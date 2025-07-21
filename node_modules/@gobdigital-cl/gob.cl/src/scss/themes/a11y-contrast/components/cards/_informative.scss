@@ -1,0 +1,9 @@
+.card-informative {
+  border-color: invert-theme-color("accent");
+
+  .card-informative-body {
+    > a {
+      color: invert-gray("a");
+    }
+  }
+}

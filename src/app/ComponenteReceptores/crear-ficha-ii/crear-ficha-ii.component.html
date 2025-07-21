@@ -1,0 +1,131 @@
+<main class="main_content pagina_interior">
+  <div class="container mt-5">
+    <h2 class="mb-4">Crear Ficha / Ubicación y Contacto <small>(2 de 3)</small></h2>
+    <form>
+      <!-- Fila 1: Región y Región Tramitación -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="region" class="form-label">Región</label>
+            <select id="region" class="form-control"
+                    [(ngModel)]="ubicacionContacto.region"
+                    name="region"
+                    (change)="onRegionChange($event)"
+                    [class.is-invalid]="errores.region">
+                    <option *ngFor="let region of regiones" [value]="region.id_region">
+                      {{ region.nombre }}
+                    </option>
+            </select>
+            <div *ngIf="errores.region" class="text-danger">{{ errores.region }}</div>
+          </div>
+        </div>
+      
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="regionTramitacion" class="form-label">Región tramitación</label>
+            <select id="regionTramitacion"
+            class="form-control"
+            [(ngModel)]="ubicacionContacto.regiontramitacion"
+            name="regiontramitacion"
+            [class.is-invalid]="errores.regiontramitacion">
+                <option *ngFor="let region of regiones" [value]="region.id_region">
+                  {{ region.nombre }}
+                </option>
+            </select>
+            <div *ngIf="errores.regiontramitacion" class="text-danger">{{ errores.regiontramitacion }}</div>
+          </div>
+        </div> <!-- <--- Cierre de la col-md-6 que faltaba -->
+      
+      </div> <!-- <--- Cierre de la row -->
+
+      <!-- Fila 2: Comuna y Dirección -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="comuna" class="form-label">Comuna</label>
+            <select id="comuna" class="form-control" [(ngModel)]="ubicacionContacto.comuna" name="comuna"
+              [class.is-invalid]="errores.comuna">
+              <option *ngFor="let c of comunas" [value]="c.id_comuna">
+                {{ c.nombre }}
+              </option>
+            </select>
+            <div *ngIf="errores.comuna" class="text-danger">{{ errores.comuna }}</div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" id="direccion" class="form-control" placeholder="Avda. Gabriela Mistral"
+              [(ngModel)]="ubicacionContacto.direccion" name="direccion"
+              [class.is-invalid]="errores.direccion" />
+            <div *ngIf="errores.direccion" class="text-danger">{{ errores.direccion }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 3: Checkbox de Dirección sin número y Número -->
+      <div class="row mb-3 align-items-center">
+        <div class="col-md-6 d-flex align-items-center">
+          <div class="form-check">
+            <input type="checkbox" id="sinNumero" class="form-check-input me-2" [(ngModel)]="ubicacionContacto.sinNumero" name="sinNumero" />
+            <label for="sinNumero" class="form-check-label">Es dirección sin número</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="numero" class="form-label">Número</label>
+            <input appValidacionesInput
+            type="text"
+            id="numero"
+            class="form-control"
+            placeholder="--"
+            [(ngModel)]="ubicacionContacto.numero"
+            name="numero"
+            [disabled]="ubicacionContacto.sinNumero"
+            [class.is-invalid]="errores.numero" />
+          <div *ngIf="errores.numero" class="text-danger">{{ errores.numero }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 4: Correo Electrónico y Teléfono -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="correoElectronico" class="form-label">Correo Electrónico</label>
+            <input appValidarCorreo
+             type="email" id="correoElectronico" class="form-control" placeholder="freirina@freirina.cl"
+              [(ngModel)]="ubicacionContacto.correoElectronico" name="correoElectronico"
+              [class.is-invalid]="errores.correoElectronico" />
+            <div *ngIf="errores.correoElectronico" class="text-danger">{{ errores.correoElectronico }}</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input 
+              appValidarTelefono 
+              type="text" id="telefono" class="form-control" placeholder="+56912347891"
+              [(ngModel)]="ubicacionContacto.telefono" name="telefono"
+              [class.is-invalid]="errores.telefono" />
+            <div *ngIf="errores.telefono" class="text-danger">{{ errores.telefono }}</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Botones -->
+      <div class="row">
+        <div class="col text-start">
+          <button type="button" class="btn btn-link" (click)="volverpasoi()">Anterior</button>
+        </div>
+        <div class="col text-right">
+          <button type="button" class="btn btn-primary" (click)="guardarDatosYContinuar()">Guardar y siguiente</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>

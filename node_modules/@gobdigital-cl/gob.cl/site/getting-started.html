@@ -1,0 +1,163 @@
+
+<section class="doc-section" id="gettingStarted">
+  <header class="doc-section-header">
+    <h2>Comenzando <a href="#gettingStarted">#</a></h2>
+  </header>
+  <div class="doc-section-body">
+    <p>
+      El Framework kit de Gobierno es un conjunto de herramientas basado en
+      Bootstrap 4 para el diseño y diagramación de sitios y aplicaciones
+      web de gobierno. Contiene plantillas de formularios, botones,
+      menús de navegación y otros elementos de diseño.
+    </p>
+    <div class="doc-subsection" id="bootstrap">
+      <div class="doc-subsection-header">
+        <h3>Bootstrap <a href="#bootstrap">#</a></h3>
+      </div>
+      <div class="doc-subsection-body">
+        <p>
+          Bootstrap es uno de los frameworks más populares para la construcción
+          de sitios web responsivos.
+          El Framework kit de Gobierno, al estar basado en Bootstrap 4 permite utilizar
+          todas las herramientas que este ofrece. Toda la información relacionada
+          la puedes encontrar en la
+          <a class="ml-1" href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">documentación oficial</a>.
+        </p>
+      </div>
+    </div>
+    <div class="doc-subsection" id="installation">
+      <div class="doc-subsection-header">
+        <h3>Instalación <a href="#installation">#</a></h3>
+      </div>
+      <div class="doc-subsection-body">
+        <h4 class="h5 sub-title" id="installNPM"> Mediante NPM <a href="#installNPM">#</a></h4>
+        <p>
+          El kit puede ser instalado en aplicaciones basadas en Node.js con el
+          <a href="https://www.npmjs.com/package/@gobdigital-cl/gob.cl">paquete de npm</a>
+          utilizando el siguiente comando:
+        </p>
+        <div class="blockquote"><code>$ npm i @gobdigital-cl/gob.cl</code></div>
+        <p>
+          Para utilizar este framework, es necesario incluir dos de los
+          archivos que vienen dentro de la carpeta dist del paquete
+          de NPM:
+        </p>
+        <ul>
+          <li>CSS: @gobdigital-cl/dist/css/gob.cl.css</li>
+          <li>JS: @gobdigital-cl/dist/js/gob.cl.js</li>
+        </ul>
+        <p>
+          Para cargarlos, necesitaremos ubicar las siguientes líneas en el
+          index de su sitio web:
+        </p>
+        <pre data-src="examples/links-framework.html"></pre>
+        <p>
+          El estilo de Bootstrap 4 viene incluido al instalar el framework kit
+          de gobierno, pero no el archivo JS. Para el correcto funcionamiento
+          del framework, es necesario que importe el archivo en conjunto con
+          los de <a href="https://jquery.com/">JQuery</a> y
+          <a href="https://popper.js.org/">Popper.js</a> en el siguiente orden:
+        </p>
+        <pre data-src="examples/links-js.html"></pre>
+        <p>
+          También son necesarias las tipografías Roboto y Robot Slab,
+          las cuales la puede descargar con Google Fonts:
+        </p>
+        <pre data-src="examples/links-fonts.html"></pre>
+        <p>
+          Otra alternativa para cargar el estilo framework kit de gobierno,
+          es utilizar Sass. Para ello deberá importar el scss en
+          su archivo <code>style.scss</code>.
+          Un ejemplo de integración con Sass sería el siguiente:
+        </p>
+        <pre data-src="examples/style.scss"></pre>
+        <h4 class="h5 sub-title" id="installCDN">Mediante CDN <a href="#installCDN">#</a></h4>
+        <p>
+          Es posible cargar el framework kit de gobierno a través de los enlaces
+          disponibles sobre la plataforma CDN de gobierno como se muestra a
+          continuación:
+        </p>
+        <pre data-src="examples/cdn-import.html"></pre>
+      </div>
+    </div>
+    <div class="doc-subsection" id="initialTemplate">
+      <div class="doc-subsection-header">
+        <h3>Template inicial <a href="#initialTemplate">#</a></h3>
+      </div>
+      <div class="doc-subsection-body">
+        <p>
+          Es importante que las páginas del sitio a crear sigan los últimos
+          estándares de desarrollo. Esto quiere decir:
+        </p>
+        <ul>
+          <li>
+            Se debe utilizar la declaración HTML5 doctype e incluir un meta tag
+            viewport para un comportamiento responsivo adecuado.
+          </li>
+          <li>El body debe tener 3 tags de HTML anidados:
+            <ol>
+              <li><code>header</code></li>
+              <li><code>main</code></li>
+              <li><code>footer</code></li>
+            </ol>
+          </li>
+          <li>
+            Los scripts de javascript, deben ir al final del body para que el
+            sitio cargue más rápido. Los scripts se cargan de manera secuencial
+            y bloquean el resto de la carga de archivos.
+            Colocarlos al final permite que otros elementos, comos los archivos
+            css carguen primero.
+          </li>
+        </ul>
+        <p>Juntando lo anterior, un ejemplo de la página principal sería:</p>
+        <pre data-src="examples/layout.html"></pre>
+      </div>
+    </div>
+    <div class="doc-subsection" id="browsersDevices">
+      <div class="doc-subsection-header">
+        <h3>Soporte browsers y dispositivos <a href="#browsersDevices">#</a></h3>
+      </div>
+      <div class="doc-subsection-body">
+        <p>
+          El framework mantiene el soporte de navegadores otorgado por bootstrap.
+          Para más detalle puede revisar la documentación de Bootstrap en la sección de
+          <a href="https://getbootstrap.com/docs/4.5/getting-started/browsers-devices/" target="_blank">Navegadores y Dispositivos</a> .
+        </p>
+        <p>
+          Las herramientas añadidas en este framework brindan soporte para varios puntos
+          de cambio en el tamaño de la pantalla del dispositivo:
+        </p>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="text-center">Extra small</th>
+              <th class="text-center">Small</th>
+              <th class="text-center">Medium</th>
+              <th class="text-center">Large</th>
+              <th class="text-center">Extra large</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="text-nowrap">Tamaños para los que aplica</th>
+              <td>&lt;576px</td>
+              <td>&GreaterEqual;576px</td>
+              <td>&GreaterEqual;768px</td>
+              <td>&GreaterEqual;992px</td>
+              <td>&GreaterEqual;1200px</td>
+            </tr>
+            <tr>
+              <th class="text-nowrap">Prefijo</th>
+              <td>No tiene</td>
+              <td><code>sm</code></td>
+              <td><code>md</code></td>
+              <td><code>lg</code></td>
+              <td><code>xl</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html class="a11y-font-0" lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="language" content="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Documentación Librería Framework kit Gobierno">
+    <title>Framework kit Gobierno</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
+    <!--if lte IE 7script(src='https://html5shim.googlecode.com/svn/trunk/html5.js')
+    -->
+    <!--if lt IE 9script(src='https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js', integrity='sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=', crossorigin='anonymous')
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" integrity="sha256-xJOZHfpxLR/uhh1BwYFS5fhmOAdIRQaiOul5F/b7v3s=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/themes/prism.min.css" integrity="sha256-DJJDQyzflMYiUb2jX3gilm9m3gAkHPC4WLv9BAk4rTE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/doc.css" type="text/css">
+  </head>
+  <body class="contingency-closed" data-main="main">
+    <header>
+      <!-- Fixed navbar-->
+      <nav class="navbar navbar-light navbar-expand-xl fixed-top">
+        <div class="container"><a class="navbar-brand mr-auto" href="/"><i class="fa fa-spinner fa-spin page-loading-icon"></i><img src="img/gob-header.svg"></a>
+          <div class="section-header">
+            <div class="toolbar"><a class="toolbar-btn toolbar-behavior-contrast" href="#"><i class="cl cl-contrast"></i></a>
+              <div class="toolbar-btn-group"><a class="toolbar-btn toolbar-behavior-decrease" href="#"><i class="cl cl-decrease-text"></i></a><a class="toolbar-btn toolbar-behavior-increase" href="#"><i class="cl cl-increase-text"></i></a></div><a class="toolbar-btn toolbar-toggler" href="#"><i class="cl cl-accessibility toolbar-behavior-on"></i><span class="toolbar-behavior-off">X</span></a>
+            </div>
+          </div>
+          <button class="navbar-toggler collapsed d-md-none d-lg-none d-xl-none" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="navbar-collapse collapse max-vh-100 overflow-auto" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto d-md-none d-lg-none d-xl-none">
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="/">Comenzando</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="framework-explanation.html">Estructura del framework</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="development.html">Desarrollo</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="accessibility.html">Accesibilidad</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="typography.html">Tipografía</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="colors.html">Colores</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="icons.html">Íconos</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="sections.html">Secciones</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="buttons.html">Botones</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="navbar.html">Navegación</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="pagination.html">Paginación</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="tags.html">Tags</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="cards.html">Cards</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="news.html">Noticias</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="custom-presentation.html">Presentación personalizada</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="profiles.html">Perfiles</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="banners.html">Banners</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="search-form.html">Formulario de búsqueda</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="tabs.html">Tabs</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="collapsibles.html">Colapsables</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="footer-explanation.html">Footer</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="forms.html">Formularios</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="utilities.html">Utilidades</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="with-fixed-navbar">
+      <section class="contingency" data-active="false">
+        <div class="contingency-body">
+          <section class="section-jumbotron bg-warning text-black contingency-item contingency-1">
+            <div class="container">
+              <div class="section-header pt-5 clearfix"><span class="cl cl-close-line close contingency-behavior-close" title="Cerrar contingencia" aria-label="Cerrar contingencia"></span></div>
+              <div class="section-body pb-5">
+                <h1 class="line">
+                  Contingencia 1
+                  
+                </h1>
+                <p class="text-black font-weight-light mb-5 text-center">Conoce la información oficial más reciente sobre esta <br>
+                  emergencia. Estamos actualizando constantemente.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="section-jumbotron bg-warning text-black contingency-item contingency-2 d-none">
+            <div class="container">
+              <div class="section-header pt-5 clearfix"><span class="cl cl-close-line close contingency-behavior-close" title="Cerrar contingencia" aria-label="Cerrar contingencia"></span></div>
+              <div class="section-body pb-5">
+                <h1 class="line">
+                  Contingencia 2
+                  
+                </h1>
+                <p class="text-black font-weight-light mb-5 text-center">Conoce la información oficial más reciente sobre esta <br>
+                  emergencia. Estamos actualizando constantemente.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="section-jumbotron bg-warning text-black contingency-item contingency-3 d-none">
+            <div class="container">
+              <div class="section-header pt-5 clearfix"><span class="cl cl-close-line close contingency-behavior-close" title="Cerrar contingencia" aria-label="Cerrar contingencia"></span></div>
+              <div class="section-body pb-5">
+                <h1 class="line">
+                  Contingencia 3
+                  
+                </h1>
+                <p class="text-black font-weight-light mb-5 text-center">Conoce la información oficial más reciente sobre esta <br>
+                  emergencia. Estamos actualizando constantemente.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="section-jumbotron bg-warning text-black contingency-item contingency-4 d-none">
+            <div class="container">
+              <div class="section-header pt-5 clearfix"><span class="cl cl-close-line close contingency-behavior-close" title="Cerrar contingencia" aria-label="Cerrar contingencia"></span></div>
+              <div class="section-body pb-5">
+                <h1 class="line">
+                  Contingencia 4
+                  
+                </h1>
+                <p class="text-black font-weight-light mb-5 text-center">Conoce la información oficial más reciente sobre esta <br>
+                  emergencia. Estamos actualizando constantemente.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="section-jumbotron bg-warning text-black contingency-item contingency-5 d-none">
+            <div class="container">
+              <div class="section-header pt-5 clearfix"><span class="cl cl-close-line close contingency-behavior-close" title="Cerrar contingencia" aria-label="Cerrar contingencia"></span></div>
+              <div class="section-body pb-5">
+                <h1 class="line">
+                  Contingencia 5
+                  
+                </h1>
+                <p class="text-black font-weight-light mb-5 text-center">Conoce la información oficial más reciente sobre esta <br>
+                  emergencia. Estamos actualizando constantemente.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 contingency-1 contingency-item">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Lo más reciente</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Ccontingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Contingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 contingency-2 contingency-item d-none">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Lo más reciente</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Ccontingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Contingencia se
+                        mantiene durante las próximas 6 horas
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 contingency-3 contingency-item d-none">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Lo más reciente</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Ccontingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Contingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 contingency-4 contingency-item d-none">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Lo más reciente</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Ccontingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Contingencia se
+                        mantiene durante las próximas 6 horas
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 contingency-5 contingency-item d-none">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Lo más reciente</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Ccontingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Contingencia se
+                        mantiene durante las próximas 6 horas
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Otras Contingencias</h3>
+              </div>
+              <div class="section-body mt-4 contingency-index">
+                <div class="row">
+                  <div class="col-lg-6 contingency-item contingency-1 d-none"><a class="contingency-behavior-change" href="#" data-target=".contingency-1">
+                      <h4 class="mb-3">Contingencia 1</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="col-lg-6 contingency-item contingency-2"><a class="contingency-behavior-change" href="#" data-target=".contingency-2">
+                      <h4 class="mb-3">Contingencia 2</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="col-lg-6 contingency-item contingency-3"><a class="contingency-behavior-change" href="#" data-target=".contingency-3">
+                      <h4 class="mb-3">Contingencia 3</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="col-lg-6 contingency-item contingency-4"><a class="contingency-behavior-change" href="#" data-target=".contingency-4">
+                      <h4 class="mb-3">Contingencia 4</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="col-lg-6 contingency-item contingency-5"><a class="contingency-behavior-change" href="#" data-target=".contingency-5">
+                      <h4 class="mb-3">Contingencia 5</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 bg-gray-c">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Encuentra mas información</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6"><a href="#">
+                      <h4 class="mb-3">Onemi</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="col-lg-6"><a href="#">
+                      <h4 class="mb-3">Shoa</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                      
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section">
+            <div class="section-action mt-4"><a class="btn btn-neutral btn-default-size contingency-behavior-close" href="#">Ir a la portada</a></div>
+          </section>
+        </div>
+        <div class="contingency-footer">
+          <div class="container">
+            <div class="footer-logo"><img class="footer-default-logo" src="../img/gob-footer-contingency.svg"><img class="footer-mobile-logo" src="../img/gob-footer-mobile.svg"></div>
+          </div>
+        </div>
+      </section>
+      <section class="redirecting" id="to-link-1">
+        <div class="redirecting-body d-flex justify-content-center">
+          <section class="section-jumbotron align-self-center">
+            <div class="container">
+              <div class="section-header">
+                <div class="row px-sm-5 py-4">
+                  <div class="col-5 text-right"><img src="../img/gob-header.svg"></div>
+                  <div class="col-2 align-self-center text-center">
+                    <div class="arrow-loading"><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i></div>
+                  </div>
+                  <div class="col-5"><img src="../img/gob-header.svg"></div>
+                </div>
+              </div>
+              <div class="section-body">
+                <div class="line"></div>
+                <h3>Te estamos redirigiendo a  <b>Link 1</b></h3>
+                <p>Ejemplo de redirección.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="redirecting-footer">
+          <div class="container">
+            <div class="footer-logo"><img class="footer-default-logo" src="../img/gob-footer-contingency.svg"><img class="footer-mobile-logo" src="../img/gob-footer-mobile.svg"></div>
+          </div>
+        </div>
+      </section>
+      <section class="redirecting" id="to-link-2">
+        <div class="redirecting-body d-flex justify-content-center">
+          <section class="section-jumbotron align-self-center">
+            <div class="container">
+              <div class="section-header">
+                <div class="row px-sm-5 py-4">
+                  <div class="col-5 text-right"><img src="../img/gob-header.svg"></div>
+                  <div class="col-2 align-self-center text-center">
+                    <div class="arrow-loading"><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i></div>
+                  </div>
+                  <div class="col-5"><img src="../img/gob-header.svg"></div>
+                </div>
+              </div>
+              <div class="section-body">
+                <div class="line"></div>
+                <h3>Te estamos redirigiendo a  <b>Link 2</b></h3>
+                <p>Ejemplo de redirección.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="redirecting-footer">
+          <div class="container">
+            <div class="footer-logo"><img class="footer-default-logo" src="../img/gob-footer-contingency.svg"><img class="footer-mobile-logo" src="../img/gob-footer-mobile.svg"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section-jumbotron py-3">
+        <div class="container">
+          <div class="section-body"><img src="img/gob-home.svg">
+            <h1 class="line">Framework kit Gobierno</h1>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-3 bd-sidebar d-none d-md-block d-lg-block d-lg-block">
+              <nav class="bd-links">
+                <div class="bd-toc-item"><a class="bd-toc-link" href="/">Comenzando</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="framework-explanation.html">Estructura del framework</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="development.html">Desarrollo</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="accessibility.html">Accesibilidad</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="typography.html">Tipografía</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="colors.html">Colores</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="icons.html">Íconos</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="sections.html">Secciones</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="buttons.html">Botones</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="navbar.html">Navegación</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="pagination.html">Paginación</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="tags.html">Tags</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="cards.html">Cards</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="news.html">Noticias</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="custom-presentation.html">Presentación personalizada</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="profiles.html">Perfiles</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="banners.html">Banners</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="search-form.html">Formulario de búsqueda</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="tabs.html">Tabs</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="collapsibles.html">Colapsables</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="footer-explanation.html">Footer</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="forms.html">Formularios</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="utilities.html">Utilidades</a>
+                </div>
+              </nav>
+            </div>
+            <div class="col-12 col-md-9">
+              <section class="doc-section" id="utilities">
+                <header class="doc-section-header">
+                  <h2>Utilidades <a href="#utilities">#</a></h2>
+                </header>
+                <div class="doc-section-body">
+                  <p>
+                    El framework kit de gobierno dispone de elementos que son de utilidad
+                    para la facilitar la integración de ciertos elementos que
+                    podría llegar a utilizar con frecuencia.
+                  </p>
+                  <div class="doc-subsection" id="decorativeLine">
+                    <div class="doc-subsection-header">
+                      <h3>Franja decorativa <a href="#decorativeLine">#</a></h3>
+                    </div>
+                    <div class="doc-subsection-body">
+                      <p>La clase<code>.line</code> al ser añadida a algún tag html agrega una
+                        franja debajo del elemento con colores por defecto del diseño de
+                        gobierno, como en el título principal de esta
+                        documentación.
+                      </p>
+                      <p>La clase<code>.line-x</code>, donde x es el nombre de uno de los colores
+                        mencionados en la sección
+                        <a href="includes/colors.html">colores</a>, al ser añadida junto a
+                        la clase<code>.line</code>, permite elegir un color diferente para la
+                        franja completa.
+                      </p>
+                      <p>
+                        A continuación, una lista con las franjas en los distintos colores
+                        disponibles:
+                      </p>
+                      <div class="text-center">
+                        <div class="h3 line">Línea por defecto</div>
+                        <div class="h3 line line-primary">Línea color <span class="text-primary">primary</span></div>
+                        <div class="h3 line line-secondary">Línea color <span class="text-secondary">secondary</span></div>
+                        <div class="h3 line line-tertiary">Línea color <span class="text-tertiary">tertiary</span></div>
+                        <div class="h3 line line-success">Línea color <span class="text-success">success</span></div>
+                        <div class="h3 line line-info">Línea color <span class="text-info">info</span></div>
+                        <div class="h3 line line-warning">Línea color <span class="text-warning">warning</span></div>
+                        <div class="h3 line line-danger">Línea color <span class="text-danger">danger</span></div>
+                        <div class="bg-black">
+                          <div class="h3 line line-light"><span class="text-white">Línea color</span> <span class="text-light">light</span></div>
+                        </div>
+                        <div class="h3 line line-dark">Línea color <span class="text-dark">dark</span></div>
+                        <div class="h3 line line-accent">Línea color <span class="text-accent">accent</span></div>
+                        <div class="bg-black">
+                          <div class="h3 line line-neutral"><span class="text-white">Línea color</span> <span class="text-neutral">neutral</span></div>
+                        </div>
+                      </div>
+                      <pre data-src="examples/line.html"></pre>
+                    </div>
+                  </div>
+                  <div class="doc-subsection" id="backgrounds">
+                    <div class="doc-subsection-header">
+                      <h3>Fondos <a href="#backgrounds">#</a></h3>
+                    </div>
+                    <div class="doc-subsection-body">
+                      <p>
+                        Una forma sencilla de añadir imágenes como background se logra utilizando los
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">data-attributes</a>
+                        implementados para estos casos:
+                      </p>
+                      <ul>
+                        <li><code>data-background</code> especifica la referencia a la imágen
+                          que se quiere utilizar de fondo.
+                        </li>
+                        <li><code>data-opacity</code> especifica si se quiere el comportamiento 
+                          hover.
+                        </li>
+                        <li><code>data-background-video</code> especifica la referencia a un
+                          recurso tipo video.
+                        </li>
+                      </ul>
+                      <h4 class="h5" id="simpleBackground">Fondo simple <a href="#simpleBackground">#</a></h4>
+                      <p>El siguiente ejemplo es un <code>div</code> con un background sencillo:</p>
+                      <div data-background="/img/gob-icon.svg">
+                        <p class="h3 text-white text-center py-3">Ejemplo de background</p>
+                      </div>
+                      <pre data-src="examples/cover-background.html"></pre>
+                      <h4 class="h5" id="backgroundsEffect">Fondo con efecto <a href="#backgroundsEffect">#</a></h4>
+                      <p>Es lo mismo que lo anterior pero activando el efecto hover:</p>
+                      <div data-background="/img/gob-icon.svg" data-opacity="1">
+                        <p class="h3 text-white text-center py-3">Ejemplo de background con hover</p>
+                      </div>
+                      <pre data-src="examples/cover-background-hover.html"></pre>
+                      <h4 class="h5" id="backgroundVideo">Fondo con video <a href="#backgroundVideo">#</a></h4>
+                      <p>
+                        Para añadir un video como background tiene que especificar la
+                        imágen placeholder con <code>data-background</code> y el enlace
+                        al recurso con <code>data-background-video</code>.
+                      </p>
+                      <p>
+                        El siguiente ejemplo utiliza un video obtenido desde la
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">documentación</a>
+                        del elemento video en
+                        <a href="https://developer.mozilla.org/en-US/">mdn</a>.
+                      </p>
+                      <div data-background="/img/gob-icon.svg" data-background-video="/video/sample.webm">
+                        <p class="h3 text-white text-center py-5">Ejemplo de background con video</p>
+                      </div>
+                      <pre data-src="examples/cover-background-video.html"></pre>
+                      <h4 class="h5" id="pseudoBackground">Fondo con el plugin pseudo-background <a href="#pseudoBackground">#</a></h4>
+                      <p>
+                        Otra herramienta disponible para los fondos es la
+                        clase<code>pseudo-background</code>. Si bien tiene un comportamiento
+                        similar al <a href="#simpleBackground">Fondo simple</a>, esta clase
+                        es compatible con navegadores que no soportan o permiten el uso
+                        de javascript dado que utiliza el tag html <code>img</code>:
+                      </p>
+                      <div class="pseudo-background"><img class="pseudo-src" src="img/gob-icon.svg" alt="">
+                        <p class="h3 text-white text-center py-3">Ejemplo de background con pseudo background</p>
+                      </div>
+                      <pre data-src="examples/pseudo-background.html"></pre>
+                    </div>
+                  </div>
+                  <div class="doc-subsection" id="utilitiesClasses">
+                    <div class="doc-subsection-header">
+                      <h3>Clases de utilidad <a href="#utilitiesClasses">#</a></h3>
+                    </div>
+                    <div class="doc-subsection-body">
+                      <p>
+                        Bootstrap provee de varias clases de utilidad que permiten
+                        dar estilo sin la necesidad de crear nuevas clases. Este kit
+                        agrega nuevas clases y extiende otras de manera de ampliar las
+                        posibilidades:
+                      </p>
+                      <ul>
+                        <li class="mb-2"><span class="text-primary">.list-inline</span>: Ordena los elementos de una lista en una misma
+                          fila.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.text-underline</span>: Decora con subrayado el texto.</li>
+                        <li class="mb-2"><span class="text-primary">.text-normal</span>: Remueve las transformaciones y decorados
+                          de un texto.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.text-break</span>: Hace que un texto haga salto de línea y 
+                          esconda el exceso por overflow por palabra en vez de letra.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.border-$infix</span>: Por cada
+                          <span class="text-primary">$infix</span> (<code>breakpoint</code>)
+                          define un borde de ancho y color
+                          definido por el tema. Ejemplo, <code>.border-md</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.border-$infix-$side</span>: Por cada
+                          <span class="text-primary">$infix</span> (<code>breakpoint</code>)
+                          define un borde en la dirección 
+                          <span class="text-primary">$side</span> (top, right, bot left) de ancho y color
+                          definido por el tema. Ejemplo, <code>.border-md-top</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.text-$color</span>: Aplica el color <span class="text-primary">$color</span>
+                          al texto. Ejemplo, <code>.text-primary</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">a.text-$color:focus</span>: Aplica el color <span class="text-primary">$color</span>
+                          al texto de un anchor en la acción focus.
+                          Ejemplo, <code>a.text-primary</code>
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.badge-$color</span>: Aplica cambio de color al contenido y al 
+                          fondo de acuerdo a lo definido para cada <span class="text-primary">$color</span>
+                          del tema. Ejemplo, <code>.badge-primary</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.bg-layer-$color</span>: Añade un background de color
+                          <span class="text-primary">$color</span> como pseudo elemento.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.col-separator-$color</span>: Añade un separador de
+                          columnas hijas del elemento de color <span class="text-primary">$color</span>.
+                          Ejemplo, <code>.col-separator-primary</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.border-$color</span>: Aplica el color <span class="text-primary">$color</span>
+                          al borde. Ejemplo, <code>.border-primary</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.text-before-$color</span>: Aplica el color <span class="text-primary">$color</span>
+                          a un pseudo elemento que esté antes de este.
+                          Ejemplo, <code>.text-before-primary</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.text-after-$color</span>: Aplica el color <span class="text-primary">$color</span>
+                          a un pseudo elemento que esté después de este.
+                          Ejemplo, <code>.text-after-primary</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.bg-before-$color</span>: Aplica el color <span class="text-primary">$color</span>
+                          al fondo de un pseudo elemento que esté antes de este.
+                          Ejemplo, <code>.text-after-primary</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.bg-after-$color</span>: Aplica el color <span class="text-primary">$color</span>
+                          al fondo de un pseudo elemento que esté antes de este.
+                          Ejemplo, <code>.text-after-primary</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.square-text-$color</span>: Aplica el color y fondo
+                          <span class="text-primary">$color</span> al cuadrado de texto.
+                          Ejemplo, <code>.square-text-primary</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.border$infix-$color</span>: Aplica el color <span class="text-primary">$color</span>
+                          al borde activo en el breakpoint <span class="text-primary">$infix</span>. 
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.close</span>: Deja en normal el valor para <code>font-style</code>.</li>
+                        <li class="mb-2"><span class="text-primary">.opacity</span>: Aplica una opacidad definida por el tema.</li>
+                        <li class="mb-2"><span class="text-primary">.square-text-$key</span>: Define un cuadrado de texto, con
+                          color <code>gray-a</code> y fondo <code>neutral</code> en <code>bold</code> 
+                          para un tamaño <span class="text-primary">$key</span>.
+                          Ejemplo, <code>.square-text-1</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">.max-vh-100</span>: Define un alto máximo de <code>100vh</code>.</li>
+                        <li class="mb-2"><span class="text-primary">.a11y-contrast-text-$color</span>: Aplica la versión
+                          contraste del color <span class="text-primary">$color</span>.
+                          Ejemplo, <code>.square-text-primary</code>.
+                        </li>
+                      </ul>
+                      <p>
+                        Cabe destacar, que las clases existentes que manejan colores
+                        son adaptadas para el modo contraste en
+                        <code>themes/a11y-contrast/base/_base.scss</code>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="min-hight-lg-auto">
+      <div class="container"><a class="footer-logo" href="#"><img class="footer-default-logo" src="img/gob-footer.svg"><img class="footer-mobile-logo" src="img/gob-footer-mobile.svg"></a>
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="row">
+              <div class="col-md-6"><a class="link" href="https://digital.gob.cl/" target="_blank">División de Gobierno digital</a></div>
+              <div class="col-md-6"><a class="link" href="https://www.gob.cl/" target="_blank">Gob.cl</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js" integrity="sha256-FcVIknBiVRk5KLQeIBb9VQdtFRMqwffXyZ+D8q0gQro=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js" integrity="sha256-MOdZTZaHYcbubI1ggZrOK+am0uoo4tNJkvcvOzTDKAk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-scss.min.js" integrity="sha256-1lVYQdPYmeuVDB/iXGqZBZvOPt5fwnRmM0Q2+aoGY7c=" crossorigin="anonymous"></script>
+    <script src="js/gob.cl.js"></script>
+    <script>
+      // Custom script to add active class in navbar doc
+      let path = window.location.pathname.replace('/', '');
+      if (!path) {
+        path = "/";
+      }
+      $(`.bd-links .bd-toc-item a[href="${path}"]`).parents().addClass('active');
+    </script>
+  </body>
+</html>

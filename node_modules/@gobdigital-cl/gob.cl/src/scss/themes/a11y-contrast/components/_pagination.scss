@@ -1,0 +1,27 @@
+.pagination {
+  .page-link {
+    color: invert-color("black");
+    background-color: contrast-color("white");
+  }
+
+  .page-item {
+    &.active {
+      .page-link {
+        color: invert-theme-color();
+        background-color: invert-theme-color("accent");
+        border-color: invert-theme-color();
+      }
+    }
+
+    .page-link {
+      &.disabled {
+        color: invert-gray("500");
+        border-color: invert-gray("500");
+
+        &:hover {
+          background-color: contrast-color("white");
+        }
+      }
+    }
+  }
+}

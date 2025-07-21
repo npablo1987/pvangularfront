@@ -1,0 +1,60 @@
+extends ../doc.pug
+
+block content
+  section#news.doc-section
+    header.doc-section-header
+      h2.
+        Noticias
+        #[a(href='#news') #]
+    .doc-section-body
+      p.
+        Los componentes presentacionales de noticias sirven para
+        mostrar de manera sencilla e intuitiva información
+        a los usuarios.
+      div#newsDisplay.doc-subsection
+        .doc-subsection-header
+          h3 Presentación de Noticias #[a(href='#newsDisplay') #]
+        .doc-subsection-body
+          p.
+            Este componente presenta la información de una
+            noticia destacada
+          include ../examples/card-featured-news
+          pre(data-src='examples/card-featured-news.html')
+          p.
+            De forma más compacta se puede presentar la información general de
+            una noticia de esta manera:
+          include ../examples/card-news
+          pre(data-src='examples/card-news.html')
+          p.
+            Lo anterior puede variar añadiendo un lead:
+          include ../examples/card-news-lead
+          pre(data-src='examples/card-news-lead.html')
+          p.
+            Otra variante para presentar la información general de
+            una noticia puede ser añadiendo botones a ésta:
+          include ../examples/card-news-buttons
+          pre(data-src='examples/card-news-buttons.html')
+          p.
+            También se puede utilizar un formato distinto y más compacto, con
+            un efecto interactivo:
+          include ../examples/card-news-over-image
+          pre(data-src='../examples/card-news-over-image.html')
+      div#featured.doc-subsection
+        .doc-subsection-header
+          h3 Destacados #[a(href='#featured') #]
+        .doc-subsection-body
+          p.
+            Algunas noticias pueden ser consideradas más "destacables" que otras,
+            para ello, puede utilizar este diseño:
+          include ../examples/card-featured
+          pre(data-src='examples/card-featured.html')
+      div#newsDetail.doc-subsection
+        .doc-subsection-header
+          h3 Detalle de noticia #[a(href='#newsDetail') #]
+        .doc-subsection-body
+          p.
+            Finalmente, luego de que un usuario hace clic en un resumen de
+            noticia, este será redirigido a la página con el detalle el cual
+            podrá tener un diseño como el que se muestra a continuación:
+          include ../examples/news-detail
+          pre(data-src='examples/news-detail.html')

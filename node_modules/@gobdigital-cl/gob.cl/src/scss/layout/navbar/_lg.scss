@@ -1,0 +1,59 @@
+nav.navbar {
+
+  @include media($from: desktop) {
+    &.navbar-lg {
+      min-height: $navbar-lg-lg-height;
+
+      .navbar-toggler {
+        min-height: $navbar-lg-lg-height;
+      }
+
+      &.navbar-expand {
+
+        @each $breakpoint in map-keys($grid-breakpoints) {
+          $next: breakpoint-next($breakpoint, $grid-breakpoints);
+          $infix: breakpoint-infix($next, $grid-breakpoints);
+
+          &#{$infix} {
+
+            @include media-breakpoint-up($next) {
+              .navbar-nav {
+                height: $navbar-lg-lg-height;
+
+                .nav-item {
+                  .nav-link {
+                    height: $navbar-lg-lg-height;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .nav-behavior {
+        height: $navbar-lg-lg-height;
+      }
+
+      .nav-item {
+        .nav-link {
+          height: $navbar-lg-lg-height;
+        }
+      }
+
+      .navbar-brand {
+        height: $navbar-lg-lg-height;
+      }
+    }
+  }
+}
+
+main {
+  &.with-fixed-navbar-lg {
+    margin-top: $navbar-height;
+
+    @include media($from: desktop) {
+      margin-top: $navbar-lg-lg-height;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.section-social {
+  position: relative;
+  padding-top: spacer(4);
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    content: "";
+    border-top: 1px solid theme-color("accent");
+
+    @include media($from: desktop) {
+      right: $grid-gutter-width / 2;
+      left: $grid-gutter-width / 2;
+    }
+  }
+
+  @extend .container;
+}

@@ -1,0 +1,63 @@
+extends ../doc.pug
+
+block content
+  section#cards.doc-section
+    header.doc-section-header
+      h2.
+        Cards
+        #[a(href='#cards') #]
+    .doc-section-body
+      p.
+        Las cards presentan información de forma compacta. Este kit provee
+        de diseños para distintos propósitos, pero que no restringe un uso
+        distinto al comentado en esta sección.
+      div#functions.doc-subsection
+        .doc-subsection-header
+          h3 Funciones #[a(href='#functions') #]
+        .doc-subsection-body
+        p.
+          Este componente está diseñado para la presentación de la información
+          relacionada a funciones ofrecidas por alguna entidad a través del
+          sitio web:
+        include ../examples/card-function
+        pre(data-src='examples/card-function.html')
+      div#organizationsRoles.doc-subsection
+        .doc-subsection-header
+          h3 Organizaciones y Roles #[a(href='#organizationsRoles') #]
+        .doc-subsection-body
+          p.
+            Este componente está diseñado para presentar información general de
+            una organización en  un sitio y los roles existentes en él:
+          include ../examples/card-organizations
+          pre(data-src='examples/card-organizations.html')
+      div#orgRolesDetails.doc-subsection
+        .doc-subsection-header
+          h3 Organizaciones y Roles Detallado #[a(href='#orgRolesDetails') #]
+        .doc-subsection-body
+          p.
+            Este componente amplía el anterior permitiendo mostrar información
+            más detallada:
+          include ../examples/card-detail
+          pre(data-src='examples/card-detail.html')
+      div#categories.doc-subsection
+        .doc-subsection-header
+          h3 Categorías #[a(href='#categories') #]
+        .doc-subsection-body
+          p.
+            Este componente presenta la información general de una categoría:
+          include ../examples/card-category
+          pre(data-src='examples/card-category.html')
+      div#numbers.doc-subsection
+        .doc-subsection-header
+          h3 Cifras #[a(href='#numbers') #]
+        .doc-subsection-body
+          p.
+            Este componente presenta información relacionada a estadísticas
+            de un sitio:
+          include ../examples/card-data-list
+          pre(data-src='examples/card-data-list.html')
+          p.
+            Si a lo anterior le agrega la clase #[code .card-data-list-flush] a
+            #[code .card-data-list] se obtiene el siguiente resultado:
+          include ../examples/card-data-list-flush
+          pre(data-src='examples/card-data-list-flush.html')

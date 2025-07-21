@@ -1,0 +1,30 @@
+.line {
+  position: relative;
+  display: inline-block;
+  min-width: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    left: 0;
+    height: 5px;
+    content: "";
+
+    background: $line-background;
+  }
+
+  @include media($from: tablet) {
+    min-width: $line-min-width;
+  }
+
+  @include from-colors using ($color, $value) {
+    &.line-#{$color} {
+      &::after {
+        background: $value;
+      }
+    }
+  }
+}

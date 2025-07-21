@@ -1,0 +1,63 @@
+.row
+  .col-12
+    .dom-search.search.mx-auto(data-groups='[".group-a", ".group-b", ".group-c"]')
+      input.form-control(
+        type='text', name='search',
+        placeholder='Texto placeholder buscador con filtrado en grupos',
+        aria-label='Texto placeholder buscador con filtrado en grupos',
+        aria-describedby='searchAction'
+      )
+      .search-action
+        button.btn.btn-outline-search.dom-search-behavior-cancel.d-none
+          i.icon.cl.cl-close-line
+        button#searchAction.btn.btn-outline-search.dom-search-behavior-search(type='submit')
+          i.icon.cl.cl-filter
+
+.row
+  .col-12
+    h4.mt-4.pb-2.border-bottom.border-accent Grupo A
+.row
+  .searchable.col-12.group-a(data-search-value='GrupoA Uno')
+    p
+      a(href='#') GrupoA Uno
+  .searchable.col-12.group-a(data-search-value='GrupoA Dos')
+    p
+      a(href='#') GrupoA Dos
+  .searchable.col-12.group-a(data-search-value='GrupoA Tres')
+    p
+      a(href='#') GrupoA Tres
+.row.search-not-found.not-found-group-a
+  .col-12
+    small No se encontraron resultados en el grupo a
+.row
+  .col-12
+    h4.mt-4.pb-2.border-bottom.border-accent Grupo B
+.row
+  .searchable.col-12.group-b(data-search-value='GrupoB Cuatro')
+    p
+      a(href='#') GrupoB Cuatro
+  .searchable.col-12.group-b(data-search-value='GrupoB Cinco')
+    p
+      a(href='#') GrupoB Cinco
+  .searchable.col-12.group-b(data-search-value='GrupoB Seis')
+    p
+      a(href='#') GrupoB Seis
+.row.search-not-found.not-found-group-b
+  .col-12
+    small No se encontraron resultados en el grupo b
+.row
+  .col-12
+    h4.mt-4.pb-2.border-bottom.border-accent Grupo C
+.row
+  .searchable.col-12.group-c(data-search-value='GrupoC Siete')
+    p
+      a(href='#') GrupoC Siete
+  .searchable.col-12.group-c(data-search-value='GrupoC Ocho')
+    p
+      a(href='#') GrupoC Ocho
+  .searchable.col-12.group-c(data-search-value='GrupoC Nueve')
+    p
+      a(href='#') GrupoC Nueve
+.row.search-not-found.not-found-group-c
+  .col-12
+    small No se encontraron resultados en el grupo c

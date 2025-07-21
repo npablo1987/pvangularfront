@@ -1,0 +1,114 @@
+.card-data-list {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-right: 0;
+  margin-left: 0;
+
+  @extend .row;
+
+  @include media($from: desktop) {
+    flex-direction: row;
+  }
+
+  .card-data {
+    display: flex;
+    align-items: center;
+    height: rem($card-data-height);
+    padding: $card-data-padding;
+    background-color: color("white");
+    border: 1px solid theme-color("accent");
+
+    &:hover {
+      color: color("white");
+      background-color: theme-color() !important;  /* stylelint-disable-line */
+
+      p {
+        color: color("white");
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: spacer(3);
+    }
+
+    @include media($from: tablet) {
+      display: block;
+      height: rem($card-data-lg-height);
+    }
+
+    @include media($from: desktop) {
+      &:not(:last-child) {
+        margin-right: spacer(3);
+        border-bottom: 1px solid theme-color("accent");
+      }
+    }
+
+    &:first-child {
+      background-color: $card-data-first-bg-color;
+    }
+
+    @extend .col-12;
+
+    @extend .col-lg;
+
+    > .card-data-title {
+      display: flex;
+      align-items: center;
+
+      @include media($from: tablet) {
+        display: block;
+      }
+
+      > .card-data-quantity {
+        flex-shrink: 0;
+        height: rem($card-data-quantity-line-height);
+        margin-right: $card-data-quantity-separation;
+        overflow: hidden;
+        font-family: $accent-font;
+        font-size: rem($card-data-quantity-font-size);
+        line-height: rem($card-data-title-line-height);
+
+        @include media($from: tablet) {
+          margin-right: 0;
+        }
+      }
+
+      > h5 {
+        margin-bottom: 0;
+        overflow: hidden;
+        font-size: rem($card-data-title-font-size);
+
+        @include media($from: tablet) {
+          height: rem($card-data-title-height);
+          margin-bottom: $headings-margin-bottom;
+        }
+      }
+    }
+
+    > p {
+      display: none;
+      height: rem($card-data-body-height);
+      overflow: hidden;
+      font-size: rem($card-data-body-font-size);
+      line-height: rem($card-data-body-line-height);
+
+      @include media($from: tablet) {
+        display: block;
+      }
+    }
+  }
+
+  // Variations
+  &-flush {
+    .card-data:not(:last-child) {
+      margin-bottom: 0;
+      border-bottom: none;
+
+      @include media($from: desktop) {
+        margin-right: 0;
+        border-right: none;
+        border-bottom: 1px solid theme-color("accent");
+      }
+    }
+  }
+}

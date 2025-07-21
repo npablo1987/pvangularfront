@@ -1,0 +1,18 @@
+.card-featured {
+  background-color: contrast-color("white");
+  border-color: invert-theme-color("accent");
+
+  &::before {
+    color: invert-theme-color("accent");
+  }
+
+  &:hover {
+    color: invert-theme-color();
+    text-decoration: none;
+    border: 1px solid invert-theme-color();
+
+    &::before {
+      color: invert-theme-color();
+    }
+  }
+}

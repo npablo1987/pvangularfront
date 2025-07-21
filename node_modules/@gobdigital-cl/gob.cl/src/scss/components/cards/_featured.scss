@@ -1,0 +1,51 @@
+.card-featured {
+  position: relative;
+  display: block;
+  margin-bottom: spacer(4);
+  text-decoration: none;
+  cursor: pointer;
+  background-color: color("white");
+  border: 1px solid theme-color("accent");
+
+  &::before {
+    position: absolute;
+    right: $card-featured-icon-margin;
+    bottom: $card-featured-icon-margin;
+    font-size: $small-font-size;
+    color: theme-color("accent");
+
+    @extend %cl;
+
+    content: $cl-arrow;
+  }
+
+  &:hover {
+    color: theme-color();
+    text-decoration: none;
+    border: 1px solid theme-color();
+
+    &::before {
+      color: theme-color();
+    }
+  }
+
+  &-image {
+    position: relative;
+    height: $card-featured-image-height;
+
+    @include media($from: desktop) {
+      height: $card-featured-lg-image-height;
+    }
+
+    .badge {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+    }
+  }
+
+  &-body {
+    width: 100%;
+    padding: $card-featured-padding;
+  }
+}

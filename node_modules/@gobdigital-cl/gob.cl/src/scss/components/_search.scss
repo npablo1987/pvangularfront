@@ -1,0 +1,96 @@
+.search {
+  width: $search-width;
+
+  @include media($from: desktop) {
+    width: $search-lg-width;
+  }
+
+  &:not(.with-label) {
+    width: $search-width;
+
+    @include media($from: desktop) {
+      width: $search-lg-width;
+    }
+
+    @extend .input-group;
+
+    @extend .input-group-lg;
+
+    .form-control {
+      font-family: $primary-font;
+      font-size: rem(16);
+      font-weight: 400;
+      border-right: none;
+
+      &:focus {
+        border-color: $input-border-color;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.with-label {
+    .search-content {
+      flex-wrap: nowrap;
+      justify-content: stretch;
+
+      @extend .input-group;
+
+      @extend .input-group-lg;
+
+      .form-control {
+        font-family: $primary-font;
+        font-size: rem(16);
+        font-weight: 400;
+        border-right: none;
+
+        &:focus {
+          border-color: $input-border-color;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .search-action {
+
+    @extend .input-group-append;
+
+    .btn {
+      display: flex;
+      align-items: center;
+      color: theme-color("accent");
+      background-color: $input-bg;
+      border-color: $input-border-color;
+      border-left: none;
+      transition: $input-transition;
+
+      &:not(:last-child) {
+        border-right: none;
+      }
+
+      .icon {
+        font-size: rem(20);
+        color: currentColor;
+      }
+
+      &[type="submit"] {
+        color: theme-color();
+      }
+    }
+  }
+
+  &.dom-search {
+    .dom-search-behavior-cancel {
+      padding-right: 0;
+    }
+  }
+}
+
+.search-not-found {
+  display: none;
+
+  &.not-found {
+    display: block;
+  }
+}

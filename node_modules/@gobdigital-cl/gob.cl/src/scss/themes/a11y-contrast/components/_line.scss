@@ -1,0 +1,10 @@
+.line {
+
+  @include from-inverted-colors using ($color, $value) {
+    &.line-#{$color} {
+      &::after {
+        background: $value;
+      }
+    }
+  }
+}

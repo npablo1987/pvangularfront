@@ -1,0 +1,168 @@
+extends ../doc.pug
+
+block content
+  section#accessibility.doc-section
+    header.doc-section-header
+      h2.
+        Accesibilidad
+        #[a(href='#accessibility') #]
+    .doc-section-body
+      p.
+        Con el objetivo de generar contenido accesible para personas con problemas
+        visuales o auditivos, este framework dispone de herramientas
+        básicas para el desarrollo de elementos que permiten cambiar el estilo
+        de un sitio y adaptarlo a las necesidades de los usuarios.
+      p.
+        Algunas indicaciones respecto a los lineamientos en este tema puede
+        encontrarlos en la documentación de Bootstrap, sección de
+        #[a(href="https://getbootstrap.com/docs/4.5/getting-started/accessibility/") Accesibilidad].
+      include ../examples/toolbar.pug
+      pre(data-src='examples/toolbar.html')
+      div#increaseInSize.doc-subsection
+        .doc-subsection-header
+          h3 Aumento de tamaño #[a(href='#increaseInSize') #]
+        .doc-subsection-body
+          p.
+            Acceso en el toolbar al aumento de tamaño de la fuente:
+          include ../examples/toolbar-font-size.pug
+          pre(data-src='examples/toolbar-font-size.html')
+          p.
+            Para el cambio de tamaño de la fuente, el framework incluye 3
+            clases, las cuales son aplicadas al tag #[code html] del sitio al 
+            momento de activar y el cambio desde el toolbar.
+            Se encuentran disponibles 2 niveles de aumento de tamaño,
+            #[code .a11y-font-1], #[code .a11y-font-2] más el caso base 
+            representado por la clase #[code .a11y-font-0]. Junto a esto,
+            el tamaño de la fuente base es aumentado con lo que
+            el tamaño de todos los textos definidos en #[code rem] son escalados.
+            Por último, los estilos desarrollados en #[code themes/a11y-fonts]
+            aplicarán por sobre los definidos de forma normal.
+          p.
+            Por defecto, los niveles de tamaño son #[code 16px], #[code 20px]
+            y #[code 24px]:
+          .blockquote
+            p(style="font-size: 16px;").
+              .a11y-font-0 (16px).
+            p(style="font-size: 20px;").
+              .a11y-font-1 (20px).
+            p(style="font-size: 24px;").
+              .a11y-font-2 (24px).
+          p.
+            El framework kit de gobierno dispone de clases de utilidad que 
+            aplican solamente cuando se encuentra activa alguna de las clases
+            #[code .a11y-font]. Estas utilidades facilitan
+            la adaptación del contenido al nuevo tamaño de la fuente.
+          p.
+            Para la adaptación de columnas, se puede utilizar la clase
+            #[code .a11y-font-1-col-12]
+            para que el texto utilice una columna de 12 espacios al momento de
+            aplicar el primer aumento de tamaño del texto.
+          p.
+            A continuación, un ejemplo en el que puede observar su comportamiento al
+            cambiar el tamaño de la fuente.
+          p.
+            ¡Haga la prueba subiendo el tamaño de la fuente desde el toolbar!.
+          .blockquote
+            .row.a11y-font-0
+              .col-4.border
+                p(style="font-size: 16px;").
+                  .col-4
+              .col-4.border
+                p(style="font-size: 16px;").
+                  .col-4
+              .col-4.a11y-font-1-col-12.border
+                p(style="font-size: 16px;").
+                  .col-4.a11y-font-1-col-12
+          p.
+            Para el manejo del display de los elementos, el margen y la alineación
+            de texto, puede utilizar las clases
+            #[code .a11y-font-1-d-none], #[code .a11y-font-1-m-0], #[code a11y-font-1-text-center]
+            respectivamente. Como podrá intuir, estas clases utilizan el prefijo
+            #[code .a11y-font-1-X] y #[code .a11y-font-2-X] acompañados de los prefijos
+            usuales de Bootstrap para las principales propiedades disponibles 
+            (ver clases implementadas en #[code scss/themes/a11y-fonts]).
+          p.
+            Adicionalmente, cuando requiera aplicar cambios independiente del nivel
+            de aumento del tamaño de la fuente podrá utilizar el prefijo
+            #[code .a11y-fonts]. Por ejemplo, #[code .a11y-fonts-d-none] agregará 
+            la propiedad #[code display: none] tanto para #[code .a11y-font-1]
+            como para #[code .a11y-font-2].
+      div#contrastMode.doc-subsection
+        .doc-subsection-header
+          h3 Modo contraste #[a(href='#contrastMode') #]
+        .doc-subsection-body
+          p.
+            Acceso en el toolbar para el cambio al modo contraste:
+          include ../examples/toolbar-contrast.pug
+          pre(data-src='examples/toolbar-contrast.html')
+          p.
+            Al activar el modo contraste, siguiendo el mismo mecanismo que en el
+            aumento del tamaño de la fuente, la clase #[code .a11y-contrast] es
+            aplicada al tag #[code html] del sitio. De esta manera, los colores
+            son cambiados de acuerdo a lo definido en el archivo
+            #[code scss/themes/a11y-contrast/abstracts/_variables.scss].
+            Adicionalmente, el framework dispone de métodos que facilitan el mapeo
+            de los colores principales a su versión en el modo contraste (ver 
+            #[code .../a11y-contrast/abstracts/_functions.scss]).
+          p.
+            A continuación, un ejemplo con texto dentro de un #[code .blockquote],
+            en modo normal y luego en modo contraste:
+          .blockquote
+            p.
+              Párrafo normal
+            a(href="#") Link normal
+          .a11y-contrast
+            .blockquote
+              p.
+                Párrafo en modo contraste
+              a(href="#") Link en modo contraste
+          p.
+            Cabe señalar que los colores a utilizar en el modo contraste deben seguir 
+            la recomendación mencionada en la documentación de Bootstrap
+            (#[a(href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html")  WCAG 2.0 color contrast ratio of 4.5:1])
+            respecto a la razón de contraste de colores.
+      div#reader.doc-subsection
+        .doc-subsection-header
+          h3 Lector #[a(href='#reader') #]
+        .doc-subsection-body
+          p.
+            Para los usuario que acceden a contenido web a través de herramientas
+            auditivas, es necesario adquirir un servicio que permita disponibilizar
+            el sitio web de esta forma.
+          p.
+            Puede utilizar, por ejemplo, un servicio como el que ofrece 
+            #[a(href='https://www.readspeaker.com/') Read Speaker]
+            y añadir un acceso en el toolbar de accesibilidad,
+            utilizando la clase disponible en el framework #[code rsbtn-gobcl-skin].
+          .alert.alert-warning
+            b.
+              El siguiente ejemplo, no es un demo funcional debido a que el uso de
+              readspeaker requiere de una licencia pagada.
+          include ../examples/toolbar-rs.pug
+          pre(data-src='examples/toolbar-rs.html')
+      div#configuration.doc-subsection
+        .doc-subsection-header
+          h3 Configuración #[a(href='#configuration') #]
+        .doc-subsection-body
+          p.
+            El toolbar disponible en esta documentación está basado en un plugin
+            de jQuery que puede configurar vía javascript o desde 
+            #[a(href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes") data-attributes].
+          h4#configJS.h5.sub-title Vía javascript #[a(href='#configJS') #]
+          p.
+            Por ejemplo, vía javascript, puede sobreescribir los tamaños
+            de la fuente en los distintos niveles. Además, podrá añadir un
+            callback para escuchar el evento de cambio del tamaño de la fuente y
+            aplicar las acciones deseadas:
+          pre(data-src='examples/toolbar-setting.js')
+          h4#configAttrs.h5.sub-title Vía data-attributes #[a(href='#configAttrs') #]
+          p.
+            A través de data-attributes también puede configurar los tamaños
+            de la fuente en los distintos niveles disponibles:
+          pre(data-src='examples/toolbar-setting.html')
+          h4#editSkin.h5.sub-title Edición del skin #[a(href='#editSkin') #]
+          p.
+            El skin utilizado #[code rsbtn-gobcl-skin] es añadido a través de Javascript.
+            En caso de que se requiera alguna personalización, puede acceder
+            al archivo #[code src/js/plugins/Toolbar.js] y editar lo siguiente:
+          pre(data-src='examples/toolbar-skin.js')

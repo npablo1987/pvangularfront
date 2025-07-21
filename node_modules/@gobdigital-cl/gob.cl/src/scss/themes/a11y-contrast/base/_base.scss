@@ -1,0 +1,118 @@
+body {
+  color: invert-color("black");
+  background-color: contrast-color("white");
+}
+
+@each $key, $value in $invert-theme-colors {
+  .alert-#{$key} {
+
+    @include alert-variant(theme-color-level($key, -10), theme-color-level($key, -9), theme-color-level($key, 6));
+  }
+}
+
+@include from-inverted-colors using ($color, $value) {
+
+  @include bs-bg-variant(".bg-#{$color}", $value);
+
+  @include bs-bg-variant(".a11y-contarst-bg-#{$color}", $value);
+
+  .a11y-contrast-text-#{$color},
+  .text-#{$color} {
+    color: $value !important;  /* stylelint-disable-line */
+  }
+
+  .badge-#{$color} {
+    color: color-yiq($value);
+    background-color: $value;
+  }
+
+  a.badge-#{$color} {
+
+    @include hover-focus {
+      background-color: darken($value, 10%);
+    }
+  }
+
+  .bg-layer-#{unquote($color)} {
+    background-color: transparent !important;  /* stylelint-disable-line */
+
+    &::before {
+      background-color: $value;
+    }
+  }
+
+  .col-separator-#{$color} {
+
+    @include media($from: desktop) {
+      > [class*="col-"]:not(:last-child) {
+        &::after {
+          border-left-color: $value;
+        }
+      }
+    }
+  }
+
+  .border-#{$color} {
+    border-color: $value !important; /* stylelint-disable-line */
+  }
+
+  .text-before-#{$color} {
+    &::before {
+      color: $value !important; /* stylelint-disable-line */
+    }
+  }
+
+  .text-after-#{$color} {
+    &::before {
+      color: $value !important; /* stylelint-disable-line */
+    }
+  }
+
+  .bg-before-#{$color} {
+    &::before {
+      background-color: $value !important; /* stylelint-disable-line */
+    }
+  }
+
+  .bg-after-#{$color} {
+    &::before {
+      background-color: $value !important; /* stylelint-disable-line */
+    }
+  }
+
+  .square-text-#{$color} {
+    color: color-yiq($value) !important; /* stylelint-disable-line */
+    background: $value !important; /* stylelint-disable-line */
+  }
+
+  @include bs-text-emphasis-variant(".text-#{$color}", $value);
+}
+
+.text-white {
+  color: invert($white) !important; /* stylelint-disable-line */
+}
+
+.text-body {
+  color: invert($body-color) !important; /* stylelint-disable-line */
+}
+
+.text-muted {
+  color: invert($text-muted) !important; /* stylelint-disable-line */
+}
+
+.text-black-50 {
+  color: invert(rgba($black, .5)) !important; /* stylelint-disable-line */
+}
+
+.text-white-50 {
+  color: invert(rgba($white, .5)) !important; /* stylelint-disable-line */
+}
+
+@include make-sub-display-class(a11y-contrast);
+
+@each $key, $size in $square-sizes {
+  .square-text-#{$key} {
+    color: contrast-invert-theme-color("neutral");
+    background: invert-theme-color("neutral");
+  }
+}

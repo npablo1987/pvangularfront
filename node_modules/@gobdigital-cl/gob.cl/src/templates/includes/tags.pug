@@ -1,0 +1,24 @@
+extends ../doc.pug
+
+block content  
+  section#tags.doc-section
+    header.doc-section-header
+      h2.
+        Tags
+        #[a(href='#tags') #]
+    .doc-section-body
+      p.
+        Los tags se pueden crear usando las herramientas que
+        brinda Bootstrap y el framework.
+      div#mainTags.doc-subsection
+        .doc-subsection-header
+          h3 Tags Principales #[a(href='#mainTags') #]
+        .doc-subsection-body
+          include ../examples/tags
+          pre(data-src='examples/tags.html')
+      div#secondaryTags.doc-subsection
+        .doc-subsection-header
+          h3 Tags Secundarios #[a(href='#secondaryTags') #]
+        .doc-subsection-body
+          include ../examples/tags-colors
+          pre(data-src='examples/tags-colors.html')

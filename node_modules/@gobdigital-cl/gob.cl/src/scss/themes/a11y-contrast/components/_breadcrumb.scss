@@ -1,0 +1,13 @@
+.breadcrumb {
+  .breadcrumb-item {
+    &:not(:first-child) {
+      &::before {
+        color: $invert-breadcrumb-divider-color;
+      }
+    }
+
+    &.active {
+      color: $invert-breadcrumb-active-color;
+    }
+  }
+}

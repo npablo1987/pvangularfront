@@ -1,0 +1,34 @@
+.btn {
+  color: invert($body-color);
+
+  @include hover {
+    color: invert($body-color);
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: $invert-btn-box-shadow;
+  }
+
+  @each $color, $value in $invert-theme-colors {
+    &.btn-#{$color} {
+
+      @include button-variant($value, $value);
+    }
+
+    &.btn-outline-#{$color} {
+
+      @include button-outline-variant($value);
+    }
+
+    &-pill-#{$color} {
+
+      @include button-outline-variant(
+        $color: $value,
+        $color-hover: darken($value, 10%),
+        $active-background: invert-color("white"),
+        $active-border: darken($value, 10%)
+      );
+    }
+  }
+}

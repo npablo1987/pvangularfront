@@ -1,0 +1,220 @@
+extends ../doc.pug
+
+block content 
+  section#colors.doc-section
+    header.doc-section-header
+      h2.
+        Colores #[a(href='#colors') #]
+    .doc-section-body
+      p.
+        La paleta de colores que se eligió para el kit responde a la necesidad de mantener la identidad de los
+        colores que componen el sistema de marcas del gobierno pero llevados a un plano más digital.
+      p.
+        Es importante mencionar, que los colores provistos por Bootstrap están soportados y los puede ver en la   
+        #[a(href="https://getbootstrap.com/docs/4.5/utilities/colors/", target="_blank") documentación].
+      div#mainSetColors.doc-subsection
+        .doc-subsection-header
+          h3 Paleta de colores principal #[a(href='#mainSetColors') #]
+        .doc-subsection-body
+          .row
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Primario
+                .c-color-title (primary)
+                .c-color-square.bg-primary
+                .c-color-text #006FB3
+                .c-color-text RGB(0, 111, 179)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Secundario
+                .c-color-title (secondary)
+                .c-color-square.bg-secondary
+                .c-color-text #FE6565
+                .c-color-text RGB(254, 101, 101)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Terciario
+                .c-color-title (tertiary)
+                .c-color-square.bg-tertiary
+                .c-color-text #0A132D
+                .c-color-text RGB(52, 58, 64)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Acentuar
+                .c-color-title (accent)
+                .c-color-square.bg-accent
+                .c-color-text #A8B7C7
+                .c-color-text RGB(33, 37, 41)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Neutral
+                .c-color-title (neutral)
+                .c-color-square.bg-neutral
+                .c-color-text #EEEEEE
+                .c-color-text RGB(238, 238, 238)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Gris oscuro 
+                .c-color-title (gray-a)
+                .c-color-square.bg-gray-a
+                .c-color-text #4A4A4A
+                .c-color-text RGB(74, 74, 74)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Gris medio
+                .c-color-title (gray-b)
+                .c-color-square.bg-gray-b
+                .c-color-text #8A8A8A
+                .c-color-text RGB(138, 138, 138)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Negro
+                .c-color-title (black)
+                .c-color-square.bg-black
+                .c-color-text #111111
+                .c-color-text RGB(17, 17, 17)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Blanco
+                .c-color-title (white)
+                .c-color-square.bg-white
+                .c-color-text #FFFFFF
+                .c-color-text RGB(255, 255, 255)
+
+          p.
+            Estos colores, tienen entre paréntesis el nombre del color en el
+            framework los que pueden ser utilizados para colorear los distintos
+            componentes es este.
+            Bootstrap viene con 
+            #[a(href="https://getbootstrap.com/docs/4.5/utilities/colors/", target="_blank") una lista de colores]
+            y las clases css para utilizarlas. Este framework extiende las
+            mismas funcionalidades con los colores previamente definidos.
+      div#othersColors.doc-subsection
+        .doc-subsection-header
+          h3 Otros colores #[a(href='#othersColors') #]
+        .doc-subsection-body
+          .row
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Morado
+                .c-color-title (purple)
+                .c-color-square.bg-purple
+                .c-color-text #6633CC
+                .c-color-text RGB(102, 51, 204)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Naranjo
+                .c-color-title (orange)
+                .c-color-square.bg-orange
+                .c-color-text #E0701E
+                .c-color-text RGB(224, 112, 30)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Naranjo claro
+                .c-color-title (orange-light)
+                .c-color-square.bg-orange-light
+                .c-color-text #FFA11B
+                .c-color-text RGB(255, 161, 27)
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Verde
+                .c-color-title (green)
+                .c-color-square.bg-green
+                .c-color-text #2D717C
+                .c-color-text RGB(45, 113, 124)
+
+      div#usingColors.doc-subsection
+        .doc-subsection-header
+          h3 Utilización de colores #[a(href='#usingColors') #]
+        .doc-subsection-body
+          .row
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Títulos
+                .c-color-square(style="background: #111111")
+                .c-color-text black
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Párrafos
+                .c-color-square.bg-gray-a
+                .c-color-text gray-a
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Íconos
+                .c-color-square.bg-gray-b
+                .c-color-text gray-b
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Fondo
+                .c-color-square.bg-white
+                .c-color-text white
+            .col-6.col-md-3
+              .c-color
+                .c-color-title Bordes
+                .c-color-square.bg-accent
+                .c-color-text accent
+      div#logoColors.doc-subsection
+        .doc-subsection-header
+          h3 Colores del logo #[a(href='#logoColors') #]
+        .doc-subsection-body
+          .row
+            .col-6.col-md-3
+              .c-color
+                .c-color-square.bg-primary
+                .c-color-text primary
+            .col-6.col-md-3
+              .c-color
+                .c-color-square.bg-secondary
+                .c-color-text secondary
+            .col-6.col-md-3
+              .c-color
+                .c-color-square.bg-dark
+                .c-color-text gray-a
+
+      div#textColor.doc-subsection
+        .doc-subsection-header
+          h3 Color en texto #[a(href='#textColor') #]
+        .doc-subsection-body
+          p.
+            Bootstrap provee de 
+            #[a(href="https://getbootstrap.com/docs/4.5/utilities/colors/#color") clases]
+            que permiten aplicar color
+            al texto. Para ello basta con utilizar la clase #[code .text-x]
+            donde x es el nombre del color a utilizar.
+          p.
+            A continuación, algunos ejemplos con la paleta de colores
+            principal:
+          include ../examples/colors
+          pre(data-src='examples/colors.html')
+      div#bgColors.doc-subsection
+        .doc-subsection-header
+          h3 Colores de fondo #[a(href='#bgColors') #]
+        .doc-subsection-body
+          p.
+            Para colorear el fondo tenemos las 
+            #[a(href="https://getbootstrap.com/docs/4.5/utilities/colors/#background-color") clases] 
+            de Bootstrap #[code .bg-x]
+            donde x es el nombre del color a utilizar.
+          p.
+            Este kit extiende dichas clases y añade los colores de la paleta
+            principal y secundaria. A continuación una lista de ejemplos:
+          include ../examples/colors-bg
+          pre(data-src='examples/colors-bg.html')
+      div#alertsBorders.doc-subsection
+        .doc-subsection-header
+          h3 Alertas y bordes #[a(href='#alertsBorders') #]
+        .doc-subsection-body
+          p.
+            Otras clases de utilidad disponibles son las 
+            #[a(href="https://getbootstrap.com/docs/4.5/components/alerts/") alertas]
+            #[code .alert-x] y los 
+            #[a(href="https://getbootstrap.com/docs/4.5/utilities/borders/#border-color") bordes]
+            #[code .border-x], donde
+            x es el nombre del color a aplicar. Sin embargo, para estos casos
+            sólo están disponibles los colores provistos por Bootstrap, listados
+            en su
+            #[a(href="https://getbootstrap.com/docs/4.5/utilities/colors/#color") documentación].
+          p.
+            A continuación un par de ejemplos de su aplicación:
+          include ../examples/colors-others
+          pre(data-src='examples/colors-others.html')

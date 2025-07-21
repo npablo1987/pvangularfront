@@ -1,0 +1,39 @@
+<app-menu-revision-ficha></app-menu-revision-ficha>
+<br /><br />
+
+<div class="container">
+
+  <!-- Tabla de Datos y Documentos -->
+  <h5>Datos y documentos</h5>
+  <p>Los documentos y datos asociados a la ficha deben ser correctos y estar vigentes.</p>
+
+  <!-- Historial -->
+  <h4 class="mt-4">Historial de la ficha</h4>
+
+  <div *ngIf="historial.length === 0" class="alert alert-info">
+    No existen eventos registrados para esta ficha.
+  </div>
+
+  <table *ngIf="historial.length > 0"
+         class="table table-bordered table-striped mt-3">
+    <thead class="table-light">
+      <tr>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Estado</th>
+        <th>Usuario</th>
+        <th>Observaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let h of historial">
+        <td>{{ h.fecha | date:'dd/MM/yyyy' }}</td>
+        <td>{{ h.hora  | date:'HH:mm:ss' }}</td>
+        <td>{{ h.estado }}</td>
+        <td>{{ h.usuario_nombre || h.id_usuario }}</td>
+        <td>{{ h.observaciones || '-' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br /><br />

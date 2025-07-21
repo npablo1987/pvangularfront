@@ -1,0 +1,173 @@
+/* stylelint-disable */
+
+@font-face {
+  font-family: "gob-cl";
+  src: url("#{$fonts-path}gob-cl.eot?t=1608124305840"); /* IE9 */
+  src:
+ url("#{$fonts-path}gob-cl.eot?t=1608124305840#iefix") format('embedded-opentype'), /* IE6-IE8 */
+    url("#{$fonts-path}gob-cl.woff2?t=1608124305840") format("woff2"),
+    url("#{$fonts-path}gob-cl.woff?t=1608124305840") format("woff"),
+    url("#{$fonts-path}gob-cl.ttf?t=1608124305840") format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url("#{$fonts-path}gob-cl.svg?t=1608124305840#gob-cl") format('svg'); /* iOS 4.1- */
+}
+
+.cl-accessibility::before { content: "\ea01"; }
+
+.cl-add-circle-fill::before { content: "\ea02"; }
+
+.cl-add-circle-line::before { content: "\ea03"; }
+
+.cl-arrow-left::before { content: "\ea04"; }
+
+.cl-arrow-line::before { content: "\ea05"; }
+
+.cl-arrow-right::before { content: "\ea06"; }
+
+.cl-arrow::before { content: "\ea07"; }
+
+.cl-authority::before { content: "\ea08"; }
+
+.cl-breadcrumb::before { content: "\ea09"; }
+
+.cl-briefcase::before { content: "\ea0a"; }
+
+.cl-burger::before { content: "\ea0b"; }
+
+.cl-bus::before { content: "\ea0c"; }
+
+.cl-call-info::before { content: "\ea0d"; }
+
+.cl-claveunica::before { content: "\ea0e"; }
+
+.cl-close-line::before { content: "\ea0f"; }
+
+.cl-close::before { content: "\ea10"; }
+
+.cl-computer::before { content: "\ea11"; }
+
+.cl-contrast::before { content: "\ea12"; }
+
+.cl-currency-cycle::before { content: "\ea13"; }
+
+.cl-decrease-text::before { content: "\ea14"; }
+
+.cl-doctor::before { content: "\ea15"; }
+
+.cl-document-verified::before { content: "\ea16"; }
+
+.cl-download::before { content: "\ea17"; }
+
+.cl-facebook::before { content: "\ea18"; }
+
+.cl-filter::before { content: "\ea19"; }
+
+.cl-give-letter::before { content: "\ea1a"; }
+
+.cl-img-preview::before { content: "\ea1b"; }
+
+.cl-increase-text::before { content: "\ea1c"; }
+
+.cl-instagram::before { content: "\ea1d"; }
+
+.cl-list::before { content: "\ea1e"; }
+
+.cl-login-fill::before { content: "\ea1f"; }
+
+.cl-login::before { content: "\ea20"; }
+
+.cl-logout::before { content: "\ea21"; }
+
+.cl-m-arrow-down::before { content: "\ea22"; }
+
+.cl-m-arrow-left::before { content: "\ea23"; }
+
+.cl-m-arrow-right::before { content: "\ea24"; }
+
+.cl-m-arrow-up::before { content: "\ea25"; }
+
+.cl-messenger::before { content: "\ea26"; }
+
+.cl-moneybox::before { content: "\ea27"; }
+
+.cl-ok::before { content: "\ea28"; }
+
+.cl-pause::before { content: "\ea29"; }
+
+.cl-play::before { content: "\ea2a"; }
+
+.cl-question::before { content: "\ea2b"; }
+
+.cl-reading::before { content: "\ea2c"; }
+
+.cl-search::before { content: "\ea2d"; }
+
+.cl-sound::before { content: "\ea2e"; }
+
+.cl-store::before { content: "\ea2f"; }
+
+.cl-telephone::before { content: "\ea30"; }
+
+.cl-together::before { content: "\ea31"; }
+
+.cl-touch-screen::before { content: "\ea32"; }
+
+.cl-twitter::before { content: "\ea33"; }
+
+.cl-woman::before { content: "\ea34"; }
+
+.cl-youtube::before { content: "\ea35"; }
+
+$cl-accessibility: "\ea01";
+$cl-add-circle-fill: "\ea02";
+$cl-add-circle-line: "\ea03";
+$cl-arrow-left: "\ea04";
+$cl-arrow-line: "\ea05";
+$cl-arrow-right: "\ea06";
+$cl-arrow: "\ea07";
+$cl-authority: "\ea08";
+$cl-breadcrumb: "\ea09";
+$cl-briefcase: "\ea0a";
+$cl-burger: "\ea0b";
+$cl-bus: "\ea0c";
+$cl-call-info: "\ea0d";
+$cl-claveunica: "\ea0e";
+$cl-close-line: "\ea0f";
+$cl-close: "\ea10";
+$cl-computer: "\ea11";
+$cl-contrast: "\ea12";
+$cl-currency-cycle: "\ea13";
+$cl-decrease-text: "\ea14";
+$cl-doctor: "\ea15";
+$cl-document-verified: "\ea16";
+$cl-download: "\ea17";
+$cl-facebook: "\ea18";
+$cl-filter: "\ea19";
+$cl-give-letter: "\ea1a";
+$cl-img-preview: "\ea1b";
+$cl-increase-text: "\ea1c";
+$cl-instagram: "\ea1d";
+$cl-list: "\ea1e";
+$cl-login-fill: "\ea1f";
+$cl-login: "\ea20";
+$cl-logout: "\ea21";
+$cl-m-arrow-down: "\ea22";
+$cl-m-arrow-left: "\ea23";
+$cl-m-arrow-right: "\ea24";
+$cl-m-arrow-up: "\ea25";
+$cl-messenger: "\ea26";
+$cl-moneybox: "\ea27";
+$cl-ok: "\ea28";
+$cl-pause: "\ea29";
+$cl-play: "\ea2a";
+$cl-question: "\ea2b";
+$cl-reading: "\ea2c";
+$cl-search: "\ea2d";
+$cl-sound: "\ea2e";
+$cl-store: "\ea2f";
+$cl-telephone: "\ea30";
+$cl-together: "\ea31";
+$cl-touch-screen: "\ea32";
+$cl-twitter: "\ea33";
+$cl-woman: "\ea34";
+$cl-youtube: "\ea35";
+

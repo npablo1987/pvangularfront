@@ -1,0 +1,13 @@
+{
+  "src/scss/**/*.scss": [
+    "stylelint --fix --color",
+    "git add"
+  ],
+  "{site}/*.html": [
+    "htmlhint"
+  ],
+  "src/js/**/*.js": [
+    "eslint",
+    "flow focus-check"
+  ]
+}

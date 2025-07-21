@@ -1,0 +1,28 @@
+extends ../doc.pug
+
+block content  
+  section#pagination.doc-section
+    header.doc-section-header
+      h2.
+        Paginación
+        #[a(href='#pagination') #]
+    .doc-section-body
+      p.
+        Bootstrap ofrece herramientas para construir un
+        #[a(href="https://getbootstrap.com/docs/4.5/components/pagination/") paginador].
+        Este kit añade dos paginadores
+        que están más acorde al diseño general del framework de gobierno.
+      div#simple.doc-subsection
+        .doc-subsection-header
+          h3 Simple #[a(href='#simple') #]
+        .doc-subsection-body
+          .p-2
+            include ../examples/pagination
+          pre(data-src='examples/pagination.html')
+      div#pageSkip.doc-subsection
+        .doc-subsection-header
+          h3 Paginación con salto #[a(href='#pageSkip') #]
+        .doc-subsection-body
+          .p-2
+            include ../examples/pagination-jump
+          pre(data-src='examples/pagination-jump.html')

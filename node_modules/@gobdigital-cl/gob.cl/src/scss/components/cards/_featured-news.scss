@@ -1,0 +1,28 @@
+.card-featured-news {
+
+  @extend .row;
+
+  .card-featured-news-image {
+
+    @extend .col-lg-5;
+  }
+
+  .card-featured-news-body {
+    width: 100%;
+
+    small {
+      margin-bottom: spacer(4);
+    }
+
+    p,
+    small {
+      opacity: $font-opacity;
+    }
+
+    a {
+      color: gray("a");
+    }
+
+    @extend .col-lg-7;
+  }
+}

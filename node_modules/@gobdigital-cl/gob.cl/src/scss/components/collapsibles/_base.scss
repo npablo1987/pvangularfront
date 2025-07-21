@@ -1,0 +1,12 @@
+// General toggler styles
+[data-toggle="collapse"] {
+
+  // Toggler icon animation
+  .toggler-icon {
+    transition: transform .35s ease;
+  }
+
+  &[aria-expanded="true"] .toggler-icon {
+    transform: rotate(-180deg);
+  }
+}

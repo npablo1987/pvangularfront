@@ -1,0 +1,41 @@
+extends ../doc.pug
+
+block content  
+  section#profiles.doc-section
+    header.doc-section-header
+      h2.
+        Perfiles
+        #[a(href='#profiles') #]
+    div#profilePage.doc-section-body
+      .doc-subsection
+        .doc-subsection-header
+          h3 Página de perfil #[a(href='#profilePage') #]
+        .doc-subsection-body
+          p.
+            El siguiente ejemplo, muestra cómo sería una página dedicada a un
+            perfil particular:
+          include ../examples/profile-page
+          pre(data-src='examples/profile-page.html')
+      div#profileSection.doc-subsection
+        .doc-subsection-header
+          h3 Sección de Perfil #[a(href='#profileSection') #]
+        .doc-subsection-body
+          p.
+            Cuando el objetivo de una página no es el perfil,
+            pero aún así se quiere mostrar un perfil destacado, el componente
+            se puede modificar a una versión más reducida.
+            En el siguiente ejemplo, se muestra un perfil destacado en su
+            versión más compacta:
+          include ../examples/profile-section
+          pre(data-src='../examples/profile-section.html')
+      div#profileComponent.doc-subsection
+        .doc-subsection-header
+          h3 Componente de Perfil #[a(href='#profileComponent') #]
+        .doc-subsection-body
+          p.
+            Para el caso en que estamos mostrando una lista de perfiles,
+            es mejor utilizar el componente de perfil. En el siguiente ejemplo,
+            se utiliza la grilla de Bootstrap para mostrar una fila con dos
+            columnas en la que cada una usa el componente de perfil.
+          include ../examples/profile-component
+          pre(data-src='examples/profile-component.html')

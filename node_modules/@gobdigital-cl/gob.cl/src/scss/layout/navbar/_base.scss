@@ -1,0 +1,369 @@
+nav.navbar {
+  min-height: $navbar-height;
+  padding: 0;
+  box-shadow: 0 2px 0 0 $shadow-color;
+
+  @include media($from: desktop) {
+    min-height: $navbar-lg-height;
+  }
+
+  .container {
+    position: relative;
+    padding: 0;
+
+    @include media($from: desktop) {
+      padding: 0 ($grid-gutter-width / 2);
+    }
+  }
+
+  .navbar-brand {
+    height: $navbar-height;
+    text-decoration: none;
+
+    @include media($from: desktop) {
+      height: $navbar-lg-height;
+    }
+
+    img {
+      width: auto;
+      height: $navbar-brand-height;
+    }
+  }
+
+  .navbar-toggler {
+    min-height: $navbar-height;
+    padding: $navbar-toggler-padding-y px($navbar-toggler-padding-x);
+    font-size: px($navbar-toggler-font-size);
+    border: none;
+
+    @include media($from: desktop) {
+      min-height: $navbar-lg-height;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &.navbar-expand {
+
+    @each $breakpoint in map-keys($grid-breakpoints) {
+      $next: breakpoint-next($breakpoint, $grid-breakpoints);
+      $infix: breakpoint-infix($next, $grid-breakpoints);
+
+      &#{$infix} {
+
+        @include media-breakpoint-down($breakpoint) {
+          > .container,
+          > .container-fluid {
+            padding-right: 0;
+            padding-left: 0;
+          }
+        }
+
+        .navbar-nav {
+          .search {
+            width: 100%;
+            height: $navbar-search-height;
+            min-height: $navbar-search-height;
+
+            .form-control {
+              height: $navbar-search-height;
+            }
+          }
+
+          .nav-link {
+            padding: $navbar-nav-item-link-padding-y $navbar-nav-item-link-padding-x;
+            line-height: $navbar-nav-link-line-height;
+          }
+        }
+
+        @include media-breakpoint-up($next) {
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+
+          .navbar-nav {
+            flex-direction: row;
+            align-items: center;
+            height: $navbar-lg-height;
+
+            .search {
+              width: auto;
+            }
+
+            .dropdown-menu {
+              position: absolute;
+            }
+
+            .nav-link {
+              height: $navbar-lg-height;
+              padding: $navbar-lg-nav-item-link-padding-y $navbar-lg-nav-item-link-padding-x;
+            }
+
+            .nav-separator,
+            .nav-behavior {
+              display: flex;
+            }
+          }
+
+          // For nesting containers, have to redeclare for alignment purposes
+          > .container,
+          > .container-fluid {
+            flex-wrap: nowrap;
+          }
+
+          .navbar-collapse {
+            display: flex !important;  // stylelint-disable-line declaration-no-important
+
+            // Changes flex-bases to auto because of an IE10 bug
+            flex-basis: auto;
+          }
+
+          .navbar-toggler {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-nav {
+    .nav-separator {
+      display: none;
+      align-items: center;
+
+      &::after {
+        width: $navbar-nav-separator-width;
+        height: rem($navbar-nav-behavior-link-size);
+        content: "";
+        background-color: theme-color("tertiary");
+      }
+    }
+
+    .nav-behavior {
+      display: none;
+      align-items: center;
+      height: $navbar-lg-height;
+      padding: $navbar-lg-nav-behavior-padding-y $navbar-lg-nav-behavior-padding-x;
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem($navbar-nav-behavior-link-size);
+        height: rem($navbar-nav-behavior-link-size);
+        padding: 0;
+        font-size: rem($navbar-nav-behavior-link-font-size);
+        line-height: rem($navbar-nav-behavior-link-line-height);
+        color: theme-color("accent");
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        border: 1px solid theme-color("accent");
+
+        &:active,
+        &.active {
+          background-color: color("white");
+          border-color: theme-color("primary");
+        }
+
+        &:hover {
+          color: theme-color("primary");
+          border-color: theme-color("primary");
+
+          .cl::before {
+            color: theme-color("primary");
+          }
+        }
+      }
+    }
+
+    .nav-item {
+      .btn {
+        display: flex;
+        align-items: center;
+        height: $navbar-btn-height;
+        min-height: $navbar-btn-height;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        padding: $navbar-nav-item-link-padding-y $navbar-nav-item-link-padding-x;
+        font-size: rem(16);
+        line-height: $navbar-nav-link-line-height;
+
+        @include media($from: desktop) {
+          height: $navbar-lg-height;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:not(.dropdown) {
+        display: flex;
+        align-items: center;
+
+        .nav-link:hover {
+          color: theme-color();
+        }
+      }
+
+      &.dropdown {
+        .dropdown-menu {
+          margin: 0;
+          border: none;
+
+          .dropdown-item {
+            text-decoration: underline;
+          }
+        }
+
+        &.show {
+          .dropdown-toggle {
+            color: color("white");
+            background-color: theme-color("primary");
+          }
+
+          .dropdown-menu {
+            &.show {
+              background-color: theme-color("primary");
+
+              .dropdown-item {
+                padding: rem($navbar-dropdown-item-padding-y) rem($navbar-dropdown-item-padding-x);
+                color: color("white");
+
+                &:hover {
+                  color: color("white");
+                  background-color: theme-color("tertiary");
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.navbar-light {
+    background-color: color("white");
+
+    .navbar-nav {
+      .nav-separator::after {
+        background-color: theme-color("tertiary");
+      }
+
+      .nav-behavior {
+        .nav-link {
+          color: theme-color("accent");
+          border-color: theme-color("accent");
+
+          &:active,
+          &.active {
+            background-color: color("white");
+            border-color: theme-color("primary");
+          }
+
+          &:hover {
+            color: theme-color("primary");
+            border-color: theme-color("primary");
+
+            .cl::before {
+              color: theme-color("primary");
+            }
+          }
+        }
+      }
+
+      .nav-item {
+        .nav-link {
+          color: color("black");
+        }
+
+        &:not(.dropdown) {
+          .nav-link:hover {
+            color: theme-color();
+          }
+        }
+
+        &.dropdown {
+          &.show {
+            .dropdown-toggle {
+              color: color("white");
+              background-color: theme-color("primary");
+            }
+
+            .dropdown-menu {
+              &.show {
+                background-color: theme-color("primary");
+
+                .dropdown-item {
+                  color: color("white");
+
+                  &:hover {
+                    color: color("white");
+                    background-color: theme-color("tertiary");
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.navbar-dark {
+    background-color: color("blue-dark");
+
+    .navbar-nav {
+      .nav-separator::after {
+        background-color: color("white");
+      }
+
+      .nav-behavior {
+        .nav-link {
+          color: color("white");
+          border-color: theme-color("white");
+
+          .cl::before {
+            color: color("white");
+          }
+
+          &:active,
+          &.active {
+            background-color: theme-color();
+          }
+
+          &:hover {
+            background-color: theme-color();
+
+            .cl::before {
+              color: color("white");
+            }
+          }
+        }
+      }
+
+      .nav-item {
+        .nav-link {
+          color: color("white");
+        }
+      }
+    }
+  }
+}
+
+main {
+  &.with-fixed-navbar {
+    margin-top: $navbar-height;
+
+    @include media($from: desktop) {
+      margin-top: $navbar-lg-height;
+    }
+  }
+}

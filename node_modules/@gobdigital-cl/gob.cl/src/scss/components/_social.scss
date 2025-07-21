@@ -1,0 +1,82 @@
+
+.social {
+  display: block;
+  padding: 10px 0;
+  overflow: hidden;
+
+  @extend .link-unstyled;
+
+  &:hover {
+    .social-icon {
+
+      @each $key, $value in $social-colors {
+        .cl-#{$key}::before {
+
+          @include media($from: desktop) {
+            color: $value;
+          }
+        }
+      }
+    }
+  }
+
+  .social-icon {
+    display: block;
+    font-size: rem($social-icon-font-size);
+    line-height: $social-line-height;
+    text-align: center;
+
+    @include media($from: desktop) {
+      float: left;
+      margin-right: 10px;
+      text-align: left;
+    }
+
+    @each $key, $value in $social-colors {
+      .cl-#{$key}::before {
+        color: $value;
+
+        @include media($from: desktop) {
+          color: theme-color("accent");
+        }
+      }
+    }
+  }
+
+  .social-name {
+    display: none;
+    padding-left: rem($social-icon-font-size);
+    font-size: $social-name-font-size;
+    color: gray("a");
+
+    @include media($from: desktop) {
+
+      display: block;
+    }
+  }
+
+  .social-url {
+    display: none;
+    padding-left: rem($social-icon-font-size);
+    font-size: $social-url-font-size;
+    line-height: $social-line-height;
+    color: gray("a");
+
+    @include media($from: desktop) {
+
+      display: block;
+    }
+  }
+
+  &.social-sm {
+    .social-name,
+    .social-url {
+      display: none;
+    }
+
+    .social-icon {
+      float: none;
+      margin: 0 auto;
+    }
+  }
+}

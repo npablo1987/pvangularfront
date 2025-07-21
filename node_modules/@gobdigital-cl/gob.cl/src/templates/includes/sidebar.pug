@@ -1,0 +1,7 @@
+nav.bd-links
+  each link in docSidebar
+    .bd-toc-item
+      - url = link.page;
+      a.bd-toc-link(
+        href=url
+      ) #{link.title}

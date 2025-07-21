@@ -1,0 +1,28 @@
+.form-control {
+  color: color-yiq(invert($input-bg));
+  background-color: invert($input-bg);
+  border-color: invert($input-border-color);
+
+  &:focus {
+    border-color: invert($input-focus-border-color);
+    box-shadow: $invert-input-focus-box-shadow;
+  }
+
+  &::placeholder {
+    color: color-yiq(invert($input-bg));
+  }
+
+  &:disabled,
+  &[readonly] {
+    color: color-yiq(invert($input-disabled-bg));
+    background-color: invert($input-disabled-bg);
+  }
+
+  &-plaintext {
+    color: color-yiq($invert-body-bg);
+
+    &:focus {
+      box-shadow: $invert-input-focus-box-shadow;
+    }
+  }
+}

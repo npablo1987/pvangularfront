@@ -1,0 +1,90 @@
+nav.navbar {
+
+  @include media($from: desktop) {
+    &.navbar-lines {
+      min-height: $navbar-lines-height;
+
+      .navbar-toggler,
+      .container {
+        min-height: $navbar-lines-height;
+      }
+
+      .navbar-collapse {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        min-height: $navbar-lines-height;
+        margin-bottom: 10px;
+      }
+
+      &.navbar-expand {
+
+        @each $breakpoint in map-keys($grid-breakpoints) {
+          $next: breakpoint-next($breakpoint, $grid-breakpoints);
+          $infix: breakpoint-infix($next, $grid-breakpoints);
+
+          &#{$infix} {
+
+            @include media-breakpoint-up($next) {
+              .navbar-nav {
+                height: $navbar-lines-navbar-nav-height;
+
+                .nav-item {
+                  .nav-link {
+                    height: $navbar-lines-navbar-nav-height;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .nav-behavior {
+        height: $navbar-lines-navbar-nav-height;
+      }
+
+      .nav-item {
+        margin-left: 10px;
+
+        .nav-link {
+          height: $navbar-lines-navbar-nav-height;
+        }
+
+        .btn {
+          display: flex;
+          align-items: center;
+          height: $navbar-lines-navbar-nav-height;
+          min-height: $navbar-lines-navbar-nav-height;
+        }
+      }
+
+      .navbar-nav {
+        .search {
+          width: auto;
+          height: $navbar-lines-navbar-nav-height;
+          min-height: $navbar-lines-navbar-nav-height;
+
+          .form-control,
+          .search-action {
+            height: 100%;
+          }
+        }
+      }
+
+      .navbar-brand {
+        height: $navbar-lines-height;
+      }
+    }
+  }
+}
+
+main {
+  &.with-fixed-navbar-lines {
+    margin-top: $navbar-height;
+
+    @include media($from: desktop) {
+      margin-top: $navbar-lines-height;
+    }
+  }
+}

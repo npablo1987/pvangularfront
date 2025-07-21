@@ -1,0 +1,10 @@
+.form-control {
+  &-plaintext {
+    border-radius: 0;
+
+    &:focus {
+      outline: none;
+      box-shadow: $input-focus-box-shadow;
+    }
+  }
+}

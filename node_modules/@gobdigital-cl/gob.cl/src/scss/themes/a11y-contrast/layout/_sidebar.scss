@@ -1,0 +1,42 @@
+.toc-entry {
+  a {
+    &:hover {
+      color: invert-theme-color("primary");
+    }
+  }
+}
+
+.bd-search-docs-toggle {
+  color: invert-gray("900");
+}
+
+.bd-sidenav {
+  display: none;
+}
+
+.bd-toc-link {
+  &:hover {
+    color: invert-theme-color("primary");
+    background-color: invert-color("white");
+  }
+}
+
+.bd-toc-item {
+  border-top: 1px solid invert-gray("c");
+
+  &:last-child {
+    border-bottom: 1px solid invert-gray("c");
+  }
+
+  &.active {
+    background-color: invert-color("white");
+
+    > .bd-toc-link {
+      color: invert-theme-color("primary");
+    }
+  }
+}
+
+.bd-sidebar .nav > li > a {
+  color: rgba(invert-color("black"), $font-opacity);
+}

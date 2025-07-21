@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "import",
+    "flowtype"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "arrow-body-style": ["error", "as-needed"],
+    "comma-dangle": ["error", "never"],
+    "import/prefer-default-export": "off",
+    "function-paren-newline": "off",
+    "lines-between-class-members": "off"
+  },
+  "globals": {
+    "window": true,
+    "fetch": true,
+    "$": true,
+    "localStorage": true,
+    "document": true
+  }
+}

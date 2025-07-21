@@ -1,0 +1,41 @@
+.toolbar {
+  &.with-read-speaker {
+    .toolbar-player {
+      &.toolbar-btn.toolbar-behavior-read {
+        > a {
+          .rsbtn_left {
+            .rsbtn_text {
+              color: invert-color("black");
+            }
+          }
+        }
+
+        &:hover {
+          > a {
+            .rsbtn_text {
+              color: invert-theme-color();
+            }
+          }
+        }
+
+        &.rsexpanded {
+          .rsbtn_exp.rsimg.rspart {
+            .rsbtn_box {
+              .rsbtn_progress_container {
+                border: 1px solid invert-color("black");
+
+                .rsbtn_progress_handle.rsimg {
+                  background-color: invert-color("black");
+                }
+
+                .rsbtn_progress_played {
+                  background-color: invert-color("black");
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

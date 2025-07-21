@@ -1,0 +1,20 @@
+.input-error {
+  border: 2px solid red !important;
+  background-color: #ffe6e6;
+}
+
+.input-error:focus {
+  outline: none;
+  border-color: darkred;
+}
+
+/* Resaltar los inputs de archivos que falten */
+.input-error-file {
+  border: 2px dashed red !important;
+  background-color: #ffcccc;
+}
+
+.input-error-file:focus {
+  outline: none;
+  border-color: darkred;
+}

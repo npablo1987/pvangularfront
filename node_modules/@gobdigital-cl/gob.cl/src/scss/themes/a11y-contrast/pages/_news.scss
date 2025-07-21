@@ -1,0 +1,13 @@
+.page-news {
+  figure {
+    figcaption {
+      color: $invert-page-news-figcaption-color;
+    }
+  }
+
+  &-strip {
+    .icon {
+      color: $invert-page-news-strip-icon-color;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+p {
+  color: invert-gray("a");
+}
+
+a {
+  color: invert-color("black");
+
+  &:hover {
+    color: invert-color("black");
+  }
+}

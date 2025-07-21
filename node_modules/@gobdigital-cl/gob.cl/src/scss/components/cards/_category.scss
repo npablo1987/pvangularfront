@@ -1,0 +1,22 @@
+.card-category {
+  background-color: color("white");
+  border: $card-category-border-width solid $card-category-border-color;
+
+  &-image {
+    position: relative;
+    width: 100%;
+    height: $card-category-img-height;
+
+    .badge {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+    }
+  }
+
+  &-body {
+    width: 100%;
+    padding: $card-category-body-padding;
+    border-top: $card-category-border-width solid $card-category-border-color;
+  }
+}

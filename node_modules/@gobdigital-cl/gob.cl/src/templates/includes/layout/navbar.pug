@@ -1,0 +1,29 @@
+nav.navbar.navbar-light.navbar-expand-lg.fixed-top
+  .container
+    a.navbar-brand(href='/')
+      i.fa.fa-spinner.fa-spin.page-loading-icon
+      img(src='img/gob-header.svg')
+    button.navbar-toggler.collapsed(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+
+    #navbarCollapse.navbar-collapse.collapse
+      ul.navbar-nav.ml-auto
+        li.nav-item
+          a.nav-link.contingency-behavior-open(href='#') ¿Contingency?
+        li.nav-item
+          a.nav-link.redirecting-behavior-link(
+            href='https://www.chileatiende.gob.cl/',
+            data-target="#to-chile-atiende",
+            data-timeout="5000"
+          )
+            | Chile Atiende
+        li.nav-item
+          a.nav-link(href='#') Link
+        li.nav-item
+          a.nav-link(href='#') Link
+        li.nav-behavior
+          a.nav-link.text-uppercase.text-underline(href="#") en
+        li.nav-separator
+        li.nav-behavior
+          a.nav-link(href="#")
+            i.cl.cl-login

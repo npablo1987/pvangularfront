@@ -1,0 +1,13 @@
+.pseudo-background {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .pseudo-src {
+
+    @extend .w-100;
+
+    @extend .img-fluid;
+  }
+}

@@ -1,0 +1,40 @@
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: ($banner-padding-y + $banner-line-height) $banner-padding-x $banner-padding-y;
+  border: $banner-border-width solid $banner-border-color;
+  border-radius: $banner-border-radius;
+
+  @extend .text-normal;
+
+  &-text {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  &-icon {
+    margin-right: spacer(3);
+
+    @extend .cl-2x;
+  }
+
+  .line {
+    position: absolute;
+    top: -$banner-border-width;
+    left: $banner-padding-x;
+    min-width: 0;
+    margin: 0;
+
+    &::after {
+      width: $banner-line-width;
+      height: $banner-line-height;
+    }
+  }
+
+  &.banner-shadow {
+    border: none;
+    box-shadow: $banner-shadow;
+  }
+}

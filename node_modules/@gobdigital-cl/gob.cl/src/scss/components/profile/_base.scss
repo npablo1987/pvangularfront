@@ -1,0 +1,111 @@
+.profile {
+  $profile-charge-padding-top: spacer(2);
+
+  @extend .row;
+
+  p {
+    line-height: rem($profile-p-line-height);
+  }
+
+  &-charge {
+    height: rem($profile-charge-height);
+    font-size: rem($profile-charge-font-size);
+    font-weight: $font-weight-normal;
+    line-height: rem($profile-charge-line-height);
+    text-transform: uppercase;
+    letter-spacing: rem($profile-charge-letter-spacing);
+  }
+
+  &-image {
+
+    @extend .w-100;
+
+    @extend .img-fluid;
+  }
+
+  &-body {
+    section.section {
+      .section-header.with-profile-charge {
+        border-bottom: none;
+
+        .profile-charge {
+          height: rem($profile-charge-height) + $profile-charge-padding-top;
+          padding-top: $profile-charge-padding-top;
+          border-top: $profile-charge-border;
+        }
+
+        .section-icons {
+          bottom: rem($profile-charge-height) + $headings-margin-bottom + $profile-charge-padding-top + spacer(2);
+        }
+      }
+    }
+  }
+
+  &-group {
+    display: contents;
+
+    @include media($from: tablet) {
+      display: block;
+    }
+  }
+
+  .profile-header {
+    width: 100%;
+    padding: 0 ($grid-gutter-width / 2);
+
+    @supports (display: contents) {
+
+      @include make-col(6);
+    }
+
+    @include media($from: desktop) {
+
+      @include make-col(3);
+    }
+  }
+
+  .profile-body {
+
+    @include media($from: desktop) {
+
+      @include make-col(9);
+    }
+
+    section.section:first-child {
+      .section-header {
+        padding: spacer(5) ($grid-gutter-width / 2) 0;
+
+        @supports (display: contents) {
+          padding: 0 ($grid-gutter-width / 2) 0;
+
+          @include make-col(6);
+        }
+
+        @include media($from: desktop) {
+          padding: 0 ($grid-gutter-width / 2) 0;
+
+          @include make-col(12);
+        }
+      }
+
+      .section-body {
+        margin-top: spacer(4);
+
+        @extend .col-12;
+
+        @include media($from: desktop) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .profile-body,
+  .profile-body > section.section {
+    display: contents;
+
+    @include media($from: desktop) {
+      display: block;
+    }
+  }
+}

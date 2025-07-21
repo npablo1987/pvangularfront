@@ -1,0 +1,27 @@
+.row
+  .col-12
+    .dom-search.search.mx-auto(data-scrapping-class='.searchable-without-group')
+      input.form-control(
+        type='text', name='search',
+        placeholder='Texto placeholder buscador con filtrado',
+        aria-label='Texto placeholder buscador con filtrado',
+        aria-describedby='searchAction'
+      )
+      .search-action
+        button.btn.btn-outline-search.dom-search-behavior-cancel.d-none
+          i.icon.cl.cl-close-line
+        button#searchAction.btn.btn-outline-search.dom-search-behavior-search(type='submit')
+          i.icon.cl.cl-filter
+.row
+  .col-12
+    h4.mt-4.pb-2.border-bottom.border-accent Simple
+.row
+  .searchable-without-group.col-12(data-search-value='Uno')
+    p
+      a(href='#') Uno
+  .searchable-without-group.col-12(data-search-value='Dos')
+    p
+      a(href='#') Dos
+  .searchable-without-group.col-12(data-search-value='Tres')
+    p
+      a(href='#') Tres

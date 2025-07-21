@@ -1,0 +1,108 @@
+.page-news {
+  > * {
+    display: block;
+    max-width: rem($page-news-max-width);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  > .page-news-gallery,
+  > img,
+  > figure {
+    max-width: 100%;
+  }
+
+  small {
+    color: $page-news-small-color;
+  }
+
+  figure {
+    text-align: center;
+
+    img {
+      max-width: 100%;
+    }
+
+    figcaption {
+      font-style: italic;
+      color: $page-news-figcaption-color;
+    }
+  }
+
+  blockquote {
+    margin: spacer(5) auto;
+    font-size: rem($page-news-blockquote-font-size);
+    font-weight: $font-weight-light;
+    line-height: $page-news-blockquote-line-height;
+  }
+
+  .line {
+    color: $page-news-line-color;
+    text-align: left;
+  }
+
+  &-title {
+    font-size: rem($page-news-title-font-size);
+    line-height: rem($page-news-title-line-height);
+
+    @include media($from: tablet) {
+      font-size: rem($page-news-title-lg-font-size);
+      line-height: rem($page-news-title-lg-line-height);
+    }
+  }
+
+  &-subtitle {
+    font-size: rem($page-news-subtitle-font-size);
+    line-height: rem($page-news-subtitle-line-height);
+    color: $page-news-subtitle-color;
+
+    @include media($from: tablet) {
+      font-size: rem($page-news-subtitle-lg-font-size);
+      line-height: rem($page-news-subtitle-lg-line-height);
+    }
+  }
+
+  &-gallery {
+    text-align: center;
+
+    img {
+      margin: spacer(3);
+      border: 1px solid transparent;
+
+      &:hover {
+        border-color: theme-color();
+      }
+    }
+  }
+
+  &-tags {
+    .badge {
+      padding: spacer(3) spacer(4);
+      margin: 0 spacer(3) spacer(3) 0;
+    }
+  }
+
+  &-strip {
+    padding: spacer(3) 0;
+    margin: spacer(3) auto;
+    border-top: 1px solid $page-news-strip-border-color;
+    border-bottom: 1px solid $page-news-strip-border-color;
+
+    .icon {
+      margin-left: spacer(2);
+      font-size: rem($link-icon-font-size);
+      color: $page-news-strip-icon-color;
+      text-decoration: none;
+    }
+
+    &-text {
+      font-size: rem($page-news-strip-text-font-size);
+      line-height: $page-news-strip-text-line-height;
+
+      @include media($from: tablet) {
+        font-size: rem($page-news-strip-text-lg-font-size);
+        line-height: rem($page-news-strip-text-lg-line-height);
+      }
+    }
+  }
+}

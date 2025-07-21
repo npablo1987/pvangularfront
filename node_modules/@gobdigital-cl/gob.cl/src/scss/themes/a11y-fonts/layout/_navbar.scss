@@ -1,0 +1,78 @@
+.a11y-font-1,
+.a11y-font-2 {
+  nav.navbar {
+    min-height: $navbar-height;
+
+    .container {
+      min-height: $navbar-height;
+      padding: 0;
+    }
+
+    .navbar-collapse {
+      min-height: auto;
+      margin-bottom: 0;
+    }
+
+    .navbar-brand {
+      min-height: $navbar-height;
+    }
+
+    .navbar-toggler {
+      min-height: $navbar-height;
+    }
+
+    .navbar-nav {
+      .nav-behavior {
+        display: none;
+      }
+
+      .nav-separator {
+        display: none;
+      }
+
+      .search {
+        width: 100%;
+        height: $navbar-search-height;
+        min-height: $navbar-search-height;
+
+        .form-control,
+        .search-action {
+          height: $navbar-search-height;
+
+          .btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            padding-top: 0;
+            padding-bottom: 0;
+            font-size: 20px;
+
+            i {
+              width: auto;
+              height: auto;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+      .nav-item {
+        margin-left: 0;
+
+        .nav-link {
+          height: auto;
+        }
+      }
+    }
+
+    &.navbar-lines {
+      .navbar-collapse {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

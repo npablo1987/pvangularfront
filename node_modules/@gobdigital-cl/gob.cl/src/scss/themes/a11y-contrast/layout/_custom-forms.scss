@@ -1,0 +1,254 @@
+// Checkboxes and radios
+.custom-control-input {
+  &:checked ~ .custom-control-label::before {
+    color: color-yiq(invert($custom-control-indicator-checked-bg));
+    border-color: invert($custom-control-indicator-checked-border-color);
+
+    @include gradient-bg(invert($custom-control-indicator-checked-bg));
+
+    @include box-shadow($invert-custom-control-indicator-checked-box-shadow);
+  }
+
+  &:focus ~ .custom-control-label::before {
+    box-shadow: $invert-custom-control-indicator-focus-box-shadow;
+  }
+
+  &:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: invert($custom-control-indicator-focus-border-color);
+  }
+
+  &:not(:disabled):active ~ .custom-control-label::before {
+    color: color-yiq(invert($custom-control-indicator-active-bg));
+    background-color: invert($custom-control-indicator-active-bg);
+    border-color: invert($custom-control-indicator-active-border-color);
+
+    @include box-shadow($custom-control-indicator-active-box-shadow);
+  }
+
+  &:disabled {
+    ~ .custom-control-label {
+      color: color-yiq(invert($custom-control-indicator-disabled-bg));
+
+      &::before {
+        background-color: invert($custom-control-indicator-disabled-bg);
+      }
+    }
+  }
+}
+
+// Custom control indicators
+.custom-control-label {
+  &::before {
+    background-color: invert($custom-control-indicator-bg);
+    border-color: invert($custom-control-indicator-border-color);
+  }
+}
+
+// Checkbox
+.custom-checkbox {
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-image: $invert-custom-checkbox-indicator-icon-checked;
+    }
+  }
+
+  .custom-control-input:indeterminate ~ .custom-control-label {
+    &::before {
+      border-color: invert($custom-checkbox-indicator-indeterminate-border-color);
+
+      @include gradient-bg($invert-custom-checkbox-indicator-indeterminate-bg);
+    }
+
+    &::after {
+      background-image: $invert-custom-checkbox-indicator-icon-indeterminate;
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      background-color: invert($custom-control-indicator-checked-disabled-bg);
+    }
+
+    &:indeterminate ~ .custom-control-label::before {
+      background-color: invert($custom-control-indicator-checked-disabled-bg);
+    }
+  }
+}
+
+// Switch
+.custom-switch {
+  .custom-control-label {
+    &::after {
+      background-color: invert($custom-control-indicator-border-color);
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-color: invert($custom-control-indicator-bg);
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      background-color: invert($custom-control-indicator-checked-disabled-bg);
+    }
+  }
+}
+
+// Radio
+.custom-radio {
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-image: $invert-custom-radio-indicator-icon-checked;
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      background-color: invert($custom-control-indicator-checked-disabled-bg);
+    }
+  }
+}
+
+// Select
+.custom-select {
+  color: color-yiq(invert($custom-select-bg));
+  background: $invert-custom-select-background;
+  background-color: invert($custom-select-bg);
+  border-color: invert($custom-select-border-color);
+
+  &:focus {
+    border-color: invert($custom-select-focus-border-color);
+    box-shadow: $invert-custom-select-focus-box-shadow;
+
+    &::-ms-value {
+      color: color-yiq(invert($input-bg));
+      background-color: invert($input-bg);
+    }
+  }
+
+  &:disabled {
+    color: color-yiq(invert($custom-select-disabled-bg));
+    background-color: invert($custom-select-disabled-bg);
+  }
+}
+
+// File input
+.custom-file-input {
+  &:focus ~ .custom-file-label {
+    border-color: invert($custom-file-focus-border-color);
+    box-shadow: $invert-custom-file-focus-box-shadow;
+  }
+
+  &:disabled ~ .custom-file-label {
+    background-color: invert($custom-file-disabled-bg);
+  }
+}
+
+.custom-file-label {
+  color: color-yiq(invert($custom-file-bg));
+  background-color: invert($custom-file-bg);
+  border-color: invert($custom-file-border-color);
+
+  &::after {
+    color: color-yiq(invert($custom-file-button-bg));
+
+    @include gradient-bg(invert($custom-file-button-bg));
+  }
+}
+
+// Range
+.custom-range {
+  &:focus {
+    &::-webkit-slider-thumb {
+      box-shadow: $invert-custom-range-thumb-focus-box-shadow;
+    }
+
+    &::-moz-range-thumb {
+      box-shadow: $invert-custom-range-thumb-focus-box-shadow;
+    }
+
+    &::-ms-thumb {
+      box-shadow: $invert-custom-range-thumb-focus-box-shadow;
+    }
+  }
+
+  &::-webkit-slider-thumb {
+    border: $invert-custom-range-thumb-border;
+
+    @include gradient-bg(invert($custom-range-thumb-bg));
+
+    @include box-shadow($invert-custom-range-thumb-box-shadow);
+
+    &:active {
+
+      @include gradient-bg(invert($custom-range-thumb-active-bg));
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    background-color: invert($custom-range-track-bg);
+
+    @include box-shadow($invert-custom-range-track-box-shadow);
+  }
+
+  &::-moz-range-thumb {
+    border: $invert-custom-range-thumb-border;
+
+    @include gradient-bg(invert($custom-range-thumb-bg));
+
+    @include box-shadow($invert-custom-range-thumb-box-shadow);
+
+    &:active {
+
+      @include gradient-bg(invert($custom-range-thumb-active-bg));
+    }
+  }
+
+  &::-moz-range-track {
+    background-color: invert($custom-range-track-bg);
+
+    @include box-shadow($invert-custom-range-track-box-shadow);
+  }
+
+  &::-ms-thumb {
+    border: $invert-custom-range-thumb-border;
+
+    @include gradient-bg(invert($custom-range-thumb-bg));
+
+    @include box-shadow($invert-custom-range-thumb-box-shadow);
+
+    &:active {
+
+      @include gradient-bg(invert($custom-range-thumb-active-bg));
+    }
+  }
+
+  &::-ms-track {
+
+    @include box-shadow($invert-custom-range-track-box-shadow);
+  }
+
+  &::-ms-fill-lower {
+    background-color: invert($custom-range-track-bg);
+  }
+
+  &::-ms-fill-upper {
+    background-color: invert($custom-range-track-bg);
+  }
+
+  &:disabled {
+    &::-webkit-slider-thumb {
+      background-color: invert($custom-range-thumb-disabled-bg);
+    }
+
+    &::-moz-range-thumb {
+      background-color: invert($custom-range-thumb-disabled-bg);
+    }
+
+    &::-ms-thumb {
+      background-color: invert($custom-range-thumb-disabled-bg);
+    }
+  }
+}

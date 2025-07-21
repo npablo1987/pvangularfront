@@ -1,0 +1,38 @@
+section.section-jumbotron {
+  > .container {
+    > .section-body:not(.unstyled) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+
+      > *:not(.line) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &.section-jumbotron-lg {
+    h1 {
+      font-size: rem($section-jumbotron-h1-font-size);
+      line-height: rem($section-jumbotron-h1-line-height);
+
+      @include media($from: desktop) {
+        font-size: rem($section-jumbotron-lg-h1-font-size);
+        line-height: rem($section-jumbotron-lg-h1-line-height);
+      }
+    }
+
+    p {
+      font-size: rem($section-jumbotron-p-font-size);
+      line-height: rem($section-jumbotron-p-line-height);
+
+      @include media($from: desktop) {
+        font-size: rem($section-jumbotron-lg-p-font-size);
+        line-height: rem($section-jumbotron-lg-p-line-height);
+      }
+    }
+  }
+}

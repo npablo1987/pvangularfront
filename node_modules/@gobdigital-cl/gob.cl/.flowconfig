@@ -1,0 +1,16 @@
+[ignore]
+.*/dist/.*
+.*/doc/.*
+.*/site/.*
+
+[include]
+.*/src/js/.*
+
+[libs]
+./flow-typed
+
+[lints]
+
+[options]
+
+[strict]

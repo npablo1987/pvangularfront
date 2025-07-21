@@ -1,0 +1,64 @@
+@import "variables";
+
+@import "../../src/scss/gob.cl";
+
+@import "doc/colors",
+  "doc/sections";
+
+.aux-box {
+  padding: 30px 0 10px;
+  border-top: 1px solid  theme-color("tertiary");
+}
+
+p {
+  code {
+    margin-left: 5px;
+  }
+
+  a {
+    color: theme-color("primary");
+  }
+}
+
+section .section-header.with-toolbar {
+  position: fixed;
+  top: 10px;
+  right: 50px;
+  z-index: 9999;
+  padding: 0;
+}
+
+.doc-icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .doc-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 120px;
+    height: 120px;
+
+    .cl {
+      font-size: 40px;
+    }
+  }
+}
+
+// Avoid navbar push toolbar to left in the docs
+body > header > nav.navbar.navbar-expand-xl {
+
+  @include media-breakpoint-up(xl) {
+    .navbar-collapse {
+      display: none !important; // stylelint-disable-line declaration-no-important
+    }
+  }
+
+  pre {
+    margin-top: spacer(3) !important; // stylelint-disable-line declaration-no-important
+    margin-bottom: spacer(3) !important; // stylelint-disable-line declaration-no-important
+  }
+}

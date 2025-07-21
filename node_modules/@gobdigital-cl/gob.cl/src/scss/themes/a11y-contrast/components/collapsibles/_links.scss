@@ -1,0 +1,27 @@
+.collapsible-links {
+  &,
+  a,
+  &-heading,
+  &-list-link {
+    color: invert($collapsible-links-color);
+  }
+
+  &-heading,
+  &-list-link {
+    &:focus {
+      outline-color: invert($collapsible-links-color);
+    }
+  }
+
+  &-heading {
+    // Line
+    &:hover::before,
+    &:focus::before {
+      background: invert-theme-color("neutral");
+    }
+
+    &[aria-expanded="true"]::before {
+      background: invert($collapsible-links-active-line-color);
+    }
+  }
+}

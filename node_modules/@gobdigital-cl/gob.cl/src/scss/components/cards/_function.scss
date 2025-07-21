@@ -1,0 +1,50 @@
+.card-function {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: $card-function-margin-bottom;
+
+  @include media($from: tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .badge {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+  }
+
+  &-image {
+    flex-shrink: 0;
+    width: $card-function-img-width;
+    height: auto;
+    margin-right: spacer(3);
+
+    @include media($from: tablet) {
+      width: auto;
+      height: $card-function-img-lg-height;
+      margin-right: 0;
+      margin-bottom: spacer(3);
+    }
+  }
+
+  &-body {
+    flex-grow: 1;
+    width: 100%;
+
+    p {
+      font-size: $card-function-font-size;
+      line-height: $card-function-line-height;
+      text-transform: uppercase;
+      letter-spacing: .0675rem;
+    }
+  }
+
+  &-title {
+    padding-bottom: spacer(2);
+    margin-bottom: spacer(3);
+    border-bottom: $card-function-title-border-width solid $card-function-title-border-color;
+  }
+}

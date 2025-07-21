@@ -1,0 +1,45 @@
+section.onboarding {
+  z-index: $zindex-onboarding;
+  display: none;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $body-bg;
+
+  .onboarding-body {
+    height: $onboarding-body-height;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include media($from: desktop) {
+      height: $onboarding-lg-body-height;
+    }
+  }
+
+  .onboarding-footer {
+    height: $onboarding-footer-height;
+
+    .container {
+      position: relative;
+      height: $onboarding-footer-height;
+
+      .footer-logo {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.onboarding-active:not(.onboarding-closed) {
+  padding-right: 15px;
+  overflow: hidden;
+
+  section.onboarding {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+  }
+}

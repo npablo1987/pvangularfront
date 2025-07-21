@@ -1,0 +1,148 @@
+.toolbar {
+  &.with-read-speaker {
+
+    @include media($from: mobile) {
+      width: $toolbar-read-speaker-width + ($toolbar-button-icon-size * 2);
+    }
+
+    @include media($from: tablet) {
+      width: $toolbar-read-speaker-width;
+    }
+
+    .toolbar-btn {
+      &.toolbar-behavior-read {
+        width: $toolbar-read-speaker-button-read-width;
+        padding: $toolbar-read-speaker-behavior-read-padding;
+      }
+    }
+
+    &.active {
+      .toolbar-player {
+        &.toolbar-btn.toolbar-behavior-read {
+          display: flex;
+        }
+      }
+    }
+
+    .toolbar-player {
+      &.toolbar-btn.toolbar-behavior-read {
+        display: none;
+
+        @include media($from: tablet) {
+          display: flex;
+        }
+
+        > a {
+          text-decoration: none;
+
+          .rsbtn_left {
+            .rsbtn_text {
+              display: flex;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+              color: theme-color("accent");
+            }
+          }
+        }
+
+        &:hover {
+          > a {
+            .rsbtn_text {
+              color: theme-color();
+            }
+          }
+        }
+
+        &.rsexpanded {
+          > a {
+            .rsbtn_left {
+              .rsbtn_text {
+                span {
+                  display: none;
+                }
+              }
+            }
+          }
+
+          .rsbtn_exp.rsimg.rspart {
+            display: inline-block;
+            flex: 1;
+            height: $toolbar-button-size - ($toolbar-button-border-width * 2);
+
+            .rsbtn_box {
+              display: flex;
+              justify-content: space-between;
+              height: $toolbar-button-size - ($toolbar-button-border-width * 2);
+
+              .rsbtn_pause {
+                .toolbar-btn-icon-content {
+                  padding: $toolbar-behavior-read-icon-content-padding ($toolbar-button-padding * .75);
+                }
+              }
+
+              .rsbtn_closer,
+              .rsbtn_dl {
+                .toolbar-btn-icon-content {
+                  padding: $toolbar-behavior-read-icon-content-padding ($toolbar-button-padding * .75);
+                }
+              }
+
+              .rsbtn_progress_container {
+                position: relative;
+                flex: 1;
+                margin: 13px 2px;
+                border: 1px solid theme-color("accent");
+
+                .rsbtn_progress_handle.rsimg {
+                  position: absolute;
+                  top: -5px;
+                  left: -3px;
+                  width: 6px;
+                  height: 16px;
+                  background-color: theme-color("accent");
+                  background-image: none;
+                }
+
+                .rsbtn_progress_played {
+                  position: absolute;
+                  height: 100%;
+                  background-color: theme-color("accent");
+                  background-image: none;
+                }
+              }
+            }
+          }
+
+          &.rspaused {
+            .rsbtn_pause {
+              .toolbar-btn-icon-content {
+                .cl.cl-pause {
+                  display: none;
+                }
+
+                .cl.cl-play {
+                  display: block;
+                }
+              }
+            }
+          }
+
+          &.rsplaying {
+            .rsbtn_pause {
+              .toolbar-btn-icon-content {
+                .cl.cl-pause {
+                  display: block;
+                }
+
+                .cl.cl-play {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

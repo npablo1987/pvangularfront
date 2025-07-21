@@ -1,0 +1,224 @@
+html {
+  font-size: $font-size-base-in-px; // 62.5% = 10px | 100% = 16px
+}
+
+.list-inline {
+  li {
+    position: relative;
+    display: inline-block;
+    padding-right: spacer(2);
+
+    &:not(:last-child) {
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: "-";
+      }
+    }
+  }
+}
+
+.text-underline {
+  text-decoration: underline !important; /* stylelint-disable-line */
+}
+
+.text-normal {
+  text-decoration: none !important;  /* stylelint-disable-line */
+  text-transform: none !important;  /* stylelint-disable-line */
+}
+
+.text-break {
+  word-break: break-word !important; /* stylelint-disable-line */
+  overflow-wrap: break-word !important; /* stylelint-disable-line */
+}
+
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @if $infix != "" {
+    .border#{$infix} {
+      border: none !important; /* stylelint-disable-line */
+
+      @include media-breakpoint-up($breakpoint) {
+        border: $border-width solid $border-color !important; /* stylelint-disable-line */
+      }
+    }
+
+    .border#{$infix}-top {
+      border-top: none !important; /* stylelint-disable-line */
+
+      @include media-breakpoint-up($breakpoint) {
+        border-top: $border-width solid $border-color !important; /* stylelint-disable-line */
+      }
+    }
+
+    .border#{$infix}-right {
+      border-right: none !important; /* stylelint-disable-line */
+
+      @include media-breakpoint-up($breakpoint) {
+        border-right: $border-width solid $border-color !important; /* stylelint-disable-line */
+      }
+    }
+
+    .border#{$infix}-bottom {
+      border-bottom: none !important; /* stylelint-disable-line */
+
+      @include media-breakpoint-up($breakpoint) {
+        border-bottom: $border-width solid $border-color !important; /* stylelint-disable-line */
+      }
+    }
+
+    .border#{$infix}-left {
+      border-left: none !important; /* stylelint-disable-line */
+
+      @include media-breakpoint-up($breakpoint) {
+        border-left: $border-width solid $border-color !important; /* stylelint-disable-line */
+      }
+    }
+  }
+}
+
+@include from-colors using ($color, $value) {
+
+  @include bs-bg-variant(".bg-#{$color}", $value);
+
+  .text-#{$color} {
+    color: $value !important;  /* stylelint-disable-line */
+  }
+
+  a.text-#{$color}:focus {
+    color: $value !important;  /* stylelint-disable-line */
+  }
+
+  .badge-#{$color} {
+
+    @include badge-variant($value);
+  }
+
+  .bg-layer-#{unquote($color)} {
+    position: relative;
+    background-color: transparent !important;  /* stylelint-disable-line */
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      content: "";
+      background-color: $value;
+    }
+  }
+
+  .col-separator-#{$color} {
+
+    @include media($from: desktop) {
+      > [class*="col-"]:not(:last-child) {
+        &::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          content: "";
+          border-left: 1px solid $value;
+        }
+      }
+    }
+  }
+
+  .border-#{$color} {
+    border-color: $value !important; /* stylelint-disable-line */
+  }
+
+  .text-before-#{$color} {
+    &::before {
+      color: $value !important; /* stylelint-disable-line */
+    }
+  }
+
+  .text-after-#{$color} {
+    &::before {
+      color: $value !important; /* stylelint-disable-line */
+    }
+  }
+
+  .bg-before-#{$color} {
+    &::before {
+      background-color: $value !important; /* stylelint-disable-line */
+    }
+  }
+
+  .bg-after-#{$color} {
+    &::before {
+      background-color: $value !important; /* stylelint-disable-line */
+    }
+  }
+
+  .square-text-#{$color} {
+    color: color-yiq($value) !important; /* stylelint-disable-line */
+    background: $value !important; /* stylelint-disable-line */
+  }
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @if $infix != "" {
+
+      @include media-breakpoint-up($breakpoint) {
+        .border#{$infix}-#{$color} {
+          border: $border-width solid $value !important; /* stylelint-disable-line */
+        }
+
+        .border#{$infix}-#{$color}-top {
+          border-top: $border-width solid $value !important; /* stylelint-disable-line */
+        }
+
+        .border#{$infix}-#{$color}-right {
+          border-right: $border-width solid $value !important; /* stylelint-disable-line */
+        }
+
+        .border#{$infix}-#{$color}-bottom {
+          border-bottom: $border-width solid $value !important; /* stylelint-disable-line */
+        }
+
+        .border#{$infix}-#{$color}-left {
+          border-left: $border-width solid $value !important; /* stylelint-disable-line */
+        }
+      }
+    }
+  }
+}
+
+.close {
+  font-style: normal;
+}
+
+.opacity {
+  opacity: $font-opacity;
+}
+
+@each $key, $size in $square-sizes {
+  .square-text-#{$key} {
+    font-weight: $font-weight-bold;
+    color: gray("a");
+    background: theme-color("neutral");
+
+    @include font(7);
+
+    @include square-text(rem($size));
+  }
+}
+
+// sizing
+.max-vh-100 {
+  max-height: 100vh;
+}
+
+// Code sections
+pre {
+  position: relative;
+  z-index: 1;
+}

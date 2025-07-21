@@ -1,0 +1,40 @@
+extends ../doc.pug
+
+block content  
+  section#buttons.doc-section
+    header.doc-section-header
+      h2.
+        Botones
+        #[a(href='#buttons') #]
+    .doc-section-body
+      p.
+        Los botones de este kit abarcan todas las necesidades que deberían
+        cubrir este tipo de elementos, por lo que no debería ocupar
+        otros botones para evitar problemas de usabilidad.
+      div#mainSecondButton.doc-subsection
+        .doc-subsection-header
+          h3 Botón principal y secundario #[a(href='#mainSecondButton') #]
+        .doc-subsection-body
+          p.
+            El botón principal de este kit siempre deberá utilizar las clases
+            #[code .btn .btn-primary].
+            El resto de botones los debe usar a criterio, siempre priorizando
+            los botones que corresponden a la paleta de colores principales.
+          p.
+            Para botones con tamaño por defecto debe añadir la clase
+            #[code .btn-default-size].
+          p.
+            Ejemplo de botones:
+          include ../examples/buttons
+          pre(data-src='examples/buttons.html').
+      div#roundedButton.doc-subsection
+        .doc-subsection-header
+          h3 Botón redondeado #[a(href='#roundedButton') #]
+        .doc-subsection-body
+          p.
+            Este botón sólo debe ser usado en casos excepcionales
+            (por decisiones de diseño), dado
+            que no sigue el patrón de los anteriores.
+          include ../examples/button-pill
+          pre(data-src='examples/button-pill.html').
+    

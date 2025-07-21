@@ -1,0 +1,37 @@
+extends ../doc.pug
+
+block content  
+  section#collapsibles.doc-section
+    header.doc-section-header
+      h2.
+        Colapsables
+        #[a(href='#collapsibles') #]
+    .doc-section-body
+      p.
+        Esta sección presenta lo componentes desarrollados para mostrar
+        preguntas y respuestas de forma interactiva. Normalmente los utilizará
+        para una sección de ayuda o de preguntas frecuentes.
+      div#collapsiblesLinks.doc-subsection
+        .doc-subsection-header
+          h3 Collapsible links #[a(href='#collapsiblesLinks') #]
+        .doc-subsection-body
+          p.
+            Este componente despliega una lista de preguntas agrupadas por tema:
+          include ../examples/collapsible-links
+          pre(data-src='examples/collapsible-links.html')
+      div#collapsiblesFlush.doc-subsection
+        .doc-subsection-header
+          h3 Collapsible flush #[a(href='#collapsiblesFlush') #]
+        .doc-subsection-body
+          p.
+            Este componente despliega preguntas y respuestas de forma colapsada:
+          include ../examples/collapsible-flush
+          pre(data-src='examples/collapsible-flush.html')
+      div#collapsiblesLinksFlush.doc-subsection
+        .doc-subsection-header
+          h3 Collapsible links + Collapsible flush #[a(href='#collapsiblesLinksFlush') #]
+        .doc-subsection-body
+          p.
+            Juntando los dos componentes anteriores, puede construir lo siguiente:
+          include ../examples/collapsible-links-and-flush
+          pre(data-src='examples/collapsible-links-and-flush.html')

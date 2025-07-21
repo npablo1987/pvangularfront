@@ -1,0 +1,256 @@
+extends ../doc.pug
+
+block content  
+  section#typography.doc-section
+    header.doc-section-header
+      h2.
+        Tipografía #[a(href='#typography') #]
+    .doc-section-body
+      p.
+        La tipografía elegida para ser utilizada en este kit es Roboto, en sus familias Roboto
+        y Roboto Slab. Esta tipografía fue seleccionada por ser una familia diseñada para facilitar la lectura,
+        sobre todo en móviles, ya que es la tipografía por defecto en dispositivos
+        con sistema operativo Android.
+      div#roboto.doc-subsection-border
+        .doc-subsection-header
+          h3 Roboto #[a(href='#roboto') #]
+        .doc-subsection-body
+          .row
+            .col-12.col-md-7.col-lg-8
+              p.
+                Es la tipografía base del kit. Debe ser utilizada por defecto
+                en todos los textos del sitio que no sean títulos. Los tamaños
+                y jerarquías están indicados más abajo.
+            .col-12.col-md-5.col-lg-4
+              .h2.pb-2(
+                style='font-size: 130px; line-height: 100px; font-family: Roboto, sans-serif;'
+              )
+                | Aa
+              p(style='font-size: 12px; font-family: Roboto, sans-serif;').
+                abcdefghijklmnñopqrstuvwxyz.
+                1234567890 -=[];',./!@#$%^&*()_+.
+              p(style='font-size: 12px; font-family: Roboto, sans-serif;').
+                ABCDEFGHIJKLMNÑOPQRSTUVWXYZ.
+                1234567890 -=[];',./!@#$%^&*()_+.
+      div#robotoSlab.doc-subsection-border
+        .doc-subsection-header
+          h3 Roboto Slab #[a(href='#robotoSlab') #]
+        .doc-subsection-body
+          .row
+            .col-12.col-md-7.col-lg-8
+              p.
+                Es la tipografía para destacar los títulos de las secciones
+                del sitio. Sólo debe ser ocupada en títulos, ya que es una
+                tipografía con un peso visual importante en comparación a
+                Roboto regular.
+            .col-12.col-md-5.col-lg-4
+              .h2(style='font-size: 130px; line-height: 100px;') Aa
+              p(style='font-size: 12px; ')
+                | abcdefghijklmnñopqrstuvwxyz. 1234567890
+                | -=[];',./!@#$%^&*()_+.
+              p(style='font-size: 12px; ')
+                | ABCDEFGHIJKLMNÑOPQRSTUVWXYZ. 1234567890
+                | -=[];',./!@#$%^&*()_+.
+      div#typographyStyle.doc-subsection
+        .doc-subsection-header
+          h3 Estilos tipográficos #[a(href='#typographyStyle') #]
+        .doc-subsection-body
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  .h1 H1
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto Slab;
+                    font-size: 2.4rem;
+                    font-weight: 400;
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  .h2 H2
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto Slab;
+                    font-size: 1.6875rem;
+                    font-weight: 400;
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  .h3 H3
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto Slab;
+                    font-size: 1.4375rem;
+                    font-weight: 400;
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  .h4 H4
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto;
+                    font-size: 1.25rem;
+                    font-weight: 400;
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  .h5 H5
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto Slab;
+                    font-size: 1.25rem;
+                    font-weight: 400;
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  .h6 H6
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto Slab;
+                    font-size: 1.125rem;
+                    font-weight: 400;
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  | Body Default
+                  p Texto por defecto a usar.
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: #212529;
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  p Párrafos
+                  p Texto para párrafos.
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: #4a4a4a;
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  a(href='#') Links
+                  p Texto utilizado en descripciones que funcionen como enlaces.
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: #111;
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  small Small
+                  p Texto utilizado para detalles complementarios
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto;
+                    font-size: .6875rem;
+                    font-weight: 400;
+                    color: #212529;
+          .doc-subsection-border
+            .doc-subsection-body
+              .row
+                .col-12.col-md-7.col-lg-8
+                  q Citas
+                  p Texto utilizado para crear citas.
+                .col-12.col-md-5.col-lg-4
+                  pre.
+                    font-family: Roboto;
+                    font-size: 1rem;
+                    font-style: italic;
+                    font-weight: 400;
+                    color: #4a4a4a;
+
+      div#config.doc-subsection
+        .doc-subsection-header
+          h3 Configuración #[a(href='#config') #]
+        .doc-subsection-body
+          p.
+            Bootstrap pone a disposición una serie de variables globales y clases
+            para el manejo de la tipografía. En la
+            #[a(href="https://getbootstrap.com/docs/4.5/content/typography/") documentación oficial]
+            podrá revisar las principales herramientas disponibles. A continuación
+            mencionaremos algunas de ellas y comentaremos las utilidades extra que
+            añade este kit.   
+      div#typographyClases.doc-subsection
+        .doc-subsection-header
+          h3 Clases tipográficas #[a(href='#typographyClases') #]
+        .doc-subsection-body
+          p.
+            Bootstrap ofrece un 
+            #[a(href="https://getbootstrap.com/docs/4.5/content/typography/#headings") set de clases]
+            para los estilos tipográficos de los títulos, del #[code h1] al
+            #[code h6], necesarios para cuando se requiera que visualmente un 
+            texto se vea como uno de los títulos pero que no se pueda utilizar 
+            el tag correspondiente. Por ejemplo, el correcto uso de la semántica
+            en una página web ayuda a mantener un sitio accesible por otros
+            sistemas y con buen posicionamiento en buscadores (SEO), por lo
+            tanto, el uso de los tags de títulos debiese estar restringido sólo
+            al texto que tenga esa función en la jerarquía correspondiente.#[br]
+          p.
+            A continuación, una lista de ejemplo:
+          .blockquote
+            include ../examples/heading-class-example
+          pre(data-src='examples/heading-class-example.html')
+          p.
+            Otro set de clases disponibles, añadidas en este kit,
+            corresponden a los font-level, #[code .font-level-1] a
+            #[code .font-level-8], las cuales implementan
+            sólo el tamaño de la fuente y el alto de la línea de los estilos
+            tipográficos de títulos, más el #[code body default] y #[code párrafos]. 
+            Además está la clase #[code .font-base], que implementa
+            el estilo de la tipografía por defecto #[code Body Default].
+          p.
+            A continuación, una lista de ejemplo:
+          .blockquote
+            include ../examples/font-level-class-example
+          pre(data-src='examples/font-level-class-example.html')
+          p.
+            El framework kit de gobierno personaliza estos estilos en el archivo
+            #[code _typography.scss] con los valores disponibles en las variables
+            globales en #[code _variables.scss]. Debe recordar siempre definir los
+            tamaños en #[code rem].
+      div#utilitiesClasses.doc-subsection
+        .doc-subsection-header
+          h3 Clases de utilidad #[a(href='#utilitiesClasses') #]
+        .doc-subsection-body
+          p.
+            Bootstrap ofrece una serie de 
+            #[a(href="https://getbootstrap.com/docs/4.5/utilities/text/") clases de utilidad]
+            para personalizar
+            propiedades del texto específicas tales como la alineación, ajuste
+            (wrap), mayúsculas, minúsculas, estilo en negrita, decoraciones,
+            entre otros.
+          p.
+            Este kit agrega clases para aquellas ocasiones en las
+            que se necesita fijar el alto#[code height] de un elemento que
+            contiene texto. Para ello se utiliza como referencia
+            el alto de línea#[code line-height] de la tipografía a 
+            utilizar. Estas clases tienen la forma#[code .text-lines-X-Y], donde
+            X corresponde a un número del 1 al 8 que representa la tipografía
+            , e Y corresponde a un número del 0 al 20 e indica la cantidad de
+            líneas a fijar. Si el elemento que utiliza esta clase utiliza
+            menos líneas, quedará espacio en blanco. Si se pasa, no
+            aparecerán las líneas extras.
+          p.
+            A modo de ejemplo, para cada nivel de texto, se fija el alto en
+            3 líneas #[code .text-lines-X-3] y se escriben solamente 2:
+          .blockquote
+            include ../examples/text-lines-class-example
+          pre(data-src='examples/text-lines-class-example.html')

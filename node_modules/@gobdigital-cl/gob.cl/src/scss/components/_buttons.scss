@@ -1,0 +1,60 @@
+.btn {
+  font-family: $primary-font;
+  font-size: rem($font-size-base-in-px);
+  font-weight: $font-weight-normal;
+
+  @each $color, $value in $theme-colors {
+    &.btn-#{$color},
+    &.btn-outline-#{$color} {
+      text-decoration: underline;
+      word-break: break-word;
+      white-space: normal;
+
+      &:not(.btn-sm):not(.btn-lg) {
+        min-height: $button-height;
+        padding-top: $button-padding-y;
+        padding-bottom: $button-padding-y;
+        line-height: rem($button-line-height);
+      }
+    }
+
+    &-pill-#{$color} {
+      padding: $button-pill-padding-y $button-pill-padding-x;
+      word-break: break-word;
+      white-space: normal;
+      border: $button-pill-border-width solid $value;
+      border-radius: $button-pill-border-radius;
+
+      @include button-outline-variant(
+        $color: $value,
+        $color-hover: darken($value, 10%),
+        $active-background: color("white"),
+        $active-border: darken($value, 10%)
+      );
+
+      &,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.btn-default-size {
+    display: block;
+
+    @include media($from: desktop) {
+      display: inline-block;
+      width: unset;
+      min-width: $button-default-size-lg-width;
+    }
+  }
+
+  i {
+    width: rem($button-line-height);
+    height: rem($button-line-height);
+    font-size: rem($button-line-height);
+    font-style: normal;
+    font-weight: $font-weight-light;
+    vertical-align: top;
+  }
+}

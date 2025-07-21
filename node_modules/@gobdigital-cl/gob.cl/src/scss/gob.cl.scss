@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+@import "abstracts/variables",
+  "abstracts/functions",
+  "abstracts/placeholders",
+  "abstracts/mixins",
+  "abstracts/animations";
+
+/* base vendors */
+
+@import "vendors/bootstrap";
+
+@import "base/base",
+  "base/typography",
+  "base/icons";
+
+@import "components/line",
+  "components/banners",
+  "components/buttons",
+  "components/links",
+  "components/cards",
+  "components/collapsibles",
+  "components/cover-background",
+  "components/pagination",
+  "components/pseudo-background",
+  "components/search",
+  "components/profile",
+  "components/toolbar",
+  "components/social",
+  "components/breadcrumb",
+  "components/navtabs";
+
+@import "layout/navbar",
+  "layout/main",
+  "layout/sections",
+  "layout/sidebar",
+  "layout/footer",
+  "layout/forms";
+
+@import "pages/news";
+
+/* other vendors */
+
+@import "vendors/django-cms-support",
+  "vendors/select2",
+  "vendors/read-speaker";
+
+@import "themes/a11y-fonts/a11y-fonts",
+  "themes/a11y-contrast/a11y-contrast";
+
+@import "shame";

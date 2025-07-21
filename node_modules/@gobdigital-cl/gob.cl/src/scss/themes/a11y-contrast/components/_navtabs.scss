@@ -1,0 +1,21 @@
+.nav-tabs {
+  border-bottom-color: $invert-nav-tabs-border-color;
+
+  .nav-item {
+    color: $invert-nav-tabs-link-color;
+    border-color: $invert-nav-tabs-link-border-color;
+  }
+
+  .nav-link {
+
+    @include hover-focus {
+      border-color: $invert-nav-tabs-link-hover-border-color;
+    }
+  }
+
+  .nav-link.active {
+    color: $invert-nav-tabs-link-active-color;
+    background-color: $invert-nav-tabs-link-active-bg;
+    border-color: $invert-nav-tabs-link-active-border-color;
+  }
+}

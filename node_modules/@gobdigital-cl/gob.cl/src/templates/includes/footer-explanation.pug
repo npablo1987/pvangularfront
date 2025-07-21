@@ -1,0 +1,43 @@
+extends ../doc.pug
+
+block content  
+  section#footer.doc-section
+    header.doc-section-header
+      h2.
+        Footer
+        #[a(href='#footer') #]
+    .doc-section-body
+      p.
+        El framework tiene un footer, que puede ver al final de la
+        documentación. Para utilizarlo, debe comenzar con un
+        tag#[code footer], el cual contiene un único
+        elemento#[code div.container].  El contenido del footer simplemente se
+        coloca dentro de este container.
+      p.
+        Recomendamos tener el logo del sitio en el footer, y si es posible,
+        tener dos versiones del logo, uno para escritorio y otro para
+        dispositivos móviles. Ambas imágenes las debe colocar dentro de un
+        link#[code a.footer-logo] y las imágenes deben tener las
+        clases#[code img.footer-default-logo] y #[code img.footer-mobile-logo]
+        para que el framework sepa qué logo mostrar.
+      p.
+        Para sitios que son más pequeños en alto que la página en la que se
+        está mostrando, el footer se colocará al final del sitio si se respetó
+        el contenido del body (#[code header] #[code main] #[code footer]).
+      p.
+        Para evitar que el navbar se oculte en móvil use la clase
+        #[code .content-always-on-display] sobre el tag footer.
+      p.
+        A continuación un par de ejemplos:
+      div#exampleFooter1.doc-subsection
+        .doc-subsection-header
+          h3 Ejemplo de footer 1 #[a(href='#exampleFooter1') #]
+        .doc-subsection-body
+          include ../examples/footer-1
+          pre(data-src='examples/footer-1.html')
+      div#exampleFooter2.doc-subsection
+        .doc-subsection-header
+          h3 Ejemplo del footer 2 #[a(href='#exampleFooter2') #]
+        .doc-subsection-body
+          include ../examples/footer-2
+          pre(data-src='examples/footer-2.html')

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html class="a11y-font-0" lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="language" content="es">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Documentación Librería Framework kit Gobierno">
+    <title>Framework kit Gobierno</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
+    <!--if lte IE 7script(src='https://html5shim.googlecode.com/svn/trunk/html5.js')
+    -->
+    <!--if lt IE 9script(src='https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js', integrity='sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=', crossorigin='anonymous')
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" integrity="sha256-xJOZHfpxLR/uhh1BwYFS5fhmOAdIRQaiOul5F/b7v3s=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/themes/prism.min.css" integrity="sha256-DJJDQyzflMYiUb2jX3gilm9m3gAkHPC4WLv9BAk4rTE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/doc.css" type="text/css">
+  </head>
+  <body class="contingency-closed" data-main="main">
+    <header>
+      <!-- Fixed navbar-->
+      <nav class="navbar navbar-light navbar-expand-xl fixed-top">
+        <div class="container"><a class="navbar-brand mr-auto" href="/"><i class="fa fa-spinner fa-spin page-loading-icon"></i><img src="img/gob-header.svg"></a>
+          <div class="section-header">
+            <div class="toolbar"><a class="toolbar-btn toolbar-behavior-contrast" href="#"><i class="cl cl-contrast"></i></a>
+              <div class="toolbar-btn-group"><a class="toolbar-btn toolbar-behavior-decrease" href="#"><i class="cl cl-decrease-text"></i></a><a class="toolbar-btn toolbar-behavior-increase" href="#"><i class="cl cl-increase-text"></i></a></div><a class="toolbar-btn toolbar-toggler" href="#"><i class="cl cl-accessibility toolbar-behavior-on"></i><span class="toolbar-behavior-off">X</span></a>
+            </div>
+          </div>
+          <button class="navbar-toggler collapsed d-md-none d-lg-none d-xl-none" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="navbar-collapse collapse max-vh-100 overflow-auto" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto d-md-none d-lg-none d-xl-none">
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="/">Comenzando</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="framework-explanation.html">Estructura del framework</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="development.html">Desarrollo</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="accessibility.html">Accesibilidad</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="typography.html">Tipografía</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="colors.html">Colores</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="icons.html">Íconos</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="sections.html">Secciones</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="buttons.html">Botones</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="navbar.html">Navegación</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="pagination.html">Paginación</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="tags.html">Tags</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="cards.html">Cards</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="news.html">Noticias</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="custom-presentation.html">Presentación personalizada</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="profiles.html">Perfiles</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="banners.html">Banners</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="search-form.html">Formulario de búsqueda</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="tabs.html">Tabs</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="collapsibles.html">Colapsables</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="footer-explanation.html">Footer</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="forms.html">Formularios</a></li>
+              <li class="nav-item align-items-start flex-column"><a class="nav-link" href="utilities.html">Utilidades</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="with-fixed-navbar">
+      <section class="contingency" data-active="false">
+        <div class="contingency-body">
+          <section class="section-jumbotron bg-warning text-black contingency-item contingency-1">
+            <div class="container">
+              <div class="section-header pt-5 clearfix"><span class="cl cl-close-line close contingency-behavior-close" title="Cerrar contingencia" aria-label="Cerrar contingencia"></span></div>
+              <div class="section-body pb-5">
+                <h1 class="line">
+                  Contingencia 1
+                  
+                </h1>
+                <p class="text-black font-weight-light mb-5 text-center">Conoce la información oficial más reciente sobre esta <br>
+                  emergencia. Estamos actualizando constantemente.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="section-jumbotron bg-warning text-black contingency-item contingency-2 d-none">
+            <div class="container">
+              <div class="section-header pt-5 clearfix"><span class="cl cl-close-line close contingency-behavior-close" title="Cerrar contingencia" aria-label="Cerrar contingencia"></span></div>
+              <div class="section-body pb-5">
+                <h1 class="line">
+                  Contingencia 2
+                  
+                </h1>
+                <p class="text-black font-weight-light mb-5 text-center">Conoce la información oficial más reciente sobre esta <br>
+                  emergencia. Estamos actualizando constantemente.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="section-jumbotron bg-warning text-black contingency-item contingency-3 d-none">
+            <div class="container">
+              <div class="section-header pt-5 clearfix"><span class="cl cl-close-line close contingency-behavior-close" title="Cerrar contingencia" aria-label="Cerrar contingencia"></span></div>
+              <div class="section-body pb-5">
+                <h1 class="line">
+                  Contingencia 3
+                  
+                </h1>
+                <p class="text-black font-weight-light mb-5 text-center">Conoce la información oficial más reciente sobre esta <br>
+                  emergencia. Estamos actualizando constantemente.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="section-jumbotron bg-warning text-black contingency-item contingency-4 d-none">
+            <div class="container">
+              <div class="section-header pt-5 clearfix"><span class="cl cl-close-line close contingency-behavior-close" title="Cerrar contingencia" aria-label="Cerrar contingencia"></span></div>
+              <div class="section-body pb-5">
+                <h1 class="line">
+                  Contingencia 4
+                  
+                </h1>
+                <p class="text-black font-weight-light mb-5 text-center">Conoce la información oficial más reciente sobre esta <br>
+                  emergencia. Estamos actualizando constantemente.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="section-jumbotron bg-warning text-black contingency-item contingency-5 d-none">
+            <div class="container">
+              <div class="section-header pt-5 clearfix"><span class="cl cl-close-line close contingency-behavior-close" title="Cerrar contingencia" aria-label="Cerrar contingencia"></span></div>
+              <div class="section-body pb-5">
+                <h1 class="line">
+                  Contingencia 5
+                  
+                </h1>
+                <p class="text-black font-weight-light mb-5 text-center">Conoce la información oficial más reciente sobre esta <br>
+                  emergencia. Estamos actualizando constantemente.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 contingency-1 contingency-item">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Lo más reciente</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Ccontingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Contingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 contingency-2 contingency-item d-none">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Lo más reciente</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Ccontingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Contingencia se
+                        mantiene durante las próximas 6 horas
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 contingency-3 contingency-item d-none">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Lo más reciente</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Ccontingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Contingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 contingency-4 contingency-item d-none">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Lo más reciente</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Ccontingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Contingencia se
+                        mantiene durante las próximas 6 horas
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 contingency-5 contingency-item d-none">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Lo más reciente</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Ccontingencia se
+                        mantiene durante las próximas 6 horas</a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="contingency-event">
+                      <div class="contingency-event-date">
+                        <div class="contingency-event-time">22:31</div>
+                        <div class="contingency-event-day">04/01/18</div>
+                      </div><a class="contingency-event-body" href="#">
+                        Ministro del Interior y Seguridad Pública informa que Alarma de Contingencia se
+                        mantiene durante las próximas 6 horas
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Otras Contingencias</h3>
+              </div>
+              <div class="section-body mt-4 contingency-index">
+                <div class="row">
+                  <div class="col-lg-6 contingency-item contingency-1 d-none"><a class="contingency-behavior-change" href="#" data-target=".contingency-1">
+                      <h4 class="mb-3">Contingencia 1</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="col-lg-6 contingency-item contingency-2"><a class="contingency-behavior-change" href="#" data-target=".contingency-2">
+                      <h4 class="mb-3">Contingencia 2</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="col-lg-6 contingency-item contingency-3"><a class="contingency-behavior-change" href="#" data-target=".contingency-3">
+                      <h4 class="mb-3">Contingencia 3</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="col-lg-6 contingency-item contingency-4"><a class="contingency-behavior-change" href="#" data-target=".contingency-4">
+                      <h4 class="mb-3">Contingencia 4</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="col-lg-6 contingency-item contingency-5"><a class="contingency-behavior-change" href="#" data-target=".contingency-5">
+                      <h4 class="mb-3">Contingencia 5</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section py-5 bg-gray-c">
+            <div class="container">
+              <div class="section-header">
+                <h3 class="border-bottom border-accent pb-2">Encuentra mas información</h3>
+              </div>
+              <div class="section-body mt-4">
+                <div class="row">
+                  <div class="col-lg-6"><a href="#">
+                      <h4 class="mb-3">Onemi</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                    </p>
+                  </div>
+                  <div class="col-lg-6"><a href="#">
+                      <h4 class="mb-3">Shoa</h4></a>
+                    <p>
+                      Bajada ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed  ipsum dolor set it a me do eiusmod tempor incididunt
+                      ut labore et dolore magna aliqua.
+                      
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section">
+            <div class="section-action mt-4"><a class="btn btn-neutral btn-default-size contingency-behavior-close" href="#">Ir a la portada</a></div>
+          </section>
+        </div>
+        <div class="contingency-footer">
+          <div class="container">
+            <div class="footer-logo"><img class="footer-default-logo" src="../img/gob-footer-contingency.svg"><img class="footer-mobile-logo" src="../img/gob-footer-mobile.svg"></div>
+          </div>
+        </div>
+      </section>
+      <section class="redirecting" id="to-link-1">
+        <div class="redirecting-body d-flex justify-content-center">
+          <section class="section-jumbotron align-self-center">
+            <div class="container">
+              <div class="section-header">
+                <div class="row px-sm-5 py-4">
+                  <div class="col-5 text-right"><img src="../img/gob-header.svg"></div>
+                  <div class="col-2 align-self-center text-center">
+                    <div class="arrow-loading"><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i></div>
+                  </div>
+                  <div class="col-5"><img src="../img/gob-header.svg"></div>
+                </div>
+              </div>
+              <div class="section-body">
+                <div class="line"></div>
+                <h3>Te estamos redirigiendo a  <b>Link 1</b></h3>
+                <p>Ejemplo de redirección.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="redirecting-footer">
+          <div class="container">
+            <div class="footer-logo"><img class="footer-default-logo" src="../img/gob-footer-contingency.svg"><img class="footer-mobile-logo" src="../img/gob-footer-mobile.svg"></div>
+          </div>
+        </div>
+      </section>
+      <section class="redirecting" id="to-link-2">
+        <div class="redirecting-body d-flex justify-content-center">
+          <section class="section-jumbotron align-self-center">
+            <div class="container">
+              <div class="section-header">
+                <div class="row px-sm-5 py-4">
+                  <div class="col-5 text-right"><img src="../img/gob-header.svg"></div>
+                  <div class="col-2 align-self-center text-center">
+                    <div class="arrow-loading"><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i><i class="cl cl-arrow-line"></i></div>
+                  </div>
+                  <div class="col-5"><img src="../img/gob-header.svg"></div>
+                </div>
+              </div>
+              <div class="section-body">
+                <div class="line"></div>
+                <h3>Te estamos redirigiendo a  <b>Link 2</b></h3>
+                <p>Ejemplo de redirección.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="redirecting-footer">
+          <div class="container">
+            <div class="footer-logo"><img class="footer-default-logo" src="../img/gob-footer-contingency.svg"><img class="footer-mobile-logo" src="../img/gob-footer-mobile.svg"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section-jumbotron py-3">
+        <div class="container">
+          <div class="section-body"><img src="img/gob-home.svg">
+            <h1 class="line">Framework kit Gobierno</h1>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-3 bd-sidebar d-none d-md-block d-lg-block d-lg-block">
+              <nav class="bd-links">
+                <div class="bd-toc-item"><a class="bd-toc-link" href="/">Comenzando</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="framework-explanation.html">Estructura del framework</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="development.html">Desarrollo</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="accessibility.html">Accesibilidad</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="typography.html">Tipografía</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="colors.html">Colores</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="icons.html">Íconos</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="sections.html">Secciones</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="buttons.html">Botones</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="navbar.html">Navegación</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="pagination.html">Paginación</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="tags.html">Tags</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="cards.html">Cards</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="news.html">Noticias</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="custom-presentation.html">Presentación personalizada</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="profiles.html">Perfiles</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="banners.html">Banners</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="search-form.html">Formulario de búsqueda</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="tabs.html">Tabs</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="collapsibles.html">Colapsables</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="footer-explanation.html">Footer</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="forms.html">Formularios</a>
+                </div>
+                <div class="bd-toc-item"><a class="bd-toc-link" href="utilities.html">Utilidades</a>
+                </div>
+              </nav>
+            </div>
+            <div class="col-12 col-md-9">
+              <section class="doc-section" id="development">
+                <header class="doc-section-header">
+                  <h2>
+                    Desarrollo
+                    <a href="#development">#</a>
+                  </h2>
+                </header>
+                <div class="doc-section-body">
+                  <div class="doc-subsection" id="extendFramework">
+                    <div class="doc-subsection-header">
+                      <h3>Creando o extendiendo el framework kit de gobierno <a href="#extendFramework">#</a></h3>
+                    </div>
+                    <div class="doc-subsection-body">
+                      <p>
+                        Para extender el framework kit de gobierno es importante tener en
+                        consideración las ideas que hay detrás del diseño, el porqué se 
+                        hacen las cosas del modo en que se hacen. Por ello deberá
+                        leer la sección
+                        <a href="https://getbootstrap.com/docs/4.5/extend/approach/">enfoque de extensión</a>
+                        de la documentación de Bootstrap, debido a que este kit se basa en
+                        él.
+                      </p>
+                      <p>A continuación, un resumen con los puntos importantes:</p>
+                      <ul>
+                        <li>
+                          Los componentes deben ser responsivos y diseñados con un enfoque
+                          "mobile-first".
+                        </li>
+                        <li>
+                          Los componentes deberán ser construidos con una clase base y
+                          extendidos a través de modificadores de clase.
+                        </li>
+                        <li>Los componentes deberán obedecer a una escala del "z-index" común.</li>
+                        <li>
+                          Siempre que sea posible, prefiera una implementación HTML y CSS
+                          por sobre JavaScript.
+                        </li>
+                        <li>
+                          Siempre que sea posible, prefiera las utilidades por sobre estilo
+                          personalizado.
+                        </li>
+                        <li>
+                          Siempre que sea posible, evite forzar requerimientos HTML específicos
+                          ("children selectors", por ejemplo).
+                        </li>
+                        <li>
+                          Siempre que aplique, para cada componente deberá añadir la
+                          contraparte para el modo contraste y aumento de fuente.
+                        </li>
+                      </ul>
+                      <p>
+                        La creación de nuevo componente en el framework requiere identificar
+                        la categoría a la que pertenece, si es un nuevo elemento, un
+                        nuevo layout, etc. Por ejemplo, si se
+                        desea desarrollar una nueva card, se deberá crear el archivo 
+                        <code>scss</code> en el directorio de cards: <code>scss/components/cards/</code>,
+                        y luego importarlo en el archivo <code>scss/components/_cards.scss</code>.
+                      </p>
+                      <p>
+                        Siempre se cree un nuevo componente, deberá añadir su contraparte
+                        para la versión contraste del sitio y para los distintos niveles de fuentes.
+                      </p>
+                      <p>
+                        Para esto, debe crear un archivo con el mismo nombre y bajo la
+                        misma estructura jerárquica que en <code>scss/</code>, en la carpeta
+                        <code>scss/themes/a11y-contrast</code> si se trata del modo contraste ó 
+                        <code>scss/themes/a11y-fonts</code> si es el caso del aumento del tamaño de
+                        la fuente.
+                      </p>
+                      <p>
+                        Por ejemplo, para un nuevo componente tipo card
+                        <code>scss/components/cards/_roles.scss</code>:
+                      </p>
+                      <pre class="language-css"><code><span class="token tag">/* Mi nuevo tipo de card */;</span></code><code class="d-block"><span class="token tag">.card-role {
+  background-color: color("white");
+  border: $card-role-border-width solid $card-role-border-color;
+}</span></code></pre>
+                      <p>
+                        Su contraparte para el modo contraste, sería
+                        el archivo <code>/scss/themes/a11y-contrast/components/cards/_roles.scss</code>
+                        y dentro puede añadir:
+                      </p>
+                      <pre class="language-css"><code><span class="token tag">/* Mi nuevo tipo de card modo contraste */;</span></code><code class="d-block"><span class="token tag">.card-role {
+  background-color: invert-color("white");
+}</span></code></pre>
+                    </div>
+                  </div>
+                  <div class="doc-subsection" id="functionsMixins">
+                    <div class="doc-subsection-header">
+                      <h3>Funciones y mixins <a href="#functionsMixins">#</a></h3>
+                    </div>
+                    <div class="doc-subsection-body">
+                      <p>
+                        El framework kit de gobierno ofrece funciones y mixins que ayudan
+                        a simplificar el desarrollo evitando la duplicación de código y 
+                        trabajo tedioso.
+                      </p>
+                      <h4 class="h5" id="functionsFramework">Funciones <a href="#functionsFramework">#</a></h4>
+                      <p>
+                        A continuación se listan
+                        los métodos implementados con una breve reseña acerca de su
+                        utilidad:
+                      </p>
+                      <ul>
+                        <li class="mb-2"><span class="text-primary">@function strip-unit($number)</span>: Recibe un número con
+                          unidad (<code>px</code>, <code>em</code>, <code>vw</code>, <code>ch</code>, etc) y lo
+                          retorna sin ella.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function unitless-rem($pixels, $context)</span>: Recibe un
+                          número en píxeles y retorna el equivalente en <code>rem</code> sin
+                          unidad de acuerdo a lo definido en <span class="text-primary">$context</span>
+                          (por defecto, es lo definido en <code>_variables</code>).
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function rem($pixels, $context)</span>: Recibe un número en
+                          <code>px</code> y retorna el equivalente en <code>rem</code> en base a
+                          <span class="text-primary">$context</span>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function unitless-px($rems, $context)</span>: Recibe un número
+                          en rem y retorna el equivalente en <code>px</code> sin unidad
+                          de acuerdo a lo definido en <span class="text-primary">$context</span>
+                          (por defecto, es lo definido en <code>_variables</code>).
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function px($rems, $context)</span>: Recibe un número en
+                          <code>rem</code> y retorna el equivalente en <code>px</code> en base a
+                          <span class="text-primary">$context</span>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function get-breakpoint-width($name, $breakpoints)</span>:
+                          Recibe el nombre y un mapa de <code>breakpoints</code> y retorna
+                          su valor en <code>px</code>. Por defecto utiliza el definido en
+                          <code>_variables</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function spacer($spacer)</span>: Recibe un número que por
+                          defecto va del 0 al 5 y retorna el valor en <code>rem</code> del
+                          espaciado equivalente basado en el valor base de
+                          1 <code>rem</code>. (El mapa de espaciados viene definido por
+                          Bootstrap).
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function font($level, $for)</span>: Recibe el nivel de
+                          font requerido y el breakpoint de pantalla y retorna el valor
+                          en <code>px</code> del tamaño del font definido para esas variables. 
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function line-height($level, $for)</span>: Recibe el nivel de
+                          font requerido y el breakpoint de pantalla y retorna el valor
+                          en <code>px</code> del alto de línea de definido para esas variables. 
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function contrast-color($key)</span>: Recibe el nombre de un
+                          color definido en <code>_variables</code>  y retorna el color que hace contraste
+                          con el color <code>$key</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function contrast-theme-color($key)</span>: Recibe el nombre
+                          de un color definido para la paleta principal en <code>_variables</code>
+                          y retorna el color que hace contraste con el color <code>$key</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function  contrast-gray($key)</span>: Recibe el nombre
+                          de un color definido para los tonos grises en <code>_variables</code>
+                          y retorna el color que hace contraste con el color <code>$key</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function invert-color($key)</span>: Recibe el nombre de un
+                          color definido en <code>_variables</code> y retorna su versión invertida.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function  invert-theme-color($key)</span>: Recibe el nombre
+                          de un color definido para la paleta principal en <code>_variables</code>
+                          y retorna su versión invertida.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function invert-gray($key)</span>: Recibe el nombre
+                          de un color definido para los tonos grises en <code>_variables</code>
+                          y retorna su versión invertida.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function contrast-invert-color($key)</span>: Recibe el nombre
+                          de un color definido en <code>_variables</code> y retorna la versión
+                          invertida del color que hace contraste con el color <code>$key</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function contrast-invert-theme-color($key)</span>: Recibe el
+                          nombre de un color definido para la paleta principal en
+                          <code>_variables</code> y retorna la versión
+                          invertida del color que hace contraste con el color <code>$key</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@function contrast-invert-gray($key)</span>: Recibe el nombre
+                          de un color definido para los tonos grises en <code>_variables</code>
+                          y retorna la versión invertida del color que hace contraste con el color <code>$key</code>.
+                          
+                        </li>
+                      </ul>
+                      <h4 class="h5" id="mixinsFramework">Mixins <a href="#mixinsFramework">#</a></h4>
+                      <p>
+                        Los mixins son funciones que permiten generar declaraciones
+                        css reutilizables ahorrando tiempo en escribir y reescribir
+                        código. A continuación se listan los implementados en este
+                        kit:
+                      </p>
+                      <ul>
+                        <li class="mb-2"><span class="text-primary">@mixin media($from, $until, $and, $media-type, $breakpoints, $responsive, $static-breakpoint)</span>
+                          : Generador de <code>media-query</code>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin split-background($color-a, $color-b)</span>:
+                          Añade un background dividido en los colores
+                          <span class="text-primary">$color-a</span>, <span class="text-primary">color-b</span>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin use-icon($icon-name)</span>: Genera el estilo
+                          del icono <span class="text-primary">$icon-name</span>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin font($level)</span>: Genera la declaración
+                          de estilo del tamaño y alto de línea de la fuente de nivel
+                          <span class="text-primary">$level</span>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin only-font($level)</span>: Genera la
+                          declaración de estilo del tamaño de fuente del nivel
+                          <span class="text-primary">$level</span>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin only-line-height()</span>: Genera la
+                          declaración de estilo del alto de línea del nivel
+                          <span class="text-primary">$level</span>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin lines($lines, $level)</span>: Genera la
+                          declaración de estilo para fijar el alto de un elemento en función
+                          de cantidad de líneas <span class="text-primary">$lines</span> del nivel 
+                          <span class="text-primary">$level</span>. 
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin make-sub-display-class($base-class)</span>:
+                          Genera clases que comienzan con un nombre base
+                          <span class="text-primary">$base-class</span> y
+                          que definen la propiedad <code>display</code> dependiendo de los
+                          <code>$breakpoints</code> definidos en <code>_variables</code>. 
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin from-colors()</span>: Genera una lista
+                          con los colores del kit sobre los cuales se puede iterar.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin square-text($size)</span>: Genera la
+                          declaración de estilo para un elemento centrado con
+                          alto y ancho fijo de tamaño <span class="text-primary">$size</span>.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin bs-bg-variant($parent, $color)</span>: Genera la
+                          declaración de estilo para la clase <span class="text-primary">$parent</span>
+                          de color de fondo <span class="text-primary">$color</span> y añade el
+                          comportamiento <code>hover</code> para los los anchors y botones que
+                          utilicen esta clase.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin bs-text-emphasis-variant($parent, $color)</span>:
+                          Genera el estilo para la clase <span class="text-primary">$parent</span>
+                          con propiedad color <span class="text-primary">$color</span> y el
+                          comportamiento <code>hover</code> y <code>focus</code> para los anchors
+                          que utilicen esta clase.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin from-inverted-colors()</span>: Genera una lista
+                          con los colores invertidos sobre la cual se puede iterar.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin make-a11y-columns()</span>: Genera clases
+                          de utilidad para el manejo de las columnas de la grilla Bootstrap
+                          cuando se aumenta el tamaño de la fuente.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin make-a11y-texts()</span>: Genera clases
+                          de utilidad para el manejo del comportamiento del texto
+                          cuando se aumenta el tamaño de la fuente.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin make-a11y-spacings()</span>: Genera clases
+                          de utilidad para el manejo del espaciado (márgenes y paddings)
+                          cuando se aumenta el tamaño de la fuente.
+                        </li>
+                        <li class="mb-2"><span class="text-primary">@mixin make-a11y-flex()</span>: Genera clases
+                          de utilidad para el manejo de los elementos en un contenedor
+                          <code>flex</code> cuando se aumenta el tamaño de la fuente.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="min-hight-lg-auto">
+      <div class="container"><a class="footer-logo" href="#"><img class="footer-default-logo" src="img/gob-footer.svg"><img class="footer-mobile-logo" src="img/gob-footer-mobile.svg"></a>
+        <div class="row">
+          <div class="col-sm-8">
+            <div class="row">
+              <div class="col-md-6"><a class="link" href="https://digital.gob.cl/" target="_blank">División de Gobierno digital</a></div>
+              <div class="col-md-6"><a class="link" href="https://www.gob.cl/" target="_blank">Gob.cl</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js" integrity="sha256-FcVIknBiVRk5KLQeIBb9VQdtFRMqwffXyZ+D8q0gQro=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js" integrity="sha256-MOdZTZaHYcbubI1ggZrOK+am0uoo4tNJkvcvOzTDKAk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-scss.min.js" integrity="sha256-1lVYQdPYmeuVDB/iXGqZBZvOPt5fwnRmM0Q2+aoGY7c=" crossorigin="anonymous"></script>
+    <script src="js/gob.cl.js"></script>
+    <script>
+      // Custom script to add active class in navbar doc
+      let path = window.location.pathname.replace('/', '');
+      if (!path) {
+        path = "/";
+      }
+      $(`.bd-links .bd-toc-item a[href="${path}"]`).parents().addClass('active');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+.select2 {
+  &.select2-container {
+    .select2-selection {
+      height: $input-height;
+      border-color: $input-border-color;
+      border-radius: 0;
+
+      .select2-selection__rendered,
+      .select2-selection__arrow {
+        height: $input-height-inner;
+        padding: $input-btn-padding-y $input-btn-padding-x;
+        line-height: $input-line-height;
+      }
+    }
+  }
+}

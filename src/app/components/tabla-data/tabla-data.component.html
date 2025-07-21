@@ -1,0 +1,45 @@
+<app-cabecera-not-logged-in></app-cabecera-not-logged-in>
+
+<main class="main_content pagina_interior">
+  <div class="container mt-5">
+    
+    <div class="row align-items-center">
+    <div class="col">
+        <h1>Receptores de Fondos Públicos</h1>
+    </div>
+    <div class="col-md-auto">
+        <a class="btn btn-secondary" href="#" (click)="exportarAExcel()">
+            Exportar Excel
+          </a>
+    </div>
+</div>
+
+<br>
+
+<table id="fichasReceptores" class="table cell-border compact table-striped" *ngIf="personas.length > 0">
+    <thead>
+        <tr>
+            <th>RUT</th>
+            <th>Razón Social</th>
+            <th>Región</th>
+            <th>Tipo de Empresa</th>
+            <th>Representante Legal</th>
+            <th>Contacto</th>
+            <th>Fecha Certif.</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of personas">
+            <td>{{ p.rut }}</td>
+            <td>{{ p.nombre_razon_social }}</td>
+            <td>{{ p.id_region_tramitacion }}</td>
+            <td>{{ p.tipo_empresa }}</td>
+            <td>{{ p.otorgado_por }}</td>
+            <td>{{ p.correo }}</td>
+            <td>{{ p.fecha_otorgamiento }}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</main>
+<app-pie-pagina></app-pie-pagina>

@@ -1,0 +1,43 @@
+section.section {
+  .section-header {
+    position: relative;
+
+    .section-icons {
+      position: absolute;
+      right: 0;
+      bottom: $headings-margin-bottom + spacer(2);
+
+      .link-icon {
+        margin-left: spacer(3);
+      }
+    }
+  }
+
+  .section-action {
+    padding-top: spacer(4);
+    text-align: center;
+  }
+}
+
+section {
+  .section-header {
+    &.with-toolbar {
+      padding: rem($breadcrumb-min-height) 0 spacer(3);
+
+      @include clearfix;
+
+      .toolbar {
+        float: right;
+
+        @include media($from: tablet) {
+          float: none;
+        }
+
+        @include media($from: desktop) {
+          float: right;
+        }
+      }
+    }
+  }
+}
+

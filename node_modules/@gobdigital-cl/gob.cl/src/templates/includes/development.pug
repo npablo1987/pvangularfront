@@ -1,0 +1,254 @@
+extends ../doc.pug
+
+block content
+  section#development.doc-section
+    header.doc-section-header
+      h2.
+        Desarrollo
+        #[a(href='#development') #]
+    .doc-section-body
+      div#extendFramework.doc-subsection
+        .doc-subsection-header
+          h3 Creando o extendiendo el framework kit de gobierno #[a(href='#extendFramework') #]
+        .doc-subsection-body
+          p.
+            Para extender el framework kit de gobierno es importante tener en
+            consideración las ideas que hay detrás del diseño, el porqué se 
+            hacen las cosas del modo en que se hacen. Por ello deberá
+            leer la sección
+            #[a(href="https://getbootstrap.com/docs/4.5/extend/approach/") enfoque de extensión]
+            de la documentación de Bootstrap, debido a que este kit se basa en
+            él.
+          p.
+            A continuación, un resumen con los puntos importantes:
+          ul
+            li.
+              Los componentes deben ser responsivos y diseñados con un enfoque
+              "mobile-first".
+            li.
+              Los componentes deberán ser construidos con una clase base y
+              extendidos a través de modificadores de clase.
+            li.
+              Los componentes deberán obedecer a una escala del "z-index" común.
+            li.
+              Siempre que sea posible, prefiera una implementación HTML y CSS
+              por sobre JavaScript.
+            li.
+              Siempre que sea posible, prefiera las utilidades por sobre estilo
+              personalizado.
+            li.
+              Siempre que sea posible, evite forzar requerimientos HTML específicos
+              ("children selectors", por ejemplo).
+            li.
+              Siempre que aplique, para cada componente deberá añadir la
+              contraparte para el modo contraste y aumento de fuente.
+          p.
+            La creación de nuevo componente en el framework requiere identificar
+            la categoría a la que pertenece, si es un nuevo elemento, un
+            nuevo layout, etc. Por ejemplo, si se
+            desea desarrollar una nueva card, se deberá crear el archivo 
+            #[code scss] en el directorio de cards: #[code scss/components/cards/],
+            y luego importarlo en el archivo #[code scss/components/_cards.scss].
+          p.
+            Siempre se cree un nuevo componente, deberá añadir su contraparte
+            para la versión contraste del sitio y para los distintos niveles de fuentes.
+          p.
+            Para esto, debe crear un archivo con el mismo nombre y bajo la
+            misma estructura jerárquica que en #[code scss/], en la carpeta
+            #[code scss/themes/a11y-contrast] si se trata del modo contraste ó 
+            #[code scss/themes/a11y-fonts] si es el caso del aumento del tamaño de
+            la fuente.
+          p.
+            Por ejemplo, para un nuevo componente tipo card
+            #[code scss/components/cards/_roles.scss]:
+          pre.language-css
+            code
+              span.token.tag /* Mi nuevo tipo de card */;
+            code.d-block
+              span.token.tag.
+                .card-role {
+                  background-color: color("white");
+                  border: $card-role-border-width solid $card-role-border-color;
+                }
+          p.
+            Su contraparte para el modo contraste, sería
+            el archivo #[code /scss/themes/a11y-contrast/components/cards/_roles.scss]
+            y dentro puede añadir:
+          pre.language-css
+            code
+              span.token.tag /* Mi nuevo tipo de card modo contraste */;
+            code.d-block
+              span.token.tag.
+                .card-role {
+                  background-color: invert-color("white");
+                }
+      div#functionsMixins.doc-subsection
+        .doc-subsection-header
+          h3 Funciones y mixins #[a(href='#functionsMixins') #]
+        .doc-subsection-body
+          p.
+            El framework kit de gobierno ofrece funciones y mixins que ayudan
+            a simplificar el desarrollo evitando la duplicación de código y 
+            trabajo tedioso.
+          h4#functionsFramework.h5 Funciones #[a(href='#functionsFramework') #]
+          p.
+            A continuación se listan
+            los métodos implementados con una breve reseña acerca de su
+            utilidad:
+          ul
+            li.mb-2.
+              #[span.text-primary @function strip-unit($number)]: Recibe un número con
+              unidad (#[code px], #[code em], #[code vw], #[code ch], etc) y lo
+              retorna sin ella.
+            li.mb-2.
+              #[span.text-primary @function unitless-rem($pixels, $context)]: Recibe un
+              número en píxeles y retorna el equivalente en #[code rem] sin
+              unidad de acuerdo a lo definido en #[span.text-primary $context]
+              (por defecto, es lo definido en #[code _variables]).
+            li.mb-2.
+              #[span.text-primary @function rem($pixels, $context)]: Recibe un número en
+              #[code px] y retorna el equivalente en #[code rem] en base a
+              #[span.text-primary $context].
+            li.mb-2.
+              #[span.text-primary @function unitless-px($rems, $context)]: Recibe un número
+              en rem y retorna el equivalente en #[code px] sin unidad
+              de acuerdo a lo definido en #[span.text-primary $context]
+              (por defecto, es lo definido en #[code _variables]).
+            li.mb-2.
+              #[span.text-primary @function px($rems, $context)]: Recibe un número en
+              #[code rem] y retorna el equivalente en #[code px] en base a
+              #[span.text-primary $context].
+            li.mb-2.
+              #[span.text-primary @function get-breakpoint-width($name, $breakpoints)]:
+              Recibe el nombre y un mapa de #[code breakpoints] y retorna
+              su valor en #[code px]. Por defecto utiliza el definido en
+              #[code _variables].
+            li.mb-2.
+              #[span.text-primary @function spacer($spacer)]: Recibe un número que por
+              defecto va del 0 al 5 y retorna el valor en #[code rem] del
+              espaciado equivalente basado en el valor base de
+              1 #[code rem]. (El mapa de espaciados viene definido por
+              Bootstrap).
+            li.mb-2.
+              #[span.text-primary @function font($level, $for)]: Recibe el nivel de
+              font requerido y el breakpoint de pantalla y retorna el valor
+              en #[code px] del tamaño del font definido para esas variables. 
+            li.mb-2.
+              #[span.text-primary @function line-height($level, $for)]: Recibe el nivel de
+              font requerido y el breakpoint de pantalla y retorna el valor
+              en #[code px] del alto de línea de definido para esas variables. 
+            li.mb-2.
+              #[span.text-primary @function contrast-color($key)]: Recibe el nombre de un
+              color definido en #[code _variables]  y retorna el color que hace contraste
+              con el color #[code $key].
+            li.mb-2.
+              #[span.text-primary @function contrast-theme-color($key)]: Recibe el nombre
+              de un color definido para la paleta principal en #[code _variables]
+              y retorna el color que hace contraste con el color #[code $key].
+            li.mb-2.
+              #[span.text-primary @function  contrast-gray($key)]: Recibe el nombre
+              de un color definido para los tonos grises en #[code _variables]
+              y retorna el color que hace contraste con el color #[code $key].
+            li.mb-2.
+              #[span.text-primary @function invert-color($key)]: Recibe el nombre de un
+              color definido en #[code _variables] y retorna su versión invertida.
+            li.mb-2.
+              #[span.text-primary @function  invert-theme-color($key)]: Recibe el nombre
+              de un color definido para la paleta principal en #[code _variables]
+              y retorna su versión invertida.
+            li.mb-2.
+              #[span.text-primary @function invert-gray($key)]: Recibe el nombre
+              de un color definido para los tonos grises en #[code _variables]
+              y retorna su versión invertida.
+            li.mb-2.
+              #[span.text-primary @function contrast-invert-color($key)]: Recibe el nombre
+              de un color definido en #[code _variables] y retorna la versión
+              invertida del color que hace contraste con el color #[code $key].
+            li.mb-2.
+              #[span.text-primary @function contrast-invert-theme-color($key)]: Recibe el
+              nombre de un color definido para la paleta principal en
+              #[code _variables] y retorna la versión
+              invertida del color que hace contraste con el color #[code $key].
+            li.mb-2.
+              #[span.text-primary @function contrast-invert-gray($key)]: Recibe el nombre
+              de un color definido para los tonos grises en #[code _variables]
+              y retorna la versión invertida del color que hace contraste con el color #[code $key].
+
+          h4#mixinsFramework.h5 Mixins #[a(href='#mixinsFramework') #]
+          p.
+            Los mixins son funciones que permiten generar declaraciones
+            css reutilizables ahorrando tiempo en escribir y reescribir
+            código. A continuación se listan los implementados en este
+            kit:
+          ul
+            li.mb-2.
+              #[span.text-primary @mixin media($from, $until, $and, $media-type, $breakpoints, $responsive, $static-breakpoint)]
+              : Generador de #[code media-query].
+            li.mb-2.
+              #[span.text-primary @mixin split-background($color-a, $color-b)]:
+              Añade un background dividido en los colores
+              #[span.text-primary $color-a], #[span.text-primary color-b].
+            li.mb-2.
+              #[span.text-primary @mixin use-icon($icon-name)]: Genera el estilo
+              del icono #[span.text-primary $icon-name].
+            li.mb-2.
+              #[span.text-primary @mixin font($level)]: Genera la declaración
+              de estilo del tamaño y alto de línea de la fuente de nivel
+              #[span.text-primary $level].
+            li.mb-2.
+              #[span.text-primary @mixin only-font($level)]: Genera la
+              declaración de estilo del tamaño de fuente del nivel
+              #[span.text-primary $level].
+            li.mb-2.
+              #[span.text-primary @mixin only-line-height()]: Genera la
+              declaración de estilo del alto de línea del nivel
+              #[span.text-primary $level].
+            li.mb-2.
+              #[span.text-primary @mixin lines($lines, $level)]: Genera la
+              declaración de estilo para fijar el alto de un elemento en función
+              de cantidad de líneas #[span.text-primary $lines] del nivel 
+              #[span.text-primary $level]. 
+            li.mb-2.
+              #[span.text-primary @mixin make-sub-display-class($base-class)]:
+              Genera clases que comienzan con un nombre base
+              #[span.text-primary $base-class] y
+              que definen la propiedad #[code display] dependiendo de los
+              #[code $breakpoints] definidos en #[code _variables]. 
+            li.mb-2.
+              #[span.text-primary @mixin from-colors()]: Genera una lista
+              con los colores del kit sobre los cuales se puede iterar.
+            li.mb-2.
+              #[span.text-primary @mixin square-text($size)]: Genera la
+              declaración de estilo para un elemento centrado con
+              alto y ancho fijo de tamaño #[span.text-primary $size].
+            li.mb-2.
+              #[span.text-primary @mixin bs-bg-variant($parent, $color)]: Genera la
+              declaración de estilo para la clase #[span.text-primary $parent]
+              de color de fondo #[span.text-primary $color] y añade el
+              comportamiento #[code hover] para los los anchors y botones que
+              utilicen esta clase.
+            li.mb-2.
+              #[span.text-primary @mixin bs-text-emphasis-variant($parent, $color)]:
+              Genera el estilo para la clase #[span.text-primary $parent]
+              con propiedad color #[span.text-primary $color] y el
+              comportamiento #[code hover] y #[code focus] para los anchors
+              que utilicen esta clase.
+            li.mb-2.
+              #[span.text-primary @mixin from-inverted-colors()]: Genera una lista
+              con los colores invertidos sobre la cual se puede iterar.
+            li.mb-2.
+              #[span.text-primary @mixin make-a11y-columns()]: Genera clases
+              de utilidad para el manejo de las columnas de la grilla Bootstrap
+              cuando se aumenta el tamaño de la fuente.
+            li.mb-2.
+              #[span.text-primary @mixin make-a11y-texts()]: Genera clases
+              de utilidad para el manejo del comportamiento del texto
+              cuando se aumenta el tamaño de la fuente.
+            li.mb-2.
+              #[span.text-primary @mixin make-a11y-spacings()]: Genera clases
+              de utilidad para el manejo del espaciado (márgenes y paddings)
+              cuando se aumenta el tamaño de la fuente.
+            li.mb-2.
+              #[span.text-primary @mixin make-a11y-flex()]: Genera clases
+              de utilidad para el manejo de los elementos en un contenedor
+              #[code flex] cuando se aumenta el tamaño de la fuente.

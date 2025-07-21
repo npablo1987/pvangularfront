@@ -1,0 +1,30 @@
+@each $index, $pixel in $a11y-fonts {
+  .a11y-font-#{$index} {
+    $class: a11y-font-#{$index};
+
+    @include make-a11y-columns($class);
+
+    @include make-sub-display-class($class);
+
+    @include make-a11y-texts($class);
+
+    @include make-a11y-spacings($class);
+
+    @include make-a11y-flex($class);
+  }
+}
+
+.a11y-font-1,
+.a11y-font-2 {
+  $class: a11y-fonts;
+
+  @include make-a11y-columns($class);
+
+  @include make-sub-display-class($class);
+
+  @include make-a11y-texts($class);
+
+  @include make-a11y-spacings($class);
+
+  @include make-a11y-flex($class);
+}

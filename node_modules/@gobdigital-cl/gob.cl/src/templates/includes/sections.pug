@@ -1,0 +1,115 @@
+extends ../doc.pug
+
+block content
+  section#sections.doc-section
+    header.doc-section-header
+      h2.
+        Secciones
+        #[a(href='#sections') #]
+    .doc-section-body
+      p.
+        Las secciones representan espacios donde se muestra información
+        en orden. Dependiendo de los requerimientos, 
+        necesitará acomodar la forma en que despliega la información.
+        Para ello, puede configurar una sección a gusto utilizando solamente las clases
+        de utilidad en conjunto con las clases básicas que provee este kit. 
+      p.
+        Una sección genérica comienza con #[code section.section], que se divide
+        en 3 elementos hijos:
+      ul
+        li.
+          Un encabezado #[code div.section-header].
+        li.
+          Un cuerpo #[code div.section-body].
+        li.
+          Una acción #[code div.section-action].
+      p.
+        Para la  separación entre las distintas secciones basta con
+        utilizar las clases de
+        #[a.ml-1(href="https://getbootstrap.com/docs/4.5/utilities/spacing/", target="_blank") espaciado]
+        de Bootstrap.
+      p.
+        El siguiente ejemplo muestra cómo quedaría una sección normal:
+      .blockquote.my-3
+        include ../examples/sections
+        pre(data-src='../examples/sections.html')
+      p.
+        El borde inferior al título de la sección se
+        logró utilizando las clases de
+        #[a.ml-1(href="https://getbootstrap.com/docs/4.5/utilities/borders/#border", target="_blank") bordes]
+        de Bootstrap. El color del borde se aplica con clases de colores para borde
+        explicadas en la sección de
+        #[a.ml-1(href="/colors.html") colores].
+      div#contingency.doc-subsection
+        .doc-subsection-header
+          h3 Contingencia #[a(href='#contingency') #]
+        .doc-subsection-body
+          p.
+            Este kit provee de clases para el manejo de una sección de alertas o
+            contingencias.
+            El modo contingencia se activa vía javascript desde un plugin de
+            jQuery, que puede configurar desde un objeto literal al activarlo
+            o vía#[code data-attributes].
+          pre(data-src='examples/contingency-setting.js')
+          pre(data-src='examples/contingency-setting.html')
+          p.
+            Al estar activa una contingencia la sección#[code section.contingency]
+            bloquea todo el contenido.
+          p.
+            Al hacer clic en cualquier elemento que tenga la clase
+            #[code .contingency-behavior-open] se mostrarán las contingencias
+            dejando el contenido del sitio bloqueado.
+          p.
+            Al hacer clic en cualquier elemento que tenga la clase
+            #[code .contingency-behavior-close] se dejarán de mostrar las
+            contingencias.
+          p.
+            Dentro de la sección de contingencias al hacer clic en cualquier
+            elemento con la clase#[code .contingency-behavior-change] con el
+            data attribute#[code data-target], se mostrará la información de la
+            contingencia indicada por#[code data-target]. Los elementos que
+            quiera que tengan este comportamiento deben tener la clase
+            #[code .contingency-item] y#[code .contingency-&lt;number&gt;].
+          p.
+            Por defecto se muestra la contingencia con la clase#[code .contingency-1],
+            valor que se le puede dar a la sección de contingencias en el objeto
+            literal de configuración o vía#[code data-attributes].
+          p.
+            A continuación, un ejemplo de este elemento.
+          .section-action
+            a.contingency-behavior-open.btn.btn-warning.btn-default-size(href='#sections').
+              Activar contingencia de ejemplo
+      div#redirection.doc-subsection
+        .doc-subsection-header
+          h3 Redirección #[a(href='#redirection') #]
+        .doc-subsection-body
+          p.
+            El framework puede mostrar un aviso de redirección que cubre toda
+            la pantalla.
+          p.
+            El aviso de redirección se mostrará sobre cualquier link que tenga
+            la clase#[code .redirecting-behavior-link] configurado con los
+            #[code data-attributes]:#[code data-target] redirección a mostrar
+            y opcionalmente#[code data-timeout] utilizado para indicar el
+            tiempo de espera antes de hacer la redirección.
+          include ../examples/redirecting-actions
+          pre(data-src='examples/redirecting-actions.html')
+          p.
+            Sección de redirección usada en "Ejemplo de redirección 1".
+          pre(data-src='examples/redirecting-1.html')
+          p.
+            Sección de redirección usada en "Ejemplo de redirección 2".
+          pre(data-src='examples/redirecting-2.html')
+      div#smoothScroll.doc-subsection
+        .doc-subsection-header
+          h3 Smooth Scroll #[a(href='#smoothScroll') #]
+        .doc-subsection-body
+          p.
+            El movimiento entre secciones mediante las anclas tienen por defecto
+            el comportamiento smooth scroll.
+          p.
+            Por defecto se tomará el#[code margin-top] del#[code body] como
+            offset. Si desea tomar como referencia otro elemento se le puede
+            pasar un selector en el data-attribute#[code data-main] al body.
+          p.
+            Ejemplo, #[a(href="#sections") Ir al comienzo de esta sección].

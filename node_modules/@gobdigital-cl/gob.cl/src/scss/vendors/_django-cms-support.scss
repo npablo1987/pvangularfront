@@ -1,0 +1,38 @@
+$django-cms-toolbar: 0 !default;
+$django-cms-toolbar-expanded: 45.99px !default;
+
+html {
+  &.cms-ready {
+    nav.navbar {
+      top: $django-cms-toolbar;
+    }
+
+    .bd-sidebar {
+
+      @include media($from: tablet) {
+
+        @supports (position: sticky) {
+          top: $navbar-lg-height + $django-cms-toolbar;
+          height: calc(100vh - #{$navbar-lg-height + $django-cms-toolbar});
+        }
+      }
+    }
+
+    &.cms-toolbar-expanded {
+      nav.navbar {
+        top: $django-cms-toolbar-expanded;
+      }
+
+      .bd-sidebar {
+
+        @include media($from: tablet) {
+
+          @supports (position: sticky) {
+            top: $navbar-lg-height + $django-cms-toolbar-expanded;
+            height: calc(100vh - #{$navbar-lg-height + $django-cms-toolbar-expanded});
+          }
+        }
+      }
+    }
+  }
+}

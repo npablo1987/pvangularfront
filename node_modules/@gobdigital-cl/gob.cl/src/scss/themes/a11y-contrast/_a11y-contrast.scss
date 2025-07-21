@@ -1,0 +1,33 @@
+@import "abstracts/variables",
+  "abstracts/functions",
+  "abstracts/mixins";
+
+.a11y-contrast {
+
+  @import "base/base",
+    "base/typography";
+
+  @import "components/toolbar",
+    "components/search",
+    "components/cards",
+    "components/close",
+    "components/collapsibles",
+    "components/buttons",
+    "components/breadcrumb",
+    "components/pagination",
+    "components/social",
+    "components/navtabs",
+    "components/line";
+
+  @import "layout/navbar",
+    "layout/sections",
+    "layout/footer",
+    "layout/forms",
+    "layout/custom-forms",
+    "layout/sidebar";
+
+  @import "pages/news";
+
+  @import "vendors/select2",
+    "vendors/read-speaker";
+}

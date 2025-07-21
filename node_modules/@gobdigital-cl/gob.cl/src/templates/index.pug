@@ -1,0 +1,123 @@
+extends extends/layout
+
+block header
+  header
+    // Fixed navbar
+    include includes/layout/navbar
+
+block body
+  main.with-fixed-navbar
+    include includes/components/contingency
+    include includes/components/onboarding
+    include includes/components/redirecting
+    a.btn.btn-warning.btn-block.contingency-behavior-open(href="#")
+      .container
+        | Último minuto: Terremoto en Arica
+    include includes/components/breadcrumbs
+    section.section-jumbotron
+      .container
+        .section-header.with-toolbar
+          include includes/components/toolbar
+        .section-body
+          img(src='img/gob-home.svg')
+          h1.line.
+            Estás en #[b Gob.cl]
+
+          p.font-weight-light.mb-5.text-center
+            | Tu portal para acceder de manera simple y rápida a información
+            br.d-none.d-sm-none.d-sm-inline
+            |             del Gobierno de Chile.
+          include includes/components/search
+    section.section.mt-5
+      .container
+        .section-header
+          h2.pb-2.border-bottom.border-accent Destacamos en Gob.cl
+        .section-body.mt-4
+          .row
+            .col-md-4
+              include includes/components/card-featured
+            .col-md-4
+              include includes/components/card-featured
+            .col-md-4
+              include includes/components/card-featured
+    section.section.mt-5
+      .container
+        .section-header
+          h2.pb-2.border-bottom.border-accent Tramites y beneficios destacados
+        .section-body.mt-4
+          .row.col-separator-primary
+            .col-md-4
+              include includes/components/card-links
+            .col-md-4
+              include includes/components/card-links
+            .col-md-4
+              include includes/components/card-links
+        .section-action
+          a.btn.btn-neutral.btn-default-size(href='#') Ver más trámites en Chileatiende.cl
+    section.section.mt-5
+      .container
+        .section-header
+          h2.pb-2.border-bottom.border-accent Instituciones y autoridades
+        .section-body.mt-4
+          include includes/components/card-data-list
+    section.section.mt-5
+      .container
+        .section-header
+          h2.pb-2.border-bottom.border-accent Noticias
+        .section-body.mt-4
+          .row
+            .col-md-4
+              include includes/components/card-news
+            .col-md-4
+              include includes/components/card-news
+            .col-md-4
+              include includes/components/card-news
+          .row
+            .col-md-4
+              include includes/components/card-news-with-lead
+            .col-md-4
+              include includes/components/card-news-with-lead
+            .col-md-4
+              include includes/components/card-news-with-lead
+    section.section
+      .container.mt-5
+        .section-header
+          h2.pb-2.border-bottom.border-accent Acerca de Chile
+        .section-body.mt-4
+          .row
+            .col-md-6
+              include includes/components/card-informative
+            .col-md-6
+              include includes/components/card-informative
+    section.section.mt-5
+      .container
+        .section-header
+          h2.pb-2.border-bottom.border-accent Destacados
+        .section-body.mt-4
+          include includes/components/card-featured-news
+    section.section.mt-5
+      .container
+        .section-body.mt-4
+          include includes/components/profile-page
+    section.section.mt-5
+      .container
+        .section-body.mt-4
+          include includes/components/profile-section
+    section.section.mt-5
+      .container
+        .section-body.mt-4
+          .row
+            .col-lg-6
+              include includes/components/profile
+            .col-lg-6
+              include includes/components/profile
+    section.section.mt-5
+      .container
+        .section-header
+          h2.pb-2.border-bottom.border-accent Filtros
+        .section-body
+          include includes/components/dom-search
+          include includes/components/dom-search-groups
+    include includes/components/social
+block footer
+  include includes/layout/footer

@@ -1,0 +1,188 @@
+extends ../doc.pug
+
+block content
+  section#frameworkExplanation.doc-section
+    header.doc-section-header
+      h2.
+        Estructura del framework
+        #[a(href='#frameworkExplanation') #]
+    div#folderStructures.doc-section-body
+      .doc-subsection
+        .doc-subsection-header
+          h3 Estructura de carpetas #[a(href='#folderStructures') #]
+        .doc-subsection-body
+          .bg-light
+            ul.py-3
+              li gobcl/
+              ul
+                li dist/
+                li site/
+                li src/
+                  ul
+                    li fonts/
+                    li img/
+                    li js/
+                    li scss/
+                    li svg/
+                    li templates/
+          p.
+            La carpeta #[code dist/] es el destino de los archivos de código fuente
+            luego de ser compilados, disponibles para ser cargados en algún proyecto.
+          p.
+            La carpeta #[code site/] es donde se aloja el sitio web de ejemplo y esta
+            documentación con su estilo personalizado.
+          p.
+            En #[code src/] se alojan las siguientes subcarpetas:
+          ul
+            li.
+              #[code fonts/], #[code img/], #[code svg/]: Contienen los archivos
+              estáticos.
+            li.
+              #[code scss/], #[code js/]: Contienen los archivos de código fuente
+              y scripts.
+            li.
+              #[code templates/]: Contiene los archivos de código fuente de las
+              páginas de documentación y el sitio de ejemplo.
+          p.
+            Interesa en particular el directorio #[code scss/], el cual
+            contiene las siguientes carpetas:
+          .bg-light
+            ul.py-3 
+              li scss/
+              ul
+                li abstracts/
+                li base/
+                li components/
+                li icons/
+                li layout/
+                li pages/
+                li themes/
+                li vendors/
+          p.
+            La carpeta #[code abstracts/] contiene elementos transversales al
+            framework. Destacan los archivos #[code _functions.scss] y
+            #[code _mixins.scss] los cuales proveen herramientas que facilitan
+            el desarrollo, como por ejemplo, métodos para obtener el color
+            que reemplaza a otro en la versión contraste, la generación de clases 
+            para distintos tipos de displays personalizados para cada breakpoint,
+            entre otras utilidades.#[coder]
+            El archivo #[code _variables.scss] contiene los valores de colores,
+            tamaños, etc, disponibles como variables reutilizables a lo largo del
+            proyecto. También aquí se sobrescriben algunas variables de bootstrap.
+          p.
+            La carpeta #[code base/] contiene la definición de estilos relacionados
+            a elementos generales de un sitio tales como la tipografía, los íconos,
+            los títulos, entre otros.
+          p.
+            Las carpetas #[code components/], #[code icons/], #[code layout/] y
+            #[code pages/] contienen los distintos elementos y componentes 
+            implementados en este framework. En las siguientes secciones podrá
+            tener más detalles y ver algunos ejemplos.
+          p.
+            La carpeta #[code themes/] es donde se alojan las clases relativas
+            a la funcionalidades de accesibilidad, contraste y aumento de la fuente.
+            La estructura interna de esta carpeta replica la del directorio padre
+            #[code scss/] de manera de que un archivo en este directorio es la 
+            implementación de accesibilidad del equivalente en nombre en la carpeta padre.
+          p.
+            La carpeta #[code vendors/] corresponde a la integración y personalización 
+            de librerías externas.
+      div#sassEdition.doc-subsection
+        .doc-subsection-header
+          h3 Modificando el framework con Sass #[a(href='#sassEdition') #]
+        .doc-subsection-body
+          p.
+            Bootstrap está diseñado para ser extendido a través de sus
+            variables Sass, mapas Sass y css personalizado. En lo ideal, siempre
+            hay que evitar tocar el código fuente. Lo mismo aplica para
+            este kit. Por lo tanto, como guía de desarrollo se presentan los
+            lineamientos para una correcta personalización, basados en los 
+            de la
+            #[a(href="https://getbootstrap.com/docs/4.5/getting-started/theming/") Documentación]
+            de Bootstrap.
+          p.
+            Para importar el kit, en el archivo de ejemplo #[code custom.scss]
+            debe agregar lo siguiente:
+          pre.language-scss
+            code
+              span.token.tag /* Sass del framework kit de gobierno */
+            code.d-block
+              span.token.tag.
+                @import "ruta-al-kit-de-gobierno/gob.cl/src/scss/gob.cl";
+          p.
+            En el archivo #[code scss/abstracts/_variables.scss] se encuentran
+            disponibles las variables que definen el diseño del framework,
+            cada una acompañada del flag #[code !default], lo que permite
+            que pueda sobrescribir estos valores, copiando y pegando las
+            variables en tu archivo #[code custom.scss] y quitando el
+            flag #[code !default]. Una vez hecho esto,
+            cualquier reasignación posterior será omitida.
+          p.
+            Así mismo, cualquier variable de Bootstrap puede ser sobrescrita.
+            Puede revisar las variables disponibles en el código fuente de
+            Bootstrap, en el archivo #[code scss/_variables.scss].
+          p.
+            En el siguiente ejemplo, cambiaremos el color del background
+            del proyecto y el alto del navbar en el archivo#[code custom.scss]:
+          pre.language-scss
+            code.d-block
+              span.token.tag.
+                /* Color del background */
+                $body-bg: #ccffff;
+
+                /* Alto del navbar */
+                $navbar-height: 60px;
+
+                /* Sass del framework kit de gobierno */
+                @import "../node_modules/@gobdigital-cl/gob.cl/src/scss/gob.cl";
+          p.
+            Además de este tipo de variables, existen los mapas
+            de valores los cuales permiten iterar sobre estos y generar
+            clases para cada llave con su valor correspondiente. Para
+            editar estos valores, extenderlos o eliminarlos, el principio
+            es el mismo, en su archivo #[code custom.scss] deberá
+            copiar y pegar las variables con sus valores por defecto, 
+            hacer las modificaciones correspondientes y remover el tag
+            #[code !default].
+          p.
+            Como ejemplo, para modificar colores del tema:
+          pre.language-scss
+            code.d-block
+              span.token.tag.
+                /* Modificando los colores del tema primary y danger */
+                $theme-colors: (
+                  "primary": #0074d9,
+                  "danger": #ff4136
+                );
+
+                /* Sass del framework kit de gobierno */
+                @import "../node_modules/@gobdigital-cl/gob.cl/src/scss/gob.cl";
+          p.
+            Ejemplo para añadir un color nuevo:
+          pre.language-scss
+            code.d-block
+              span.token.tag.
+                /* Añadiendo un nuevo color custom-color */
+                $theme-colors: (
+                  "custom-color": #900
+                );
+
+                /* Sass del framework kit de gobierno */
+                @import "../node_modules/@gobdigital-cl/gob.cl/src/scss/gob.cl";
+          p.
+            Hay que tener presente que no se debe declarar 2 veces la variable
+            a modificar dado que el kit tomará en cuenta sólo la última
+            declaración. Por tanto, para editar colores del tema y a la
+            vez añadir uno nuevo tendrá que hacer lo siguiente:
+          pre.language-scss
+            code.d-block
+              span.token.tag.
+                /* Modificando primary y danger. Añadiendo el color custom-color */
+                $theme-colors: (
+                  "primary": #0074d9,
+                  "danger": #ff4136,
+                  "custom-color": #900
+                );
+
+                /* Sass del framework kit de gobierno */
+                @import "../node_modules/@gobdigital-cl/gob.cl/src/scss/gob.cl";

@@ -1,0 +1,67 @@
+{
+  "name": "@gobdigital-cl/gob.cl",
+  "version": "3.0.10",
+  "main": "dist/js/gob.cl.js",
+  "author": "Magnet SpA",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  },
+  "peerDependencies": {
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "gulp-pug": "^4.0.1",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "browser-sync": "^2.24.7",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.14.0",
+    "fibers": "^5.0.0",
+    "flow-bin": "^0.81.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-file": "^0.4.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "htmlhint": "^0.10.1",
+    "husky": "^1.0.0-rc.15",
+    "lint-staged": "^7.3.0",
+    "lodash": "^4.17.11",
+    "node-sass-package-importer": "^5.3.2",
+    "rollup": "^0.66.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "sass": "^1.26.11",
+    "stylelint": "^9.5.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^1.0.0",
+    "stylelint-scss": "^3.3.1",
+    "svgtofont": "^3.7.0"
+  },
+  "resolutions": {
+    "stylelint/postcss": "7.0.0",
+    "stylelint/postcss-syntax": "^0.34.0"
+  },
+  "scripts": {
+    "serve": "gulp serve",
+    "serve:doc": "gulp serve:doc",
+    "build": "gulp build",
+    "build:html": "gulp build:html",
+    "build:font": "gulp build:font",
+    "test": "lint-staged",
+    "watch": "gulp watch",
+    "watch:doc": "gulp watch:doc",
+    "clean": "gulp clean"
+  }
+}

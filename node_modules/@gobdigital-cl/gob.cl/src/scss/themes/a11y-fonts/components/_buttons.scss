@@ -1,0 +1,21 @@
+@each $index, $pixel in $a11y-fonts {
+  .a11y-font-#{$index} {
+    .btn {
+
+      @each $color, $value in $theme-colors {
+        &.btn-#{$color},
+        &.btn-outline-#{$color} {
+          &:not(.btn-sm):not(.btn-lg) {
+            padding-top: ($button-padding-y - ($a11y-scale-base * $index));
+            padding-bottom: ($button-padding-y - ($a11y-scale-base * $index));
+          }
+        }
+
+        &-pill-#{$color} {
+          padding-top: calc(#{$button-pill-padding-y} - #{$a11y-scale-base * $index});
+          padding-bottom: calc(#{$button-pill-padding-y} - #{$a11y-scale-base * $index});
+        }
+      }
+    }
+  }
+}

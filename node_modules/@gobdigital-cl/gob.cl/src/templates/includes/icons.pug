@@ -1,0 +1,28 @@
+extends ../doc.pug
+
+block content
+  section#icons.doc-section
+    header.doc-section-header
+      h2.
+        Íconos
+        #[a(href='#icons') #]
+    .doc-section-body
+      p.
+        El framework incluye un conjunto de íconos que vienen en el font
+        "gob-cl". Estos deben usar utilizando la clase #[code .cl] y
+        #[code .cl-nombre-del-icono]. A continuación el listado de ellos:
+      .doc-icons
+        each icon in docIcons
+          .doc-icon.m-1
+            span.cl(class=`cl-${icon}`).mb-2
+            div cl-#{icon}
+      p.
+        Los íconos de redes sociales vienen con un efecto que se activa con
+        #[code hover]. Para estos, debe utilizar la clase #[code .cl-social]
+        además de las anteriormente mencionadas:
+      include ../examples/icons-social
+      pre(data-src="examples/icons-social.html")
+    .alert.alert-info.
+      Si es necesario agregar un nuevo ícono, colocar su svg en la carpeta #[code src/svg]
+      y correr el comando #[code npm run build:font], se creará nuevamente la #[code font]
+      de íconos

@@ -1,0 +1,176 @@
+extends ../doc.pug
+
+block content 
+  section#utilities.doc-section
+    header.doc-section-header
+      h2.
+        Utilidades #[a(href='#utilities') #]
+    .doc-section-body
+      p.
+        El framework kit de gobierno dispone de elementos que son de utilidad
+        para la facilitar la integración de ciertos elementos que
+        podría llegar a utilizar con frecuencia.
+      div#decorativeLine.doc-subsection
+        .doc-subsection-header
+          h3 Franja decorativa #[a(href='#decorativeLine') #]
+        .doc-subsection-body
+          p.
+            La clase#[code .line] al ser añadida a algún tag html agrega una
+            franja debajo del elemento con colores por defecto del diseño de
+            gobierno, como en el título principal de esta
+            documentación.
+          p.
+            La clase#[code .line-x], donde x es el nombre de uno de los colores
+            mencionados en la sección
+            #[a(href="includes/colors.html") colores], al ser añadida junto a
+            la clase#[code .line], permite elegir un color diferente para la
+            franja completa.
+          p.
+            A continuación, una lista con las franjas en los distintos colores
+            disponibles:
+          include ../examples/line
+          pre(data-src='examples/line.html')
+      div#backgrounds.doc-subsection
+        .doc-subsection-header
+          h3 Fondos #[a(href='#backgrounds') #]
+        .doc-subsection-body
+          p.
+            Una forma sencilla de añadir imágenes como background se logra utilizando los
+            #[a(href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes") data-attributes]
+            implementados para estos casos:
+          ul
+            li.
+              #[code data-background] especifica la referencia a la imágen
+              que se quiere utilizar de fondo.
+            li.
+              #[code data-opacity] especifica si se quiere el comportamiento 
+              hover.
+            li.
+              #[code data-background-video] especifica la referencia a un
+              recurso tipo video.
+          h4#simpleBackground.h5 Fondo simple #[a(href='#simpleBackground') #]
+          p.
+            El siguiente ejemplo es un #[code div] con un background sencillo:
+          include ../examples/cover-background
+          pre(data-src='examples/cover-background.html')
+          h4#backgroundsEffect.h5 Fondo con efecto #[a(href='#backgroundsEffect') #]
+          p.
+            Es lo mismo que lo anterior pero activando el efecto hover:
+          include ../examples/cover-background-hover
+          pre(data-src='examples/cover-background-hover.html')
+          h4#backgroundVideo.h5 Fondo con video #[a(href='#backgroundVideo') #]
+          p.
+            Para añadir un video como background tiene que especificar la
+            imágen placeholder con #[code data-background] y el enlace
+            al recurso con #[code data-background-video].
+          p.
+            El siguiente ejemplo utiliza un video obtenido desde la
+            #[a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video") documentación]
+            del elemento video en
+            #[a(href="https://developer.mozilla.org/en-US/") mdn].
+          include ../examples/cover-background-video
+          pre(data-src='examples/cover-background-video.html')
+          h4#pseudoBackground.h5 Fondo con el plugin pseudo-background #[a(href='#pseudoBackground') #]
+          p.
+            Otra herramienta disponible para los fondos es la
+            clase#[code pseudo-background]. Si bien tiene un comportamiento
+            similar al #[a(href="#simpleBackground") Fondo simple], esta clase
+            es compatible con navegadores que no soportan o permiten el uso
+            de javascript dado que utiliza el tag html #[code img]:
+          include ../examples/pseudo-background
+          pre(data-src='examples/pseudo-background.html')
+      div#utilitiesClasses.doc-subsection
+        .doc-subsection-header
+          h3 Clases de utilidad #[a(href='#utilitiesClasses') #]
+        .doc-subsection-body
+          p.
+            Bootstrap provee de varias clases de utilidad que permiten
+            dar estilo sin la necesidad de crear nuevas clases. Este kit
+            agrega nuevas clases y extiende otras de manera de ampliar las
+            posibilidades:
+          ul
+            li.mb-2.
+              #[span.text-primary .list-inline]: Ordena los elementos de una lista en una misma
+              fila.
+            li.mb-2.
+              #[span.text-primary .text-underline]: Decora con subrayado el texto.
+            li.mb-2.
+              #[span.text-primary .text-normal]: Remueve las transformaciones y decorados
+              de un texto.
+            li.mb-2.
+              #[span.text-primary .text-break]: Hace que un texto haga salto de línea y 
+              esconda el exceso por overflow por palabra en vez de letra.
+            li.mb-2.
+              #[span.text-primary .border-$infix]: Por cada
+              #[span.text-primary $infix] (#[code breakpoint])
+              define un borde de ancho y color
+              definido por el tema. Ejemplo, #[code .border-md].
+            li.mb-2.
+              #[span.text-primary .border-$infix-$side]: Por cada
+              #[span.text-primary $infix] (#[code breakpoint])
+              define un borde en la dirección 
+              #[span.text-primary $side] (top, right, bot left) de ancho y color
+              definido por el tema. Ejemplo, #[code .border-md-top].
+            li.mb-2.
+              #[span.text-primary .text-$color]: Aplica el color #[span.text-primary $color]
+              al texto. Ejemplo, #[code .text-primary].
+            li.mb-2.
+              #[span.text-primary a.text-$color:focus]: Aplica el color #[span.text-primary $color]
+              al texto de un anchor en la acción focus.
+              Ejemplo, #[code a.text-primary]
+            li.mb-2.
+              #[span.text-primary .badge-$color]: Aplica cambio de color al contenido y al 
+              fondo de acuerdo a lo definido para cada #[span.text-primary $color]
+              del tema. Ejemplo, #[code .badge-primary].
+            li.mb-2.
+              #[span.text-primary .bg-layer-$color]: Añade un background de color
+              #[span.text-primary $color] como pseudo elemento.
+            li.mb-2.
+              #[span.text-primary .col-separator-$color]: Añade un separador de
+              columnas hijas del elemento de color #[span.text-primary $color].
+              Ejemplo, #[code .col-separator-primary].
+            li.mb-2.
+              #[span.text-primary .border-$color]: Aplica el color #[span.text-primary $color]
+              al borde. Ejemplo, #[code .border-primary].
+            li.mb-2.
+              #[span.text-primary .text-before-$color]: Aplica el color #[span.text-primary $color]
+              a un pseudo elemento que esté antes de este.
+              Ejemplo, #[code .text-before-primary].
+            li.mb-2.
+              #[span.text-primary .text-after-$color]: Aplica el color #[span.text-primary $color]
+              a un pseudo elemento que esté después de este.
+              Ejemplo, #[code .text-after-primary].
+            li.mb-2.
+              #[span.text-primary .bg-before-$color]: Aplica el color #[span.text-primary $color]
+              al fondo de un pseudo elemento que esté antes de este.
+              Ejemplo, #[code .text-after-primary].
+            li.mb-2.
+              #[span.text-primary .bg-after-$color]: Aplica el color #[span.text-primary $color]
+              al fondo de un pseudo elemento que esté antes de este.
+              Ejemplo, #[code .text-after-primary].
+            li.mb-2.
+              #[span.text-primary .square-text-$color]: Aplica el color y fondo
+              #[span.text-primary $color] al cuadrado de texto.
+              Ejemplo, #[code .square-text-primary].
+            li.mb-2.
+              #[span.text-primary .border$infix-$color]: Aplica el color #[span.text-primary $color]
+              al borde activo en el breakpoint #[span.text-primary $infix]. 
+            li.mb-2.
+              #[span.text-primary .close]: Deja en normal el valor para #[code font-style].
+            li.mb-2.
+              #[span.text-primary .opacity]: Aplica una opacidad definida por el tema.
+            li.mb-2.
+              #[span.text-primary .square-text-$key]: Define un cuadrado de texto, con
+              color #[code gray-a] y fondo #[code neutral] en #[code bold] 
+              para un tamaño #[span.text-primary $key].
+              Ejemplo, #[code .square-text-1].
+            li.mb-2.
+              #[span.text-primary .max-vh-100]: Define un alto máximo de #[code 100vh].
+            li.mb-2.
+              #[span.text-primary .a11y-contrast-text-$color]: Aplica la versión
+              contraste del color #[span.text-primary $color].
+              Ejemplo, #[code .square-text-primary].
+          p.
+            Cabe destacar, que las clases existentes que manejan colores
+            son adaptadas para el modo contraste en
+            #[code themes/a11y-contrast/base/_base.scss].

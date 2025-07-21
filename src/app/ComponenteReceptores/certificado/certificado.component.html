@@ -1,0 +1,29 @@
+<!-- Barra superior -->
+<app-menu-revision-ficha></app-menu-revision-ficha>
+<br />
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="container mt-3">
+  <h3>Certificado RFP</h3>
+  <hr />
+
+  <!-- Si existe certificado -->
+  <ng-container *ngIf="pdfUrl; else sinCertificado">
+    <div class="pdf-wrapper ratio ratio-16x9">
+      <iframe [src]="pdfUrl" title="Certificado RFP"></iframe>
+    </div>
+
+    <a class="btn btn-outline-primary mt-3"
+       [href]="pdfBlobUrl || pdfUrl"
+       download>
+      Descargar PDF
+    </a>
+  </ng-container>
+
+  <!-- Si NO existe certificado -->
+  <ng-template #sinCertificado>
+    <div class="alert alert-warning mt-4">
+      ⚠️ Actualmente esta ficha no contiene su certificado RFP.
+    </div>
+  </ng-template>
+</div>

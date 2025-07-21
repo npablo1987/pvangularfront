@@ -1,0 +1,47 @@
+.card-informative {
+  margin-bottom: spacer(4);
+  border: 1px solid theme-color("accent");
+
+  &-image {
+    height: $card-informative-image-height;
+
+    @include media($from: desktop) {
+      height: $card-informative-lg-image-height;
+    }
+  }
+
+  &-body {
+    height: rem($card-informative-body);
+    padding: $card-news-padding;
+
+    @include media($from: tablet) {
+      height: rem($card-informative-lg-body);
+    }
+
+    > a {
+      display: block;
+      height: rem($card-informative-title-height);
+      margin: 0 0 $card-informative-padding;
+      overflow: hidden;
+      font-weight: $font-weight-light;
+      color: gray("a");
+
+      @extend .h3;
+
+      @include media($from: tablet) {
+        height: rem($card-informative-lg-title-height);
+      }
+    }
+
+    > p {
+      height: rem($card-informative-p-height);
+      margin: 0;
+      overflow: hidden;
+      opacity: $font-opacity;
+
+      @include media($from: tablet) {
+        height: rem($card-informative-lg-p-height);
+      }
+    }
+  }
+}

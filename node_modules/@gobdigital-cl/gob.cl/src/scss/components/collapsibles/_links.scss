@@ -1,0 +1,80 @@
+.collapsible-links {
+  &,
+  a {
+    color: $collapsible-links-color;
+  }
+
+  &,
+  &-list {
+
+    @extend .list-unstyled;
+  }
+
+  &-item {
+    position: relative;
+  }
+
+  &-heading,
+  &-list-link {
+    color: $collapsible-links-color;
+    text-align: left;
+    text-decoration: underline;
+
+    @extend .btn, .btn-link;
+
+    &:hover {
+      color: currentColor;
+    }
+
+    &:focus {
+      outline: 1px dotted $collapsible-links-color;
+    }
+  }
+
+  // Heading
+  &-heading {
+    padding: $collapsible-links-toggler-padding;
+    font-weight: $font-weight-bold;
+
+    @extend .btn-block;
+
+    // Line
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: $collapsible-links-active-line-width;
+      height: 100%;
+      content: "";
+      background: transparent;
+      transition: background .15s ease-in;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      background: theme-color("neutral");
+    }
+
+    &[aria-expanded="true"]::before {
+      background: $collapsible-links-active-line-color;
+    }
+  }
+
+  // List
+  &-list {
+    padding-left: $collapsible-links-list-padding-left;
+
+    &-item {
+      padding: $collapsible-links-list-item-padding;
+
+      [aria-expanded="true"] {
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    &-link {
+      padding: 0;
+    }
+  }
+}

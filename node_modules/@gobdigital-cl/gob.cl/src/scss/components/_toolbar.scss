@@ -1,0 +1,131 @@
+.toolbar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  height: $toolbar-height;
+
+  @include media($from: tablet) {
+    width: $toolbar-width;
+  }
+
+  .toolbar-btn {
+    display: none;
+    width: $toolbar-button-size;
+    height: $toolbar-button-size;
+    padding: $toolbar-button-padding;
+    text-decoration: none;
+    vertical-align: top;
+    background-color: color("white");
+    border: $toolbar-button-border-width solid theme-color("accent");
+
+    &:hover {
+      border-color: theme-color("primary");
+
+      .cl::before {
+        color: theme-color("primary");
+      }
+    }
+
+    .toolbar-btn-icon-content {
+      display: inline-block;
+      height: $toolbar-button-size - ($toolbar-button-border-width * 2);
+      padding: $toolbar-button-padding;
+    }
+
+    @include media($from: tablet) {
+      display: inline-block;
+    }
+
+    .cl {
+      display: block;
+      width: $toolbar-button-icon-size;
+      height: $toolbar-button-icon-size;
+      font-size: $toolbar-button-icon-size;
+      line-height: $toolbar-button-icon-size;
+      text-align: center;
+
+      &::before {
+        color: theme-color("accent");
+      }
+    }
+
+    &.toolbar-toggler {
+      display: inline-block;
+
+      .toolbar-behavior-on {
+        display: block;
+      }
+
+      .toolbar-behavior-off {
+        display: none;
+        font-size: $toolbar-button-icon-size;
+        line-height: $toolbar-button-icon-size;
+        color: theme-color("accent");
+        text-align: center;
+      }
+
+      @include media($from: tablet) {
+        display: none;
+      }
+    }
+  }
+
+  .toolbar-btn-group {
+    display: none;
+    height: $toolbar-button-size;
+
+    .toolbar-btn {
+      &:not(:first-child) {
+        margin-left: $toolbar-button-group-margin;
+      }
+    }
+
+    @include media($from: tablet) {
+      display: inline-block;
+    }
+  }
+
+  &.active {
+    .toolbar-btn-group {
+      display: inline-block;
+    }
+
+    .toolbar-btn {
+      display: inline-block;
+
+      &.toolbar-toggler {
+
+        @include media($from: tablet) {
+          display: none;
+        }
+
+        .toolbar-behavior-on {
+          display: none;
+        }
+
+        .toolbar-behavior-off {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &.light {
+    .toolbar-btn {
+      border-color: color("white");
+
+      .cl::before {
+        color: color("white");
+      }
+
+      &:hover {
+        border-color: theme-color("primary");
+
+        .cl::before {
+          color: theme-color("primary");
+        }
+      }
+    }
+  }
+}

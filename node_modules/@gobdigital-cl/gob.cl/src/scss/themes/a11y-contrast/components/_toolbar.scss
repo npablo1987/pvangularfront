@@ -1,0 +1,29 @@
+.toolbar {
+  .toolbar-btn {
+    background-color: contrast-color("white");
+    border-color: invert-color("black");
+
+    &.toolbar-toggler {
+      .toolbar-behavior-off {
+        color: invert-color("black");
+      }
+    }
+
+    .cl::before {
+      color: invert-color("black");
+    }
+
+    &:hover {
+      border-color: invert-theme-color("primary");
+
+      .toolbar-behavior-off {
+        color: invert-theme-color("primary");
+      }
+
+      .cl::before {
+        color: invert-theme-color("primary");
+      }
+    }
+  }
+}
+

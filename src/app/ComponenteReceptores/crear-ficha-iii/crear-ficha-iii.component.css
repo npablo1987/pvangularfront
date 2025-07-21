@@ -1,0 +1,108 @@
+/* Backdrop */
+.custom-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Caja modal */
+.custom-modal {
+  background: #fff;
+  border-radius: 4px;
+  width: 600px;
+  max-width: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+  /* Para que la cabecera, cuerpo y pie se dispongan en columna */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabecera */
+.modal-header {
+  border-bottom: 1px solid #ddd;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Cuerpo */
+.modal-body {
+  padding: 1rem;
+  /* Si el formulario puede hacerse muy largo, podemos permitir scroll interno */
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Pie */
+.modal-footer {
+  border-top: 1px solid #ddd;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Botón de cerrar */
+.close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Caja gris para datos del socio */
+.datos-socio {
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* form-group, form-row, etc. */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Un poco de estilo a la vista */
+.form-control {
+  margin-top: 0.25rem;
+}
+
+.form-check-inline {
+  margin-right: 1rem;
+}
+
+.input-error {
+  border: 2px solid red !important;
+  background-color: #ffe6e6;
+}
+
+.input-error:focus {
+  outline: none;
+  border-color: darkred;
+}
+
+/* Resaltar los inputs de archivos que falten */
+.input-error-file {
+  border: 2px dashed red !important;
+  background-color: #ffcccc;
+}
+
+.input-error-file:focus {
+  outline: none;
+  border-color: darkred;
+}

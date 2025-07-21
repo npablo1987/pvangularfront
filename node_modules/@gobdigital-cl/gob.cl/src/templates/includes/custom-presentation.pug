@@ -1,0 +1,29 @@
+extends ../doc.pug
+
+block content
+  section#customPresentation.doc-section
+    header.doc-section-header
+      h2.
+        Presentación personalizada
+        #[a(href='#customPresentation') #]
+    .doc-section-body
+      p.
+        Cuando necesite presentar información de forma
+        en la que no existe una estructura predefinida otorgada por
+        este kit o Bootstrap, puede utilizar las clases de utilidad
+        para dar el formato que se requiere en determinado contexto. A
+        continuación algunos ejemplos:
+      div#featuredCategories.doc-subsection
+        .doc-subsection-header
+          h3 Categorías destacadas de Datos #[a(href='#featuredCategories') #]
+        .doc-subsection-body
+          include ../examples/media-featured-category
+          pre(data-src='examples/media-featured-category.html')
+      div#dataResources.doc-subsection
+        .doc-subsection-header
+          h3 Recursos de Datos #[a(href='#dataResources') #]
+        .doc-subsection-body
+          p.
+            Este componente presenta la información general de un recurso:
+          include ../examples/media-resource
+          pre(data-src='examples/media-resource.html')

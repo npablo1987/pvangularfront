@@ -1,0 +1,15 @@
+.section-social {
+  &::before {
+    border-top: 1px solid invert-theme-color("accent");
+  }
+}
+
+.social {
+  .social-name {
+    color: invert-gray("a");
+  }
+
+  .social-url {
+    color: invert-gray("a");
+  }
+}

@@ -1,0 +1,30 @@
+extends ../doc.pug
+
+block content  
+  section#banners.doc-section
+    header.doc-section-header
+      h2.
+        Banners
+        #[a(href='#banners') #]
+    .doc-section-body
+      p.
+        El Kit ofrece estilos gráficos para crear banners con diseño
+        alineado al mismo framework, con posibilidad de modificar su
+        contenido, distribución y algunos detalles estéticos.
+      div#banner.doc-subsection
+        .doc-subsection-header
+          h3 Banner #[a(href='#banner') #]
+        .doc-subsection-body
+          include ../examples/banner
+          pre(data-src='examples/banner.html')
+      div#bannerShadow.doc-subsection
+        .doc-subsection-header
+          h3 Banner con sombra #[a(href='#bannerShadow') #]
+        .doc-subsection-body
+          p.
+            Para reemplazar el borde por una sombra, debe agregar la clase
+            #[code .banner-shadow] al elemento con clase #[code .banner].
+            Esta variación del banner mantiene las mismas flexibilidades de
+            color y de tamaño de fuente que el anterior.
+          include ../examples/banner-shadow
+          pre(data-src='examples/banner-shadow.html')

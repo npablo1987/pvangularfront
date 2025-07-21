@@ -1,0 +1,25 @@
+.card-links {
+  .card-links-body {
+    ul.list-unstyled {
+      li {
+        a {
+          color: invert-gray("a");
+        }
+      }
+    }
+
+    ul.list-inline {
+      li {
+        a,
+        &::after {
+          color: invert-gray("a");
+        }
+      }
+    }
+
+    p {
+      color: invert-gray("a");
+    }
+  }
+}
+

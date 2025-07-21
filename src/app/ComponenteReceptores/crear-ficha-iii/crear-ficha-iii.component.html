@@ -1,0 +1,206 @@
+<main class="main_content pagina_interior">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col">
+          <h2 class="mb-4">Crear Ficha / Lista de Socios <small>(3 de 3)</small></h2>
+        </div>
+        <div class="col-md-auto">
+          <!-- Botón para abrir el modal -->
+          <button class="btn btn-secondary" (click)="abrirModal()">+ Agregar Socio</button>
+        </div>
+      </div>
+      <br>
+      <!--  tabla, etc. -->
+      <table id="fichasReceptores" class="table cell-border compact table-striped">
+        <thead>
+          <tr>
+            <th>RUT</th>
+            <th>Nombre Completo</th>
+            <th>Cargo</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Rep.</th>
+            <th>Cédula</th>
+            <th>Editar</th>
+            <th>Quitar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listaSocios; let i = index">
+            <td>{{ item.rut }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.cargo.join(', ') }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.telefono }}</td>
+            <td>{{ item.representanteLegal ? 'Sí' : 'No' }}</td>
+            <td>
+              <a *ngIf="item.archivoCedula" (click)="abrirArchivo(item.archivoCedula)" class="text-primary" style="cursor:pointer;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.99967 6H12.6663L7.99967 10.6667L3.33301 6H5.99967V2H9.99967V6ZM3.33301 13.3333V12H12.6663V13.3333H3.33301Z" fill="#0F69C4"/></svg> Descargar</a>
+              <span *ngIf="!item.archivoCedula">--</span>
+            </td>
+            <td>
+              <button (click)="editarSocio(i)" class="btn btn-sm btn-primary">Editar</button>
+            </td>
+            <td>
+              <button (click)="removerSocio(i)" class="btn btn-sm btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      
+      <br><br>
+      <div class="row">
+        <div class="col text-start">
+          <button type="button" class="btn btn-link" (click)="volverpasoii()">Anterior</button>
+        </div>
+        <div class="col text-right">
+          <button type="button" class="btn btn-primary" (click)="guardarFicha()">Guardar</button>
+        </div>
+      </div>
+  
+    </div><!-- /.container -->
+</main>
+    <div class="custom-backdrop" *ngIf="mostrarModal">
+      <div class="custom-modal">
+    
+        <!-- Cabecera del modal -->
+        <div class="modal-header">
+          <h2 class="modal-title">Socio</h2>
+          <button class="close" (click)="cerrarModal()">×</button>
+        </div>
+    
+        <!-- Cuerpo del modal, donde va tu formulario -->
+        <div class="modal-body">
+          <form id="socioFormId" #socioForm="ngForm" (ngSubmit)="onSubmit()">    
+            <!-- Rut + Botón de lupa -->
+            <div class="form-group">
+              <label for="rutSocio">Rut Socio</label>
+              <div class="input-group">
+                <input
+                  appValidarRut
+                  type="text"
+                  id="rutSocio"
+                  name="rutSocio"
+                  class="form-control"
+                  [(ngModel)]="socio.rut"
+                  placeholder="12.345.678-9"
+                >
+                <div class="input-group-append">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    (click)="buscarSocio()"
+                  >
+                    Buscar
+                  </button>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Bloque con nombre, sexo y fecha nacimiento -->
+            <div class="datos-socio box mb-3">
+              <p><strong>Nombre Completo</strong><br>{{ socio.nombre }}</p>
+              <p><strong>Sexo</strong><br>{{ socio.sexo }}</p>
+              <p><strong>Fecha de nacimiento</strong><br>{{ socio.fechaNacimiento }}</p>
+            </div>
+    
+            <!-- Teléfono y Email en la misma fila -->
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="telefono">Teléfono</label>
+                <input
+                appValidarTelefono
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  class="form-control"
+                  [(ngModel)]="socio.telefono"
+                  placeholder="+56912345678"
+                >
+              </div>
+              <div class="form-group col">
+                <label for="email">Email</label>
+                <input
+                  appValidarCorreo
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  [(ngModel)]="socio.email"
+                  placeholder="minombre@gmail.com"
+                >
+              </div>
+            </div>
+    
+            <!-- Select (o multi-select) para Cargos -->
+            <div class="form-group">
+              <label for="cargo">Cargo</label>
+              <select
+                id="cargo"
+                name="cargo"
+                class="form-control"
+                [(ngModel)]="socio.cargo"
+                multiple
+              >
+                <option *ngFor="let c of cargos" [ngValue]="c">{{ c }}</option>
+              </select>
+            </div>
+    
+            <!-- Radio: ¿Es representante legal? -->
+            <div class="form-group">
+              <label class="d-block mb-1">¿Es representante legal?</label>
+            
+              <div class="form-check form-check-inline">
+                <input type="radio"
+                       id="repSi"
+                       name="representanteLegal"
+                       class="form-check-input"
+                       [value]="true"
+                       [(ngModel)]="socio.representanteLegal">
+                <label class="form-check-label" for="repSi">Sí</label>
+              </div>
+            
+              <div class="form-check form-check-inline">
+                <input type="radio"
+                       id="repNo"
+                       name="representanteLegal"
+                       class="form-check-input"
+                       [value]="false"
+                       [(ngModel)]="socio.representanteLegal">
+                <label class="form-check-label" for="repNo">No</label>
+              </div>
+            </div>
+    
+            <!-- Input de archivo para la cédula -->
+            <div class="form-group">
+              <label for="cedula">Cédula de Identidad</label>
+              <input
+                type="file"
+                id="cedula"
+                name="cedula"
+                class="form-control-file"
+                (change)="onFileSelected($event)"
+              >
+              <div *ngIf="nombreArchivo" class="mt-1">
+                {{ nombreArchivo }}
+              </div>
+            </div>
+    
+            <!-- (Fin del formulario) -->
+          </form>
+        </div>
+    
+        
+        <div class="modal-footer">
+          <!-- Pie del modal: Botón Guardar -->
+          <div class="form-group text-end">
+            <button type="submit" class="btn btn-primary" form="socioFormId">
+              Guardar Socio
+            </button>
+          </div>
+        </div>
+    
+      </div><!-- /.custom-modal -->
+    </div><!-- /.custom-backdrop -->
+    
+  

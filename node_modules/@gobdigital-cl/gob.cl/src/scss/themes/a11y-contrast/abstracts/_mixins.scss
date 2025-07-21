@@ -1,0 +1,12 @@
+@mixin from-inverted-colors() {
+
+  @each $key, $value in map_merge($invert-colors, $invert-theme-colors) {
+
+    @content($key, $value); /* stylelint-disable-line */
+  }
+
+  @each $key, $value in $invert-grays {
+
+    @content("gray-#{$key}", $value); /* stylelint-disable-line */
+  }
+}

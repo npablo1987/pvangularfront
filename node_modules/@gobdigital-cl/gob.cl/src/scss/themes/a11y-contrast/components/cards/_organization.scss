@@ -1,0 +1,7 @@
+.card-organization {
+  border-color: invert-theme-color("accent");
+
+  &-body {
+    background-color: contrast-color("white");
+  }
+}

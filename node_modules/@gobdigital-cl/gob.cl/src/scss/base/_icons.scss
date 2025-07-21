@@ -1,0 +1,39 @@
+.cl {
+  font-family: "gob-cl" !important; /* stylelint-disable-line */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: $font-weight-normal;
+  font-variant: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @for $i from 2 through $icon-sizes {
+    &.cl-#{$i}x {
+      font-size: $font-size-base * $i;
+    }
+  }
+
+  &-social {
+
+    @each $key, $value in $social-colors {
+      &.cl-#{$key} {
+        &::before {
+          color: theme-color("accent");
+        }
+
+        &:hover {
+          &::before {
+            color: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@import "../icons/gob-cl";

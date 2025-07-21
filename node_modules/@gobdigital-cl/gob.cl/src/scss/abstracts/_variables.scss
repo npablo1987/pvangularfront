@@ -1,0 +1,678 @@
+// paths
+$images-path: "../img/" !default;
+$fonts-path: "../fonts/" !default;
+
+$primary-font: "Roboto", sans-serif !default;
+$accent-font: "Roboto Slab", serif !default;
+
+$fonts: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$fonts: map-merge(
+  (
+    "primary": $primary-font,
+    "accent": $accent-font
+  ),
+  $fonts
+);
+
+// media
+$media-type: all !default;
+$responsive: true !default;
+$static-breakpoint: desktop !default;
+
+// fonts
+$font-size-base: 1rem !default;
+$font-size-base-in-px: 16px !default;
+
+$body-font-size: 14.4px !default;
+$body-line-height: 21.6px !default;
+$line-height-base: 1.35; // $body-line-height to rem w/o unit
+$body-lg-font-size: $font-size-base-in-px !default;
+$body-lg-line-height: 22px !default;
+
+$h1-font-size: 24px !default;
+$h2-font-size: 20px !default;
+$h3-font-size: 19.7px !default;
+$h4-font-size: 17px !default;
+$h5-font-size: 17px !default;
+$h6-font-size: 16px !default;
+$h1-lg-font-size: 38.4px !default;
+$h2-lg-font-size: 27px !default;
+$h3-lg-font-size: 23px !default;
+$h4-lg-font-size: 20px !default;
+$h5-lg-font-size: 20px !default;
+$h6-lg-font-size: 18px !default;
+
+$h1-line-height: 46.08px !default;
+$h2-line-height: 26px !default;
+$h3-line-height: 26px !default;
+$h4-line-height: 23.4px !default;
+$h5-line-height: 19px !default;
+$h6-line-height: 24px !default;
+$h1-lg-line-height: 57.6px !default;
+$h2-lg-line-height: 26px !default;
+$h3-lg-line-height: 26px !default;
+$h4-lg-line-height: 26px !default;
+$h5-lg-line-height: 26px !default;
+$h6-lg-line-height: 24px !default;
+
+$a-font-size: 14.4px !default;
+$a-line-height: 16px !default;
+$a-lg-font-size: 16px !default;
+$a-lg-line-height: 22px !default;
+
+$small-font-size: 11px !default;
+$small-line-height: 24px !default;
+$small-lg-font-size: 11px !default;
+$small-lg-line-height: 24px !default;
+
+$p-font-size: $body-font-size !default;
+$p-line-height: $body-line-height !default;
+$p-lg-font-size: $font-size-base-in-px !default;
+$p-lg-line-height: $body-lg-line-height !default;
+
+$q-font-size: 16px !default;
+$q-line-height: 19px !default;
+$q-lg-font-size: 16px !default;
+$q-lg-line-height: 19px !default;
+
+$font-lg-sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$font-lg-sizes: map-merge(
+  (
+    1: ($h1-lg-font-size, $h1-lg-line-height),
+    2: ($h2-lg-font-size, $h2-lg-line-height),
+    3: ($h3-lg-font-size, $h3-lg-line-height),
+    4: ($h4-lg-font-size, $h4-lg-line-height),
+    5: ($h5-lg-font-size, $h5-lg-line-height),
+    6: ($h6-lg-font-size, $h6-lg-line-height),
+    7: ($body-lg-font-size, $body-lg-line-height),
+    8: ($small-font-size, $small-line-height)
+  ),
+  $font-lg-sizes
+);
+
+$font-sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$font-sizes: map-merge(
+  (
+    1: ($h1-font-size, $h1-line-height),
+    2: ($h2-font-size, $h2-line-height),
+    3: ($h3-font-size, $h3-line-height),
+    4: ($h4-font-size, $h4-line-height),
+    5: ($h5-font-size, $h5-line-height),
+    6: ($h6-font-size, $h6-line-height),
+    7: ($body-font-size, $body-line-height),
+    8: ($small-lg-font-size, $small-lg-line-height)
+  ),
+  $font-sizes
+);
+
+$font-opacity: .6 !default;
+
+$font-weight-light: 300 !default;
+$font-weight-normal:  400 !default;
+$font-weight-bold:  700 !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  ss: 375px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$breakpoints: (
+  mobile: map-get($grid-breakpoints, sm),
+  tablet: map-get($grid-breakpoints, md),
+  desktop: map-get($grid-breakpoints, lg),
+  wide: map-get($grid-breakpoints, xl)
+) !default;
+
+// footer
+$footer-base-height: (
+  xs: 64px,
+  md: 245px,
+  lg: 245px,
+  xl: 223px,
+) !default;
+
+// footer links
+$footer-link-height: 44px !default;
+$footer-link-padding: 10px 40px 10px 0 !default;
+$footer-link-lg-padding: 10px 0 !default;
+$footer-links-ellipsized: true !default;
+$footer-padding: 0 !default;
+$footer-lg-padding: 40px 0 50px !default;
+$footer-height: 64px !default;
+$footer-lg-min-height: 300px !default;
+$footer-line-width: 80px !default;
+$footer-line-lg-width: 169px !default;
+
+// colors
+$brand-color-primary: #0f69b4 !default;
+$brand-color-secondary: #e22c2c !default;
+$brand-color-tertiary: #001c41 !default;
+
+$shadow-color: #e3e5ef !default;
+
+$black: #111 !default;
+$gray-a: #4a4a4a !default;
+$gray-b: #8a8a8a !default;
+$gray-c: #eee !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$white: #fff !default;
+
+$grays: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge(
+  (
+    "a": $gray-a,
+    "b": $gray-b,
+    "c": $gray-c,
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
+
+$blue: #006fb3 !default;
+$blue-light: #a8b7c7 !default;
+$blue-dark: #0a132d !default;
+$indigo: #6610f2 !default;
+$purple: #63c !default;
+$pink: #e83e8c !default;
+$red: #fe6565 !default;
+$orange: #e0701e !default;
+$orange-light: #ffa11b !default;
+$yellow: #f2c728 !default;
+$green: #2d717c !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+$gray: #a8b7c7 !default;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "blue": $blue,
+    "blue-light": $blue-light,
+    "blue-dark": $blue-dark,
+    "indigo": $indigo,
+    "purple": $purple,
+    "pink": $pink,
+    "red": $red,
+    "orange": $orange,
+    "orange-light": $orange-light,
+    "yellow": $yellow,
+    "green": $green,
+    "teal": $teal,
+    "cyan": $cyan,
+    "black": $black,
+    "white": $white,
+    "gray": $gray
+  ),
+  $colors
+);
+
+$primary: $blue !default;
+$secondary: $red !default;
+$tertiary: $blue-dark !default;
+$accent: $blue-light !default;
+$neutral: $gray-c !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "tertiary": $tertiary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+    "accent": $accent,
+    "neutral": $neutral
+  ),
+  $theme-colors
+);
+
+$twitter: #00aced !default;
+$facebook: #3b5998 !default;
+$youtube: #f00 !default;
+$instagram: #bc2a8d !default;
+
+$social-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$social-colors: map-merge(
+  (
+    "twitter": $twitter,
+    "youtube": $youtube,
+    "instagram": $instagram,
+    "facebook": $facebook
+  ),
+  $social-colors
+);
+
+$input-placeholder-color: $gray-b !default;
+$hr-border-color: $accent !default;
+
+$icon-sizes: 10 !default;
+
+// text
+$text-lines-max: 20 !default;
+
+
+// navbar
+$navbar-height: 54px !default;
+$navbar-search-height: 48px !default;
+$navbar-lg-height: 69px !default;
+$navbar-lg-lg-height: 90px !default;
+$navbar-lines-height: 135px !default;
+$navbar-lines-navbar-nav-height: 42px !default;
+
+$navbar-brand-height: 46% !default;
+$navbar-brand-padding-y: 0 !default;
+
+$navbar-light-color: $black !default;
+$navbar-light-hover-color: $black !default;
+$navbar-nav-link-line-height: 28px !default;
+$navbar-btn-height: 48px !default;
+
+$navbar-nav-behavior-link-size: 25px !default;
+$navbar-nav-behavior-link-line-height: $navbar-nav-behavior-link-size !default;
+$navbar-nav-behavior-link-font-size: $small-font-size !default;
+
+$navbar-nav-item-link-padding-x: 14.4px !default;
+$navbar-nav-item-link-padding-y: 8px !default;
+
+$navbar-lg-nav-item-link-padding-x: 14.4px !default;
+$navbar-lg-nav-item-link-padding-y: 22.4px !default;
+
+$navbar-lg-nav-behavior-padding-x: 14.4px !default;
+$navbar-lg-nav-behavior-padding-y: 22.4px !default;
+
+$navbar-nav-separator-width: 1px !default;
+
+$navbar-dropdown-item-padding-x: 14.4px !default;
+$navbar-dropdown-item-padding-y: 4px !default;
+
+$custom-container-max-width: (
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+// links
+$link-icon-font-size: 22px !default;
+
+// line component
+$line-min-width: 600px !default;
+
+// borders
+$border-radius: 0 !default;
+$border-radius-lg: 0 !default;
+$border-radius-sm: 0 !default;
+
+// search component
+$search-width: 100% !default;
+$search-lg-width: 555px !default;
+
+// button component
+$button-height: 60px !default;
+$button-line-height: 24px !default;
+$button-padding-y: ((($button-height - $button-line-height) / 2)) !default;
+$button-default-size-lg-width: 360px !default;
+
+// button-pill component
+$button-pill-padding-y: .375rem !default;
+$button-pill-padding-x: 1.5rem !default;
+$button-pill-border-width: 2px !default;
+$button-pill-border-radius: 1.25rem !default;
+
+// card-featured component
+$card-featured-image-height: 99px !default;
+$card-featured-lg-image-height: 125px !default;
+$card-featured-icon-margin: 6px !default;
+
+$card-featured-padding: 13px !default;
+
+// card-news component
+$card-news-padding: 13px !default;
+
+$card-news-image-height: 99px !default;
+$card-news-image-center-width: 140px !default;
+$card-news-body-with-image-bg-min-height: 200px !default;
+$card-news-lg-image-height: 125px !default;
+
+$card-news-date-height: $small-line-height !default;
+$card-news-lg-date-height: $small-lg-line-height !default;
+
+$card-news-link-lines: 4 !default;
+$card-news-link-line-height: $a-line-height !default;
+$card-news-link-height: $card-news-link-line-height * $card-news-link-lines !default;
+$card-news-body-height: $card-news-date-height + $card-news-link-height + ($card-news-padding * 3) !default;
+
+$card-news-lg-link-line-height: $a-lg-line-height !default;
+$card-news-lg-link-height: $card-news-lg-link-line-height * $card-news-link-lines !default;
+$card-news-lg-body-height: $card-news-lg-date-height + $card-news-lg-link-height + ($card-news-padding * 3) !default;
+
+$card-news-footer-min-height: 78px !default;
+
+// card-data component
+$card-data-height: 94px !default;
+$card-data-padding: 16px !default;
+
+$card-data-title-lines: 2 !default;
+$card-data-title-font-size: $h5-lg-font-size !default;
+$card-data-title-line-height: $h5-lg-line-height !default;
+$card-data-title-height: $card-data-title-line-height * $card-data-title-lines !default;
+
+$card-data-quantity-line-height: 26px !default;
+$card-data-quantity-font-size: 29px !default;
+$card-data-quantity-separation: 10px !default;
+
+$card-data-body-lines: 3 !default;
+$card-data-body-font-size: 14.4px !default;
+$card-data-body-line-height: $p-line-height !default;
+$card-data-body-height: $card-data-body-line-height * $card-data-body-lines !default;
+
+$card-data-first-bg-color: #f5f6f7 !default; // TODO: move.
+
+$card-data-lg-height: $card-data-quantity-line-height + $card-data-title-height + $card-data-body-height
+  + ($card-data-padding * 3) !default;
+
+// card-links component
+$card-links-link-lines: 2 !default;
+$card-links-link-line-height: $body-line-height !default;
+$card-links-link-height: $card-links-link-line-height * $card-links-link-lines !default;
+
+$card-links-lg-link-line-height: $body-lg-line-height !default;
+$card-links-lg-link-height: $card-links-lg-link-line-height * $card-links-link-lines !default;
+
+$card-links-image-width: 50px !default;
+
+// card-informative;
+$card-informative-image-height: 99px !default;
+$card-informative-lg-image-height: 200px !default;
+
+$card-informative-padding: 13px !default;
+
+$card-informative-title-lines: 1 !default;
+$card-informative-title-line-height: $h3-line-height !default;
+$card-informative-title-height: $card-informative-title-line-height * $card-informative-title-lines !default;
+
+$card-informative-p-lines: 2 !default;
+$card-informative-p-line-height: $p-line-height !default;
+$card-informative-p-height: $card-informative-p-line-height * $card-informative-p-lines !default;
+
+$card-informative-body: $card-informative-title-height + $card-informative-p-height + ($card-informative-padding * 3) !default;
+
+$card-informative-lg-title-line-height: $h3-lg-line-height !default;
+$card-informative-lg-title-height: $card-informative-lg-title-line-height * $card-informative-title-lines !default;
+
+$card-informative-lg-p-line-height: $p-lg-line-height !default;
+$card-informative-lg-p-height: $card-informative-lg-p-line-height * $card-informative-p-lines !default;
+
+$card-informative-lg-body: $card-informative-lg-title-height + $card-informative-lg-p-height + ($card-informative-padding * 3) !default;
+
+// card-category component
+$card-category-border-width: 1px !default;
+$card-category-border-color: $accent !default;
+
+$card-category-img-height: 110px !default;
+
+$card-category-body-padding: 1.5rem 1rem !default;
+
+// card-detail component
+$card-detail-border-width: 1px !default;
+$card-detail-border-color: $neutral !default;
+$card-detail-border-radius: .25rem !default;
+
+$card-detail-img-height: 186px !default;
+$card-detail-img-padding: 1rem 1.25rem !default;
+
+$card-detail-body-padding: 1.5rem 1.25rem !default;
+
+// card-organization component
+$card-organization-img-bg: #f5f6f7 !default;
+$card-organization-img-height: 212px !default;
+$card-organization-img-padding: 1rem !default;
+
+$card-organization-body-padding: 1.5rem 1rem !default;
+
+// card-function component
+$card-function-font-size: .8125rem !default;
+$card-function-line-height: .9375rem !default;
+$card-function-margin-bottom: 1rem !default;
+
+$card-function-img-width: 100px !default;
+$card-function-img-lg-height: 124px !default;
+
+$card-function-title-border-width: 1px !default;
+$card-function-title-border-color: $accent !default;
+
+// collapsible-links component
+$collapsible-links-color: $tertiary !default;
+
+$collapsible-links-active-line-width: .25rem !default;
+$collapsible-links-active-line-color: $collapsible-links-color !default;
+
+$collapsible-links-toggler-padding: 1rem 1rem 1rem ($collapsible-links-active-line-width + 1.5rem) !default;
+
+$collapsible-links-list-padding-left: $collapsible-links-active-line-width + 3rem !default;
+$collapsible-links-list-item-padding: 0 1rem 1rem 0 !default;
+
+// profiles
+$profile-p-line-height: 24px !default;
+
+// profile component
+$profile-charge-font-size: 13px !default;
+$profile-charge-lines: 2 !default;
+$profile-charge-line-height: 15px !default;
+$profile-charge-height: $profile-charge-line-height * $profile-charge-lines !default;
+$profile-charge-letter-spacing: 1.08px !default;
+$profile-charge-border: 1px solid theme-color("accent") !default;
+
+// social component
+$social-icon-font-size: 32px !default;
+$social-line-height: 16px !default;
+$social-name-font-size: 16px !default;
+$social-url-font-size: 12px !default;
+
+// toolbar component
+$toolbar-button-size: 38px !default;
+$toolbar-button-icon-size: 16px !default;
+$toolbar-button-read-width: $toolbar-button-size !default;
+
+$toolbar-button-border-width: 1.77px !default;
+$toolbar-button-padding: (
+  $toolbar-button-size - $toolbar-button-icon-size - ($toolbar-button-border-width * 2)
+) / 2 !default;
+
+$toolbar-button-group-margin: 4px !default;
+$toolbar-height: $toolbar-button-size !default;
+$toolbar-width: 200px !default;
+
+$toolbar-behavior-decrease-icon-size: 10px !default;
+$toolbar-behavior-decrease-padding: (
+  $toolbar-button-size - $toolbar-behavior-decrease-icon-size - ($toolbar-button-border-width * 2)
+) / 2 !default;
+
+$toolbar-behavior-increase-icon-size: 13px !default;
+$toolbar-behavior-increase-padding: (
+  $toolbar-button-size - $toolbar-behavior-increase-icon-size - ($toolbar-button-border-width * 2)
+) / 2 !default;
+
+$toolbar-behavior-read-icon-size: 10px !default;
+$toolbar-behavior-read-padding: (
+  $toolbar-button-size - $toolbar-behavior-read-icon-size - ($toolbar-button-border-width * 2)
+) / 2 !default;
+
+$toolbar-behavior-read-icon-content-padding: (
+  $toolbar-button-size - $toolbar-behavior-read-icon-size - ($toolbar-button-border-width * 2)
+) / 2 !default;
+
+
+// toolbar with read speaker
+$toolbar-read-speaker-width: 300px !default;
+$toolbar-read-speaker-button-read-width: 160px !default;
+$toolbar-read-speaker-behavior-read-padding: 0 !default;
+
+// contingency section
+$zindex-contingency: 1010 !default;
+
+$contingency-footer-height: 60px !default;
+
+$contingency-item-date-width: 70px !default;
+$contingency-item-time-font-size: 14px !default;
+$contingency-item-day-font-size: 10px !default;
+$contingency-line-size: 2.5px !default;
+
+// onboarding section
+$zindex-onboarding: 1090 !default;
+
+$onboarding-footer-height: 60px !default;
+
+$onboarding-body-height: calc(100vh - #{$onboarding-footer-height}) !default;
+$onboarding-lg-body-height: calc(100vh - #{$onboarding-footer-height}) !default;
+
+// jumbotrom section
+$section-jumbotron-h1-font-size: 24px !default;
+$section-jumbotron-h1-line-height: 57.6px !default;
+$section-jumbotron-p-font-size: 14.4px !default;
+$section-jumbotron-p-line-height: 17px !default;
+
+$section-jumbotron-lg-h1-font-size: 48px !default;
+$section-jumbotron-lg-h1-line-height: 57.6px !default;
+$section-jumbotron-lg-p-font-size: 20px !default;
+$section-jumbotron-lg-p-line-height: 24px !default;
+
+// redirecting section
+$zindex-redirecting: 1100 !default;
+
+$redirecting-footer-height: 60px !default;
+
+$redirecting-body-min-height: calc(100vh - #{$redirecting-footer-height}) !default;
+$redirecting-lg-body-min-height: calc(100vh - #{$redirecting-footer-height}) !default;
+
+// breadcrumb component
+$breadcrumb-divider-margin: 10px !default;
+$breadcrumb-divider-color: $accent !default;
+$breadcrumb-bg: transparent !default;
+$breadcrumb-margin-bottom: 0 !default;
+$breadcrumb-min-height: 34px !default;
+
+// page news
+$page-news-max-width: 710px !default;
+
+$page-news-small-color: $gray-a !default;
+
+$page-news-figcaption-color: $gray-a !default;
+
+$page-news-line-color: $black !default;
+
+$page-news-title-font-size: 38px !default;
+$page-news-title-line-height: 50px !default;
+
+$page-news-title-lg-font-size: 41px !default;
+$page-news-title-lg-line-height: 50px !default;
+
+$page-news-subtitle-font-size: 28px !default;
+$page-news-subtitle-line-height: 37px !default;
+$page-news-subtitle-color: $gray-b !default;
+
+$page-news-subtitle-lg-font-size: 31px !default;
+$page-news-subtitle-lg-line-height: 27px !default;
+
+$page-news-blockquote-font-size: 28px !default;
+$page-news-blockquote-line-height: 37px !default;
+
+$page-news-strip-min-height: 60px !default;
+$page-news-strip-icon-color: $black !default;
+$page-news-strip-border-color: $gray-b !default;
+
+$page-news-strip-text-font-size: 14px !default;
+$page-news-strip-text-line-height: 16px !default;
+
+$page-news-strip-text-lg-font-size: 14px !default;
+$page-news-strip-text-lg-line-height: 16px !default;
+
+// line component
+$line-background: linear-gradient(
+  to right,
+  $brand-color-primary 0%,
+  $brand-color-primary 50%,
+  $brand-color-secondary 50%,
+  $brand-color-secondary 100%
+) !default;
+
+// squares
+$square-sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$square-sizes: map-merge(
+  (
+    64: 64px,
+    68: 68px
+  ),
+  $square-sizes
+);
+
+// body
+$body-bg: $white !default;
+
+// navtabs
+$nav-tabs-border-color: $accent !default;
+$nav-tabs-link-hover-border-color: $accent !default;
+$nav-tabs-link-active-bg: $body-bg !default;
+$nav-tabs-link-active-border-color: $accent $accent $nav-tabs-link-active-bg !default;
+$nav-tabs-link-active-color: $gray-a !default;
+$nav-tabs-link-border-color: $neutral $neutral transparent !default;
+$nav-tabs-link-color: $primary !default;
+
+// banners
+$banner-padding-y: 1rem !default;
+$banner-padding-x: 1rem !default;
+$banner-border-width: 1px !default;
+$banner-border-color: $gray-c !default;
+$banner-border-radius: .25rem !default;
+$banner-shadow: 0 1px 2px 0 #858585cc !default;
+
+$banner-line-width: 6.25rem !default;
+$banner-line-height: .625rem !default;
+
+// close
+$close-font-size:   $font-size-base * 1.2 !default;
+$close-color:       $black !default;
+$close-text-shadow: none !default;

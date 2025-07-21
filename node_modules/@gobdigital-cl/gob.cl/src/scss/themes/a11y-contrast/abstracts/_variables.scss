@@ -1,0 +1,168 @@
+$invert-shadow-color: invert($shadow-color) !default;
+$invert-body-bg: invert($body-bg) !default;
+
+$invert-black: invert($black) !default;
+$invert-gray-a: invert($gray-a) !default;
+$invert-gray-b: invert($gray-b) !default;
+$invert-gray-c: invert($gray-c) !default;
+$invert-gray-100: invert($gray-100) !default;
+$invert-gray-200: invert($gray-200) !default;
+$invert-gray-300: invert($gray-300) !default;
+$invert-gray-400: invert($gray-400) !default;
+$invert-gray-500: invert($gray-500) !default;
+$invert-gray-600: invert($gray-600) !default;
+$invert-gray-700: invert($gray-700) !default;
+$invert-gray-800: invert($gray-800) !default;
+$invert-gray-900: invert($gray-900) !default;
+$invert-white: invert($white) !default;
+
+$invert-grays: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$invert-grays: map-merge(
+  (
+    "a": $invert-gray-a,
+    "b": $invert-gray-b,
+    "c": $invert-gray-c,
+    "100": $invert-gray-100,
+    "200": $invert-gray-200,
+    "300": $invert-gray-300,
+    "400": $invert-gray-400,
+    "500": $invert-gray-500,
+    "600": $invert-gray-600,
+    "700": $invert-gray-700,
+    "800": $invert-gray-800,
+    "900": $invert-gray-900
+  ),
+  $invert-grays
+);
+
+$invert-blue: invert($blue) !default;
+$invert-blue-light: invert($blue-light) !default;
+$invert-blue-dark: invert($blue-dark) !default;
+$invert-indigo: invert($indigo) !default;
+$invert-purple: invert($purple) !default;
+$invert-pink: invert($pink) !default;
+$invert-red: invert($red) !default;
+$invert-orange: invert($orange) !default;
+$invert-orange-light: invert($orange-light) !default;
+$invert-yellow: invert($yellow) !default;
+$invert-green: invert($green) !default;
+$invert-teal: invert($teal) !default;
+$invert-cyan: invert($cyan) !default;
+$invert-gray: invert($gray) !default;
+
+$invert-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$invert-colors: map-merge(
+  (
+    "blue": $invert-blue,
+    "blue-dark": $invert-blue-dark,
+    "blue-light": $invert-blue-light,
+    "black": $invert-black,
+    "gray": $invert-gray,
+    "red": $invert-red,
+    "white": $invert-white,
+    "indigo": $invert-indigo,
+    "purple": $invert-purple,
+    "pink": $invert-pink,
+    "orange": $invert-orange,
+    "orange-light": $invert-orange-light,
+    "yellow": $invert-yellow,
+    "green": $invert-green,
+    "teal": $invert-teal,
+    "cyan": $invert-cyan,
+    "gray-dark": $invert-gray-800
+  ),
+  $invert-colors
+);
+
+$invert-primary: $invert-blue !default;
+$invert-secondary: $invert-red !default;
+$invert-tertiary: $invert-blue-dark !default;
+$invert-accent: $invert-blue-light !default;
+$invert-neutral: $invert-gray-c !default;
+
+$invert-success: $invert-green !default;
+$invert-info: $invert-cyan !default;
+$invert-warning: $invert-yellow !default;
+$invert-danger: $invert-red !default;
+$invert-light: $invert-gray-100 !default;
+$invert-dark: $invert-gray-800 !default;
+
+$invert-theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$invert-theme-colors: map-merge(
+  (
+    "accent": $invert-accent,
+    "neutral": $invert-neutral,
+    "primary": $invert-primary,
+    "secondary": $invert-secondary,
+    "tertiary": $invert-tertiary,
+    "success": $invert-success,
+    "info": $invert-info,
+    "warning": $invert-warning,
+    "danger": $invert-danger,
+    "light": $invert-light,
+    "dark": $invert-dark
+  ),
+  $invert-theme-colors
+);
+
+$invert-navbar-light-color: rgba($invert-black, .7) !default;
+$invert-navbar-light-hover-color: rgba($invert-black, .9) !default;
+$invert-navbar-light-active-color: $invert-black !default;
+$invert-navbar-light-disabled-color: rgba($invert-black, .5) !default;
+$invert-navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$invert-navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
+$invert-navbar-light-toggler-border-color: rgba($invert-black, .2) !default;
+
+$invert-card-data-first-bg-color: invert($card-data-first-bg-color) !default; // TODO: move.
+
+// buttons
+$invert-btn-box-shadow: 0 0 0 $input-btn-focus-width invert($input-btn-focus-color) !default;
+
+// breadcrumb component
+$invert-breadcrumb-divider-color: $invert-accent !default;
+$invert-breadcrumb-active-color: invert($primary) !default;
+
+// forms
+$invert-input-focus-box-shadow: $invert-btn-box-shadow !default;
+
+// custom forms
+$invert-custom-control-indicator-checked-box-shadow: none !default;
+$invert-custom-control-indicator-focus-box-shadow:   $invert-input-focus-box-shadow !default;
+$invert-custom-control-indicator-checked-color:      invert($component-active-color) !default;
+
+$invert-custom-checkbox-indicator-icon-checked: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='#{$invert-custom-control-indicator-checked-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e"), "#", "%23") !default;
+$invert-custom-checkbox-indicator-indeterminate-bg:    invert($component-active-bg) !default;
+$invert-custom-checkbox-indicator-indeterminate-color: color-yiq(invert($component-active-bg)) !default;
+$invert-custom-checkbox-indicator-icon-indeterminate:  str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3e%3cpath stroke='#{$invert-custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3e%3c/svg%3e"), "#", "%23") !default;
+
+$invert-custom-radio-indicator-icon-checked: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='#{$invert-custom-control-indicator-checked-color}'/%3e%3c/svg%3e"), "#", "%23") !default;
+
+$invert-custom-select-indicator-color: color-yiq(invert($custom-select-bg)) !default;
+$invert-custom-select-indicator:       str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='#{$invert-custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e"), "#", "%23") !default;
+$invert-custom-select-background:      $invert-custom-select-indicator no-repeat right $custom-select-padding-x center / $custom-select-bg-size !default;
+
+$invert-custom-select-focus-box-shadow: $invert-input-focus-box-shadow !default;
+
+$invert-custom-file-focus-box-shadow:   $invert-input-focus-box-shadow !default;
+
+$invert-custom-range-track-box-shadow: none !default;
+
+$invert-custom-range-thumb-border: 0 !default;
+$invert-custom-range-thumb-box-shadow: none !default;
+
+$invert-custom-range-thumb-focus-box-shadow: $invert-input-focus-box-shadow !default;
+
+// nav tabs
+$invert-nav-tabs-border-color: $invert-accent !default;
+$invert-nav-tabs-link-color: $invert-primary !default;
+$invert-nav-tabs-link-border-color: $invert-neutral $invert-neutral $invert-accent !default;
+$invert-nav-tabs-link-hover-border-color: $invert-accent !default;
+$invert-nav-tabs-link-active-bg: $invert-body-bg !default;
+$invert-nav-tabs-link-active-border-color: $invert-accent $invert-accent $invert-nav-tabs-link-active-bg !default;
+$invert-nav-tabs-link-active-color: $invert-gray-a !default;
+
+// page news
+$invert-page-news-strip-icon-color: $invert-black !default;
+$invert-page-news-figcaption-color: $invert-gray-a !default;

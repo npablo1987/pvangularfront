@@ -1,0 +1,50 @@
+// Functions for contrasting a color
+
+@function contrast-color($key: "blue") {
+
+  @return color-yiq(color($key));
+}
+
+@function contrast-theme-color($key: "primary") {
+
+  @return color-yiq(theme-color($key));
+}
+
+@function contrast-gray($key: "100") {
+
+  @return color-yiq(gray($key));
+}
+
+// Functions for inverting a color
+
+@function invert-color($key: "blue") {
+
+  @return map-get($invert-colors, $key);
+}
+
+@function invert-theme-color($key: "primary") {
+
+  @return map-get($invert-theme-colors, $key);
+}
+
+@function invert-gray($key: "100") {
+
+  @return map-get($invert-grays, $key);
+}
+
+// Functions for contrasting the inverted version of a color
+
+@function contrast-invert-color($key: "blue") {
+
+  @return color-yiq(invert-color($key));
+}
+
+@function contrast-invert-theme-color($key: "primary") {
+
+  @return color-yiq(invert-theme-color($key));
+}
+
+@function contrast-invert-gray($key: "100") {
+
+  @return color-yiq(invert-gray($key));
+}

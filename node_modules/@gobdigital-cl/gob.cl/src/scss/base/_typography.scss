@@ -1,0 +1,189 @@
+body {
+  font-family: $primary-font;
+  font-size: rem($body-font-size);
+  font-weight: $font-weight-normal;
+  line-height: rem($body-line-height);
+
+  @include media($from: tablet) {
+    font-size: rem($body-lg-font-size);
+    line-height: rem($body-lg-line-height);
+  }
+}
+
+h1,
+.h1 {
+  font-family: $accent-font;
+  font-size: rem($h1-font-size);
+  font-weight: $font-weight-normal;
+  line-height: rem($h1-line-height);
+
+  @include media($from: tablet) {
+    font-size: rem($h1-lg-font-size);
+    line-height: rem($h1-lg-line-height);
+  }
+}
+
+h2,
+.h2 {
+  font-family: $accent-font;
+  font-size: rem($h2-font-size);
+  font-weight: $font-weight-normal;
+  line-height: rem($h2-line-height);
+
+  @include media($from: tablet) {
+    font-size: rem($h2-lg-font-size);
+    line-height: rem($h2-lg-line-height);
+  }
+}
+
+h3,
+.h3 {
+  font-family: $accent-font;
+  font-size: rem($h3-font-size);
+  font-weight: $font-weight-normal;
+  line-height: rem($h3-line-height);
+
+  @include media($from: tablet) {
+    font-size: rem($h3-lg-font-size);
+    line-height: rem($h3-lg-line-height);
+  }
+}
+
+h4,
+.h4 {
+  font-family: $primary-font;
+  font-size: rem($h4-font-size);
+  font-weight: $font-weight-light;
+  line-height: rem($h4-line-height);
+
+  @include media($from: tablet) {
+    font-size: rem($h4-lg-font-size);
+    line-height: rem($h4-lg-line-height);
+  }
+}
+
+h5,
+.h5 {
+  font-family: $accent-font;
+  font-size: rem($h5-font-size);
+  font-weight: $font-weight-normal;
+  line-height: rem($h5-line-height);
+
+  @include media($from: tablet) {
+    font-size: rem($h5-lg-font-size);
+    line-height: rem($h5-lg-line-height);
+  }
+}
+
+h6,
+.h6 {
+  font-family: $accent-font;
+  font-size: rem($h6-font-size);
+  font-weight: $font-weight-normal;
+  line-height: rem($h6-line-height);
+
+  @include media($from: tablet) {
+    font-size: rem($h6-lg-font-size);
+    line-height: rem($h6-lg-line-height);
+  }
+}
+
+p {
+  font-family: $primary-font;
+  font-size: rem($p-font-size);
+  font-weight: $font-weight-normal;
+  line-height: rem($p-line-height);
+  color: gray("a");
+
+  @include media($from: tablet) {
+    font-size: rem($p-lg-font-size);
+    line-height: rem($p-lg-line-height);
+  }
+}
+
+q {
+  font-family: $primary-font;
+  font-size: rem($q-font-size);
+  font-style: italic;
+  font-weight: $font-weight-normal;
+  line-height: rem($q-line-height);
+  color: gray("a");
+
+  &::after {
+    content: "";
+  }
+
+  &::before {
+    content: "";
+  }
+
+  @include media($from: tablet) {
+    font-size: rem($q-lg-font-size);
+    line-height: rem($q-lg-line-height);
+  }
+}
+
+a {
+  font-family: $primary-font;
+  font-weight: $font-weight-normal;
+  color: color("black");
+  text-decoration: underline;
+
+  &:hover {
+    color: color("black");
+  }
+}
+
+small {
+  font-family: $primary-font;
+  font-size: rem($small-font-size);
+  font-weight: $font-weight-normal;
+  line-height: rem($small-line-height);
+
+  @include media($from: tablet) {
+    font-size: rem($small-lg-font-size);
+    line-height: rem($small-lg-line-height);
+  }
+}
+
+@each $key, $value in $fonts {
+  .font-#{$key} {
+    font-family: $value !important;  /* stylelint-disable-line */
+  }
+}
+
+.font-base {
+  font-size: rem($body-font-size);
+  line-height: rem($body-line-height);
+
+  @include media($from: tablet) {
+    font-size: rem($body-lg-font-size);
+    line-height: rem($body-lg-line-height);
+  }
+}
+
+@each $key, $value in $font-sizes {
+  $lg-value: map-get($font-lg-sizes, $key);
+
+  .font-level-#{$key} {
+    font-size: rem(nth($value, 1)) !important;  /* stylelint-disable-line */
+    line-height: rem(nth($value, 2)) !important;  /* stylelint-disable-line */
+
+    @include media($from: tablet) {
+      font-size: rem(nth($lg-value, 1)) !important;  /* stylelint-disable-line */
+      line-height: rem(nth($lg-value, 2)) !important;  /* stylelint-disable-line */
+    }
+  }
+}
+
+@each $key, $value in $font-sizes {
+
+  @for $i from 0 through $text-lines-max {
+    .text-lines-#{$key}-#{$i} {
+
+      @include lines($i, $key);
+
+      @include font($key);
+    }
+  }
+}

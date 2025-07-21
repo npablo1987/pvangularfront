@@ -1,0 +1,94 @@
+<app-cabecera-not-logged-in></app-cabecera-not-logged-in>
+
+<main class="main_content pagina_interior">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h2 class="text-center mb-4">Iniciar sesión con cédula de identidad</h2>
+        <form>
+          <!-- RUT -->
+          <div class="mb-3">
+            <label for="rut" class="form-label">RUT</label>
+            <input
+              type="text"
+              id="rut"
+              class="form-control"
+              placeholder="Ej: 11.111.111-1"
+              [(ngModel)]="rut"
+              (ngModelChange)="onRutChange($event)"
+              name="rut"
+            />
+          </div>
+
+          <!-- Fecha nacimiento -->
+          <div class="mb-3 form-group">
+            <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+            <input
+              type="date"
+              id="fechaNacimiento"
+              class="form-control"
+              [(ngModel)]="fechaNacimientoInput"
+              (ngModelChange)="formatearFecha($event)"
+              name="fechaNacimiento"
+            />
+          </div>
+
+          <!-- Número serie -->
+          <div class="mb-3 form-group">
+            <label for="numeroSerie" class="form-label">Número de serie en cédula de identidad</label>
+            <input
+              type="text"
+              id="numeroSerie"
+              class="form-control"
+              placeholder="344533234"
+              [(ngModel)]="numeroSerie"
+              name="numeroSerie"
+            />
+          </div>
+
+          <div class="mb-3 text-center">
+            <button type="button"
+                    class="btn btn-link p-0"
+                    (click)="abrirModal()">
+              ¿Dónde encontrar el número de serie?
+            </button>
+          </div>
+
+          <hr>
+
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-link">Volver</a>
+            <button type="button" class="btn btn-primary" (click)="onIngresar()">
+              Ingresar
+            </button>
+          </div>
+        </form>
+
+
+        <br><br><br>
+
+        <p class="text-muted text-center">
+          Si eres funcionaria o funcionario de INDAP, ingresa desde
+          <a href="https://sistemas.indap.cl/" target="_blank">sistemas.indap.cl</a>.
+        </p>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal-overlay" *ngIf="mostrarModal" (keydown.escape)="cerrarModal()" tabindex="0">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="cerrar-modal" type="button" (click)="cerrarModal()">✕</button>
+      <!-- verwende den Build‑Pfad  -->
+      <img src="images/Cedula-indap.png"
+           alt="Ejemplo número de serie"
+           class="img-fluid rounded">
+    </div>
+  </div>
+
+
+  </main>
+<app-pie-pagina></app-pie-pagina>

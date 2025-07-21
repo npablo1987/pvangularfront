@@ -1,0 +1,47 @@
+extends ../doc.pug
+
+block content
+  section#dynamicComponents.doc-section
+    header.doc-section-header
+      h2.
+        Formulario de búsqueda
+        #[a(href='#dynamicComponents') #]
+    .doc-section-body
+      .doc-subsection
+        p.
+          El componente de búsqueda por defecto solo tiene comportamientos
+          visuales, Podrá realizar búsquedas sobre el DOM configurando los
+          data-attributes#[code data-view-filter],
+          #[code data-scrapping-value (default: #[i search-value])] y
+          #[code data-scrapping-class (default: #[i .searchable])].
+        p.
+          El componente puede ser configurado tanto vía data-attributes como
+          desde la llamada del plugin en javascript:
+        pre(data-src='examples/search-setting.html')
+        pre(data-src='examples/search-setting.js')
+        p.
+          Ejemplo del componente simple:
+        include ../examples/search
+        pre(data-src='examples/search.html')
+        p.
+          Ejemplo del componente simple con botón para limpiar input:
+        include ../examples/search-simple
+        pre(data-src='examples/search-simple.html')
+        p.
+          Ejemplo del componente con filtrado:
+        include ../examples/search-filter
+        pre(data-src='examples/search-filter.html')
+        p.
+          Es posible hacer grupos de elementos de los listados sobre los que
+          se realizará la búsqueda, de esta forma puede mostrar un mensaje
+          de error por grupo al no conseguir resultados.
+        p.
+          Es necesario usar el data-attribute#[code data-groups] enviándole
+          un arreglo en JSON con los selectores que identifican a cada grupo,
+          y agregarle a cada elemento#[code .searchable] el selector del
+          grupo al que pertence.
+        p.
+          Para identificar el tag que contendrá el mensaje de error por cada
+          grupo debe usa la clase#[code .search-not-found] y#[code .not-found-&lt;group-name&gt;]
+        include ../examples/search-filter-groups
+        pre(data-src='examples/search-filter-groups.html')

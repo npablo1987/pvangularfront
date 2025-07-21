@@ -1,0 +1,18 @@
+footer {
+  background-color: invert-color("white");
+
+  .footer-social {
+    li {
+      a {
+        font-size: 32px;
+        color: invert-gray("c");
+      }
+    }
+  }
+
+  .footer-links {
+    a {
+      color: invert-color("black");
+    }
+  }
+}

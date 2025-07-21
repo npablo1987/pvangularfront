@@ -1,0 +1,15 @@
+
+%cl {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: gob-cl !important; /* stylelint-disable-line */
+  font-style: normal;
+  font-weight: $font-weight-normal;
+  font-variant: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

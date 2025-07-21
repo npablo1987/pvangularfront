@@ -1,0 +1,37 @@
+
+.social {
+  &:hover {
+    .social-icon {
+
+      @each $key, $value in $social-colors {
+        .cl-#{$key}::before {
+
+          @include media($from: desktop) {
+            color: $value;
+          }
+        }
+      }
+    }
+  }
+
+  .social-icon {
+
+    @each $key, $value in $social-colors {
+      .cl-#{$key}::before {
+        color: $value;
+
+        @include media($from: desktop) {
+          color: invert-theme-color();
+        }
+      }
+    }
+  }
+
+  .social-name {
+    color: invert-gray("a");
+  }
+
+  .social-url {
+    color: invert-gray("a");
+  }
+}

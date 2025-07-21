@@ -1,0 +1,65 @@
+
+<header class="main_header">
+
+    <nav class="navbar navbar-light navbar-expand-lg navbar-lg">
+        <div class="container">
+            <a class="navbar-nav" href=".">
+                <img src="images/logo-header.png"/>
+            </a>
+
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarLgLightExampleCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="navbar-collapse collapse" id="navbarLgLightExampleCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.indap.gob.cl/">Sitio Web INDAP</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://sistemas.indap.cl/">Sistemas INDAP</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/sesion-cedula">Sesión con Cédula</a>
+                          </li>
+                    <li class="nav-item">
+                        <a class="btn btn-block btn-primary" (click)="onClaveUnicaLogin()">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.9806 14.2171C10.8108 14.059 10.7224 13.8319 10.7407 13.6006C10.7591 13.3693 10.882 13.1589 11.0746 13.0295C11.2364 12.8773 11.455 12.8007 11.6764 12.8186C11.8978 12.8365 12.1013 12.9473 12.2366 13.1235C12.5319 13.4795 12.4903 14.0059 12.1426 14.3111C11.9808 14.4633 11.7621 14.5398 11.5407 14.5219C11.3193 14.504 11.1159 14.3933 10.9806 14.2171V14.2171ZM15.7061 4.41861C19.2741 6.04715 21.7773 9.57856 21.84 13.7472C21.84 19.4096 17.2497 24 11.5872 24C5.92469 24 1.33433 19.4096 1.33433 13.7472C1.27677 9.63556 3.74073 5.90743 7.54585 4.34871C7.96451 4.24618 8.27209 4.24618 8.47715 4.76737C8.6719 5.1922 8.48918 5.69467 8.06703 5.89518C4.17687 7.62346 2.15232 11.9517 3.31919 16.0454C4.48607 20.1392 8.48839 22.7495 12.7051 22.167C16.9219 21.5845 20.0666 17.9868 20.08 13.7301C20.0942 10.2274 18.1718 7.23085 15.0362 5.89518C14.8316 5.83147 14.6662 5.67965 14.5851 5.48125C14.5041 5.28285 14.516 5.05862 14.6176 4.8699C14.6834 4.66478 14.8368 4.49947 15.0365 4.41861C15.2361 4.33776 15.5161 4.31708 15.7061 4.41861ZM6.46074 13.474C6.44278 10.9325 8.23794 8.73876 10.7328 8.25354V0.948389C10.7651 0.473185 11.1179 0.0815657 11.5872 0H15.3551C15.8068 0.0271528 16.159 0.401846 16.1582 0.854404C16.1394 1.29897 15.7976 1.66259 15.3551 1.70881H12.4416V8.27063C14.9711 8.69684 16.7963 10.9272 16.7136 13.491C16.7425 16.3636 14.4591 18.727 11.5872 18.7969C8.70853 18.7269 6.42243 16.3532 6.46074 13.474ZM15.0048 13.5765C15.0196 11.6603 13.5025 10.0825 11.5872 10.0222C9.78563 10.2206 8.42192 11.7428 8.42192 13.5552C8.42192 15.3676 9.78563 16.8897 11.5872 17.0881C13.4859 17.0284 14.9965 15.4762 15.0048 13.5765Z" fill="white"/></svg> &nbsp;                                 
+                            Iniciar sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav><!-- /.navbar -->
+
+    <div class="breadcrumbs-toolbar container">
+
+        <div class="breadcrumbs">
+            <a href="" class="breadcrumb_link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" fill="black" fill-opacity="0.54"/></svg>
+                </a>
+            <div class="breadcrumb_sep">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.29504 16.59L12.875 12L8.29504 7.41L9.70504 6L15.705 12L9.70504 18L8.29504 16.59Z" fill="#4D4D4D"/></svg>
+            </div>
+            <a href="" class="breadcrumb_link actual">Fichas Receptores</a>
+        </div>
+
+        <div class="toolbar-btn-group">
+            <button type="button"
+                    class="toolbar-btn toolbar-behavior-contrast"
+                    (click)="toggleContraste($event)">
+              <i class="cl cl-contrast"></i>
+            </button>
+          
+            <button type="button"
+                    class="toolbar-btn toolbar-behavior-decrease"
+                    (click)="cambiarTamanoFuente(-1, $event)">
+              <i class="cl cl-decrease-text"></i>
+            </button>
+          
+            <button type="button"
+                    class="toolbar-btn toolbar-behavior-increase"
+                    (click)="cambiarTamanoFuente(1, $event)">
+              <i class="cl cl-increase-text"></i>
+            </button>
+        </div>
+
+    </div><!-- / .breadcrumbs-toolbar -->
+
+</header><!-- /.main_header -->

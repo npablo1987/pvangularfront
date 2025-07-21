@@ -1,0 +1,126 @@
+.contingency {
+  z-index: $zindex-contingency;
+  display: none;
+  flex-direction: column;
+  min-height: calc(100vh - #{$navbar-height});
+  background-color: $body-bg;
+
+  .contingency-body {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    > section.section-jumbotron {
+      .section-body {
+        .line::after {
+          height: $contingency-line-size;
+          background: color("black");
+        }
+      }
+    }
+
+    > section.section {
+      .section-header {
+        h2 {
+          color: gray("a");
+        }
+      }
+    }
+  }
+
+  .contingency-footer {
+    height: $contingency-footer-height;
+
+    .container {
+      position: relative;
+      height: $contingency-footer-height;
+
+      .footer-logo {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+
+  .contingency-event {
+    margin: spacer(5) 0 0;
+
+    .contingency-event-date {
+      float: left;
+      width: $contingency-item-date-width;
+
+      .contingency-event-time {
+        font-size: $contingency-item-time-font-size;
+        opacity: $font-opacity;
+      }
+
+      .contingency-event-day {
+        font-size: $contingency-item-day-font-size;
+        opacity: $font-opacity;
+      }
+    }
+
+    .contingency-event-body {
+      display: block;
+      padding-left: $contingency-item-date-width;
+    }
+  }
+}
+
+.contingency-active:not(.contingency-closed) {
+  padding-right: 15px;
+  overflow: hidden;
+
+  section.contingency {
+    position: fixed;
+    top: $navbar-height;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+  }
+}
+
+.with-fixed-navbar {
+  .contingency {
+    .contingency-body {
+      height: calc(100vh - #{$navbar-height + $contingency-footer-height});
+
+      @include media($from: desktop) {
+        height: calc(100vh - #{$navbar-lg-height + $contingency-footer-height});
+      }
+    }
+  }
+
+  &.contingency-active:not(.contingency-closed) {
+    .contingency {
+
+      @include media($from: desktop) {
+
+        top: $navbar-lg-height;
+      }
+    }
+  }
+}
+
+.with-fixed-navbar-lg {
+  .contingency {
+    .contingency-body {
+      height: calc(100vh - #{$navbar-height + $contingency-footer-height});
+
+      @include media($from: desktop) {
+        height: calc(100vh - #{$navbar-lg-lg-height + $contingency-footer-height});
+      }
+    }
+  }
+
+  &.contingency-active:not(.contingency-closed) {
+    .contingency {
+
+      @include media($from: desktop) {
+
+        top: $navbar-lg-lg-height;
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.profile-section {
+
+  @extend .row;
+
+  p {
+    line-height: rem($profile-p-line-height);
+  }
+
+  .profile-body,
+  .profile-footer {
+
+    @include media($from: desktop) {
+      section.section:first-child {
+        .section-header {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .profile-header {
+    width: 100%;
+    padding: 0 ($grid-gutter-width / 2);
+
+    section.section {
+      margin-top: spacer(4);
+    }
+
+    @supports (display: contents) {
+
+      @include make-col(6);
+    }
+
+    @include media($from: desktop) {
+
+      @include make-col(2);
+    }
+  }
+
+  .profile-footer {
+    section.section {
+      margin-top: spacer(4);
+
+      @include media($from: desktop) {
+        margin-top: 0;
+      }
+    }
+
+    @extend .col-lg-4;
+  }
+
+  .profile-body {
+
+    @include media($from: desktop) {
+
+      @include make-col(6);
+    }
+
+    section.section:first-child {
+      .section-header {
+        padding: 0 ($grid-gutter-width / 2);
+
+        @supports (display: contents) {
+
+          @include make-col(6);
+        }
+
+        @include media($from: desktop) {
+
+          @include make-col(12);
+        }
+
+        .section-icons {
+          position: initial;
+
+          @include media($from: desktop) {
+            position: absolute;
+            right: ($grid-gutter-width / 2);
+          }
+
+          .link-icon {
+            margin-right: spacer(3);
+            margin-left: 0;
+
+            @include media($from: desktop) {
+              margin-right: 0;
+              margin-left: spacer(3);
+            }
+          }
+        }
+      }
+
+      .section-body {
+        margin-top: spacer(4);
+
+        @include media($from: desktop) {
+          margin-top: 0;
+        }
+
+        @extend .col-12;
+      }
+    }
+  }
+
+  .profile-body,
+  .profile-body > section.section {
+    display: contents;
+
+    @include media($from: desktop) {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.card-links {
+  &-image {
+    float: left;
+    width: $card-links-image-width;
+
+    .cl {
+      font-size: 32px;
+    }
+  }
+
+  &-body {
+    padding-left: $card-links-image-width;
+
+    h4 {
+      margin-bottom: spacer(3);
+    }
+
+    ul.list-unstyled {
+      li {
+        height: rem($card-links-link-height);
+        margin-bottom: spacer(3);
+        overflow: hidden;
+
+        @include media($from: tablet) {
+          height: rem($card-links-lg-link-height);
+        }
+
+        a {
+          color: gray("a");
+        }
+      }
+    }
+
+    ul.list-inline {
+      li {
+        a,
+        &::after {
+          color: gray("a");
+          opacity: $font-opacity;
+        }
+      }
+    }
+
+    p {
+      color: gray("a");
+      opacity: $font-opacity;
+    }
+  }
+}
+

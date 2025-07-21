@@ -1,0 +1,71 @@
+section.onboarding(data-active='true')
+  .onboarding-body
+    section.section-jumbotron
+      .container
+        .section-body.py-5
+          img(src='img/gob-home.svg')
+          h1.line.text-primary.
+            Bienvenido a #[b Gob.cl]
+
+          p.mb-5.font-weight-light.text-center
+            | Tu portal para acceder de manera simple y rápida a información
+            br.d-none.d-sm-none.d-sm-inline
+            | del Gobierno de Chile.
+        hr
+    section.section.mt-5
+      .container
+        .section-header
+          h2.text-primary.text-center ¿Qué puedes hacer en Gob.cl?
+        .section-body.mt-5
+          .row.col-separator-primary
+            .col-md-4
+              .card-links.py-md-3
+                .card-links-image
+                  i.cl.cl-procedures
+                .card-links-body
+                  ul.list-unstyled
+                    li
+                      a(href='#') Accede a información de trámites y beneficios
+                  p.d-none.d-md-block.
+                    #[a(href='#') Bonos] -
+                    #[a(href='#') Subsidios] -
+                    #[a(href='#') Becas]
+
+            .col-md-4
+              .card-links.py-md-3
+                .card-links-image
+                  i.cl.cl-meet-authorities
+                .card-links-body
+                  ul.list-unstyled
+                    li
+                      a(href='#') Conoce y contacta a instituciones y autoridades
+                  ul.d-none.d-md-block.list-inline
+                    li
+                      a(href='#') Presidencia
+                    li
+                      a(href='#') Ministerios
+                    li
+                      a(href='#') Servicios
+
+            .col-md-4
+              .card-links.py-md-3
+                .card-links-image
+                  i.cl.cl-recent-news
+                .card-links-body
+                  ul.list-unstyled
+                    li
+                      a(href='#') Infórmate de las novedades más recientes del Gobierno
+                  p.d-none.d-md-block.
+                    #[a(href='#') Seguridad ciudadana] -
+                    #[a(href='#') Economía y empleo] -
+                    #[a(href='#') Salud]
+
+
+        .section-action.mt-4
+          a.text-primary.onboarding-behavior-dismiss(href='#')
+            h4 Prefiero ir a la portada
+  .onboarding-footer
+    .container
+      .footer-logo
+        img.footer-default-logo(src='img/gob-footer-contingency.svg')
+        img.footer-mobile-logo(src='img/gob-footer-mobile.svg')

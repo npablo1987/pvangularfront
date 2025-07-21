@@ -1,0 +1,125 @@
+nav.navbar,
+nav.navbar.navbar-light,
+nav.navbar.navbar-dark {
+  background-color: invert-color("white");
+  box-shadow: 0 2px 0 0 $invert-shadow-color;
+
+  .navbar-brand {
+    color: $invert-navbar-light-active-color;
+
+    @include hover-focus {
+      color: $invert-navbar-light-active-color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-separator {
+      &::after {
+        background-color: invert-theme-color("tertiary");
+      }
+    }
+
+    .nav-behavior {
+      .nav-link {
+        color: invert-color("black");
+        border: 1px solid invert-color("black");
+
+        .cl::before {
+          color: invert-color("black");
+        }
+
+        &:active,
+        &.active {
+          background-color: color("white");
+          border-color: invert-theme-color("primary");
+        }
+
+        &:hover {
+          color: invert-theme-color("primary");
+          background-color: invert-color("white");
+          border-color: invert-theme-color("primary");
+
+          .cl::before {
+            color: invert-theme-color("primary");
+          }
+        }
+      }
+    }
+
+    .nav-item {
+      &:not(.dropdown) {
+        .nav-link {
+          color: invert-gray("700");
+
+          &:hover {
+            color: invert-theme-color();
+          }
+        }
+      }
+
+      &.dropdown {
+        &.show {
+          .dropdown-toggle {
+            color: invert-color("white");
+            background-color: invert-theme-color("primary");
+          }
+
+          .dropdown-menu {
+            &.show {
+              background-color: invert-theme-color("primary");
+
+              .dropdown-item {
+                color: invert-color("white");
+
+                &:hover {
+                  color: invert-color("white");
+                  background-color: invert-theme-color("tertiary");
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .nav-link {
+      color: $invert-navbar-light-color;
+
+      @include hover-focus {
+        color: $invert-navbar-light-hover-color;
+      }
+
+      &.disabled {
+        color: $invert-navbar-light-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $invert-navbar-light-active-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $invert-navbar-light-color;
+    border-color: $invert-navbar-light-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: $invert-navbar-light-toggler-icon-bg;
+  }
+
+  .navbar-text {
+    color: $invert-navbar-light-color;
+
+    a {
+      color: $invert-navbar-light-active-color;
+
+      @include hover-focus {
+        color: $invert-navbar-light-active-color;
+      }
+    }
+  }
+}

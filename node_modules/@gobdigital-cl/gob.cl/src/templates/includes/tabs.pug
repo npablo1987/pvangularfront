@@ -1,0 +1,26 @@
+extends ../doc.pug
+
+block content
+  section#tabs.doc-section
+    header.doc-section-header
+      h2.
+        Tabs
+        #[a(href='#tabs') #]  
+    .doc-section-body
+      p.
+        Este componente utiliza como base los tabs de bootstrap, básicamente
+        permite mostrar un contenido diferente al clicar los enlaces,
+        utiliza las clases#[code show] y#[code fade] para mostrar u ocultar
+        el contenido según corresponda. La clase#[code active] permite
+        identificar cual es el elemento seleccionado, y aplica los estilos
+        correspondientes. Para evitar conflictos con el efecto de scroll
+        puede añadir la clase#[code not-smooth] en los links.
+      include ../examples/tabs
+      pre(data-src='examples/tabs.html')
+      p.
+        Si desea añadir padding y/o margen a los tabs, basta con utilizar
+        las clases de
+        #[a(href="https://getbootstrap.com/docs/4.5/utilities/spacing/") espaciado]
+        de Bootstrap.
+      include ../examples/tabs-spacing
+      pre(data-src='examples/tabs-spacing.html')

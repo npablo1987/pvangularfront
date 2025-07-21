@@ -1,0 +1,51 @@
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pagination {
+    .page-item {
+      z-index: 1;
+
+      .page-link {
+        color: theme-color("accent");
+
+        &.disabled {
+          color: gray("200");
+          border-color: gray("200");
+
+          &:hover {
+            background-color: color("white");
+          }
+        }
+      }
+
+      &.active {
+        z-index: 2;
+
+        .page-link {
+          color: theme-color();
+          background-color: color("white");
+          border-color: theme-color();
+        }
+      }
+    }
+  }
+
+  .pagination-jump {
+    display: flex;
+    margin-bottom: 1rem;
+
+    .page-input {
+      width: 3.75rem;
+      text-align: center;
+    }
+
+    .page-text {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 spacer(3);
+    }
+  }
+}

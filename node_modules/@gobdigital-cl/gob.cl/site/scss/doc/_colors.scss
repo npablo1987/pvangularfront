@@ -1,0 +1,26 @@
+.c-color {
+  margin: 0 0 30px;
+  text-align: center;
+}
+
+.c-color-square {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 15px 0;
+  vertical-align: middle;
+  background-color: transparent;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: "";
+    background: #fff;
+    box-shadow: 0 8px 14px 0 rgba(168, 183, 199, .5);
+  }
+}

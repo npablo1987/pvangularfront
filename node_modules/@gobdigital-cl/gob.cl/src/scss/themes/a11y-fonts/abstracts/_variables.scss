@@ -1,0 +1,7 @@
+$a11y-scale-base: 4px !default;
+
+$a11y-fonts: (
+  0: $font-size-base-in-px,
+  1: $font-size-base-in-px + $a11y-scale-base,
+  2: $font-size-base-in-px + ($a11y-scale-base * 2)
+) !default;

@@ -1,0 +1,25 @@
+.card-data-list {
+  .card-data {
+    background-color: contrast-color("white");
+    border-color: invert-theme-color("accent");
+
+    &:hover {
+      color: invert-color("white");
+      background-color: invert-theme-color() !important; /* stylelint-disable-line */
+
+      p {
+        color: invert-color("white");
+      }
+    }
+
+    @include media($from: desktop) {
+      &:not(:last-child) {
+        border-color: invert-theme-color("accent");
+      }
+    }
+
+    &:first-child {
+      background-color: $invert-card-data-first-bg-color;
+    }
+  }
+}

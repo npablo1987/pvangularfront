@@ -1,0 +1,19 @@
+.search {
+  .form-control {
+    &:focus {
+      border-color: invert($input-border-color);
+    }
+  }
+
+  .search-action {
+    .btn {
+      color: invert-theme-color("accent");
+      background: invert($input-bg);
+      border-color: invert($input-border-color);
+
+      &[type="submit"] {
+        color: invert-theme-color();
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+extends ../doc.pug
+
+block content  
+  section#forms.doc-section
+    header.doc-section-header
+      h2.
+        Formularios
+        #[a(href='#forms') #]
+    .doc-section-body
+      p.
+        El framework extiende los componentes de formulario dados por
+        Bootstrap 4 y le brinda soporte de contraste y aumento de font.
+      div#inputText.doc-subsection
+        .doc-subsection-header
+          h3 Inputs text #[a(href='#inputText') #]
+        .doc-subsection-body
+          include ../examples/form-controls-text
+          pre(data-src='examples/form-controls-text.html')
+      div#textareas.doc-subsection
+        .doc-subsection-header
+          h3 Textareas #[a(href='#textareas') #]
+        .doc-subsection-body
+          include ../examples/form-controls-textarea
+          pre(data-src='examples/form-controls-textarea.html')
+      div#selects.doc-subsection
+        .doc-subsection-header
+          h3 Selects #[a(href='#selects') #]
+        .doc-subsection-body
+          include ../examples/form-controls-select
+          pre(data-src='examples/form-controls-select.html')
+      div#inputFiles.doc-subsection
+        .doc-subsection-header
+          h3 Input files #[a(href='#inputFiles') #]
+        .doc-subsection-body
+          include ../examples/form-controls-file
+          pre(data-src='examples/form-controls-file.html')
+      div#checkboxes.doc-subsection
+        .doc-subsection-header
+          h3 Checkboxes #[a(href='#checkboxes') #]
+        .doc-subsection-body
+          include ../examples/form-controls-checkbox
+          pre(data-src='examples/form-controls-checkbox.html')
+      div#radios.doc-subsection
+        .doc-subsection-header
+          h3 Radios #[a(href='#radios') #]
+        .doc-subsection-body
+          include ../examples/form-controls-radio
+          pre(data-src='examples/form-controls-radio.html')
+      div#ranges.doc-subsection
+        .doc-subsection-header
+          h3 Ranges #[a(href='#ranges') #]
+        .doc-subsection-body
+          include ../examples/form-controls-range
+          pre(data-src='examples/form-controls-range.html')

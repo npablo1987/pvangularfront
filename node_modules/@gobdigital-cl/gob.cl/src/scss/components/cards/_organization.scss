@@ -1,0 +1,34 @@
+.card-organization {
+  border: $card-detail-border-width solid $card-detail-border-color;
+
+  &-image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: $card-organization-img-height;
+    padding: $card-organization-img-padding;
+    background: $card-organization-img-bg;
+
+    // It assumes that the image is a logo, so it
+    // should not have object-fit equal to cover
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .badge {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+    }
+  }
+
+  &-body {
+    width: 100%;
+    padding: $card-organization-body-padding;
+    background-color: color("white");
+    border-top: $card-detail-border-width solid $card-detail-border-color;
+  }
+}

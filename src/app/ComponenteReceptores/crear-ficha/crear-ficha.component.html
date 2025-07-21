@@ -1,0 +1,269 @@
+<main class="main_content pagina_interior">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <h2>Crear Ficha / Datos de la Empresa <small>(1 de 3)</small></h2>
+        <form>
+          <!-- Primera fila -->
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="rutEmpresa" class="form-label">RUT Empresa</label>
+                <input
+                  type="text"
+                  id="rutEmpresa"
+                  class="form-control"
+                  placeholder="Ej: 76.123.456-7"
+                  [(ngModel)]="rutEmpresa"
+                  (input)="onRutInput($event)"
+                  (ngModelChange)="onRutChange($event)"
+                  name="rut" />
+              </div> 
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="razonSocial" class="form-label">Razón Social</label>
+                <input type="text" id="razonSocial" class="form-control" placeholder="Municipalidad de Santiago"  [(ngModel)]="razonSocial" name="razonSocial" />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="tipoEmpresa" class="form-label">Tipo de Empresa</label>
+              <select
+                id="tipoEmpresa"
+                class="form-control"
+                [(ngModel)]="tipoEmpresa"
+                (change)="cambiarTipoEmpresa(tipoEmpresa)"
+                name="tipoEmpresa"
+              >
+                <option value="" disabled selected>Seleccione</option>
+                <option value="municipalidad">Municipalidad</option>
+                <option value="cooperativas">Cooperativas</option>
+                <option value="comunidades-indigenas">Comunidades y Asociaciones Indígenas</option>
+                <option value="organizaciones-comunitarias">Organizaciones Comunitarias</option>
+                <option value="juntas-vigilancia-aguas">Comunidades Asociaciones y Juntas de Vigilancia Código de Aguas</option>
+                <option value="empresas-sociedades">Empresas (Sociedades)</option>
+                <option value="sindicado">Sindicato</option>
+                <option value="comunidades-agricolas">Comunidades Agrícolas</option>
+                
+              </select>
+
+            </div>
+          </div>
+
+          <!-- Segunda fila -->
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="personalidadJuridica" class="form-label">Personalidad Jurídica Nº</label>
+                <input appValidacionesInput type="text" id="personalidadJuridica" class="form-control" placeholder="123456789" [(ngModel)]="personalidadJuridica"
+                name="personalidadJuridica"/>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="otorgadaPor" class="form-label">Personalidad Jurídica otorgada por</label>
+                <select id="otorgadaPor" class="form-control"         [(ngModel)]="otorgadaPor"
+                name="otorgadaPor">
+                  <option value="" disabled selected>Seleccione</option>
+                  <option value="notario">Notario eclesiástico de San Bernardo</option>
+                  <option value="otra">Otra opción</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Área temática -->
+          <div class="row mb-3">
+            <div class="col">
+              <div class="form-group">
+                <label for="areaTematica" class="form-label">Área Temática</label>
+                <textarea id="areaTematica" class="form-control" rows="2" [(ngModel)]="areaTematica"
+                name="areaTematica"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checkbox "No Informar" -->
+          <div class="row mb-3">
+            <div class="col-md-12 d-flex align-items-center">
+              <div class="form-group">
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    id="noInformar"
+                    [(ngModel)]="noInformar"
+                    name="noInformar"
+                    class="form-check-input me-2"
+                  />
+                  <label for="noInformar" class="form-check-label">Personalidad jurídica excenta de contabilidad</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Patrimonio, Capital Social y Estado Resultado -->
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="patrimonio" class="form-label">Patrimonio</label>
+              <input appValidacionesInput
+                type="text"
+                id="patrimonio"
+                class="form-control"
+                placeholder="$ 10.123.456.789"
+                [disabled]="noInformar"
+                [(ngModel)]="patrimonio"
+                name="patrimonio"
+              />
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="capitalSocial" class="form-label">Capital social</label>
+                <input appValidacionesInput
+                  type="text"
+                  id="capitalSocial"
+                  class="form-control"
+                  placeholder="$ 100.123"
+                  [disabled]="noInformar"
+                  [(ngModel)]="capitalSocial"
+                  name="capitalSocial"
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="estadoResultado" class="form-label">Estado Resultado</label>
+                <input appValidacionesInput
+                  type="text"
+                  id="estadoResultado"
+                  class="form-control"
+                  placeholder="$ 100.123"
+                  [disabled]="noInformar"
+                  [(ngModel)]="estadoResultado"
+                  name="estadoResultado"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Solo se muestra si el tipo de empresa tiene archivos requeridos -->
+          <div *ngIf="archivosRequeridosPorTipo[tipoEmpresa]">
+            <h5>Archivos requeridos para {{ tipoEmpresa }}</h5>
+            <!-- Iteramos sobre los archivos requeridos según el tipo de empresa -->
+            <div *ngFor="let archivo of archivosRequeridosPorTipo[tipoEmpresa]" class="mb-3">
+              <label class="form-label">{{ archivo.label }}</label>
+              <!-- Input oculto y botón de selección -->
+              <div class="row w-100 mb-2">
+                <div class="col-md-6">
+                  <input
+                    type="file"
+                    [id]="archivo.key"
+                    name="archivo"
+                    accept=".pdf,.jpg,.png"
+                    (change)="onFileSelected($event, archivo.key)"
+                    style="display: none;"
+                  />
+                  <label class="btn btn-secondary" (click)="abrirInput(archivo.key)">
+                    {{ archivosSeleccionados[archivo.key]?.name || 'Seleccionar archivo' }}
+                  </label>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-primary" (click)="guardarArchivos()">Subir</button>
+                </div>
+              </div>
+
+              <!-- Mostrar el archivo seleccionado con botón de quitar -->
+              <div class="row w-100" *ngIf="archivosSeleccionados[archivo.key]">
+                <div class="col-md-6">
+                  <a href="#">
+                    {{ archivosSeleccionados[archivo.key]?.name || archivo.label }}
+                  </a>
+                </div>
+                <div class="col">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    (click)="quitarArchivo(archivo.key)"
+                  >
+                    Quitar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 🔄  Otros archivos opcionales ------------------------------------ -->
+          <!-- 🔄  Otros archivos opcionales ------------------------------------ -->
+<div class="row mb-3">
+  <div class="col">
+    <h5>Otros archivos (opcionales)</h5>
+
+    <!-- Lista dinámica de slots “otroX” -->
+    <div *ngFor="let otro of archivosOtros" class="mb-2">
+      <label class="form-label">{{ otro.label }}</label>
+
+      <div class="row w-100 mb-2">
+        <!-- Input oculto + botón seleccionar -->
+        <div class="col-md-6">
+          <input
+            type="file"
+            [id]="otro.key"
+            accept=".pdf,.jpg,.png"
+            (change)="onFileSelected($event, otro.key)"
+            style="display:none"
+          />
+          <label class="btn btn-secondary" (click)="abrirInput(otro.key)">
+            {{ archivosSeleccionados[otro.key]?.name || 'Seleccionar archivo' }}
+          </label>
+        </div>
+
+        <!-- Acciones -->
+        <div class="col text-end">
+          <!-- Quitar SOLO el archivo -->
+          <button
+            type="button"
+            class="btn btn-danger me-2"
+            *ngIf="archivosSeleccionados[otro.key]"
+            (click)="quitarArchivo(otro.key)"
+          >
+            Quitar archivo
+          </button>
+
+          <!-- Eliminar el slot completo -->
+          <button
+            type="button"
+            class="btn btn-outline-danger"
+            (click)="eliminarOtroSlot(otro.key)"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón para crear un nuevo slot -->
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="agregarOtroArchivo()"
+    >
+      ➕ Agregar otro archivo
+    </button>
+  </div>
+</div>
+
+
+          <hr>
+
+
+          <!-- Botón de guardar y siguiente -->
+          <div class="row">
+            <div class="col text-start">
+            </div>
+            <div class="col text-right">
+              <button type="button" class="btn btn-primary" (click)="irCrearFichaparteii()">Guardar y siguiente</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

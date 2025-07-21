@@ -1,0 +1,10 @@
+form.search.mx-auto(action='', method='GET')
+  input.form-control(
+    type='text', name='search',
+    placeholder='Texto placeholder buscador simple',
+    aria-label='Texto placeholder buscador simple',
+    aria-describedby='searchAction'
+  )
+  .search-action
+    button#searchAction.btn.btn-outline-search(type='submit')
+      i.icon.cl.cl-search

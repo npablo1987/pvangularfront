@@ -1,0 +1,29 @@
+.breadcrumb {
+  min-height: $breadcrumb-min-height;
+  padding-bottom: 0;
+  padding-left: 0;
+
+  .breadcrumb-item {
+    display: inline-block;
+
+    &:not(:first-child) {
+      &::before {
+        margin: 0 $breadcrumb-divider-margin;
+        vertical-align: middle;
+        content: $cl-breadcrumb;
+
+        @extend %cl;
+      }
+    }
+  }
+}
+
+nav[aria-label="breadcrumb"] ~ section {
+  > .container {
+    > .section-header {
+      &.with-toolbar {
+        padding-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.input-error {
+  border: 2px solid red !important;
+  background-color: #ffe6e6;
+}
+
+.input-error:focus {
+  outline: none;
+  border-color: darkred;
+}
+
+.alerta-error {
+  color: red;
+  font-weight: bold;
+}
+
+
+.input-success {
+  border: 2px solid green !important;
+}

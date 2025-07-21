@@ -1,0 +1,74 @@
+extends ../doc.pug
+
+block content  
+  section#navbar.doc-section
+    header.doc-section-header
+      h2.
+        Navegación
+        #[a(href='#navbar') #]
+    .doc-section-body
+      p.
+        A continuación, una lista de los navbars disponibles para utilizar.
+      div#light.doc-subsection
+        .doc-subsection-header
+          h3 Light #[a(href='#light') #]
+        .doc-subsection-body
+          .bg-gray-100
+            p.
+              Si el navbar es #[code .fixed-top] debe usar la clase
+              #[code .with-fixed-navbar] en el main
+            .p-2
+              include ../examples/navbar-light
+            pre(data-src='examples/navbar-light.html')
+      div#dark.doc-subsection
+        .doc-subsection-header
+          h3 Dark #[a(href='#dark') #]
+        .doc-subsection-body
+          p.
+            Si el navbar es #[code .fixed-top] debe usar la clase
+            #[code .with-fixed-navbar] en el main
+          .p-2
+            include ../examples/navbar-dark
+          pre(data-src='examples/navbar-dark.html')
+      div#bigNavbarLight.doc-subsection
+        .doc-subsection-header
+          h3 Navbar Grande Light #[a(href='#bigNavbarLight') #]
+        .doc-subsection-body
+          .bg-gray-100
+            p.
+              Si el navbar es #[code .fixed-top] debe usar la clase
+              #[code .with-fixed-navbar-lg] en el main
+            .p-2
+              include ../examples/navbar-lg-light
+            pre(data-src='examples/navbar-lg-light.html')
+      div#bigNavbarDark.doc-subsection
+        .doc-subsection-header
+          h3 Navbar Grande Dark #[a(href='#bigNavbarDark') #]
+        .doc-subsection-body
+          p.
+            Si el navbar es #[code .fixed-top] debe usar la clase
+            #[code .with-fixed-navbar-lg] en el main
+          .p-2
+            include ../examples/navbar-lg-dark
+          pre(data-src='examples/navbar-lg-dark.html')
+      div#linesNavbarLight.doc-subsection
+        .doc-subsection-header
+          h3 Navbar Lines Light #[a(href='#linesNavbarLight') #]
+        .doc-subsection-body
+          .bg-gray-100
+            p.
+              Si el navbar es #[code .fixed-top] debe usar la clase
+              #[code .with-fixed-navbar-lines] en el main
+            .p-2
+              include ../examples/navbar-lines-light
+            pre(data-src='examples/navbar-lines-light.html')
+      div#linesNavbarDark.doc-subsection
+        .doc-subsection-header
+          h3 Navbar Lines Dark #[a(href='#linesNavbarDark') #]
+        .doc-subsection-body
+          p.
+            Si el navbar es #[code .fixed-top] debe usar la clase
+            #[code .with-fixed-navbar-lines] en el main
+          .p-2
+            include ../examples/navbar-lines-dark
+          pre(data-src='examples/navbar-lines-dark.html')

@@ -1,0 +1,127 @@
+section#gettingStarted.doc-section
+  header.doc-section-header
+    h2.
+      Comenzando #[a(href='#gettingStarted') #]
+  .doc-section-body
+    p.
+      El Framework kit de Gobierno es un conjunto de herramientas basado en
+      Bootstrap 4 para el diseño y diagramación de sitios y aplicaciones
+      web de gobierno. Contiene plantillas de formularios, botones,
+      menús de navegación y otros elementos de diseño.
+    div#bootstrap.doc-subsection
+      .doc-subsection-header
+        h3 Bootstrap #[a(href='#bootstrap') #]
+      .doc-subsection-body
+        p.
+          Bootstrap es uno de los frameworks más populares para la construcción
+          de sitios web responsivos.
+          El Framework kit de Gobierno, al estar basado en Bootstrap 4 permite utilizar
+          todas las herramientas que este ofrece. Toda la información relacionada
+          la puedes encontrar en la
+          #[a.ml-1(href="https://getbootstrap.com/docs/4.5/getting-started/introduction/", target="_blank") documentación oficial].
+    div#installation.doc-subsection
+      .doc-subsection-header
+        h3 Instalación #[a(href='#installation') #]
+      .doc-subsection-body
+        h4#installNPM.h5.sub-title  Mediante NPM #[a(href='#installNPM') #]
+        p.
+          El kit puede ser instalado en aplicaciones basadas en Node.js con el
+          #[a(href="https://www.npmjs.com/package/@gobdigital-cl/gob.cl") paquete de npm]
+          utilizando el siguiente comando:
+        .blockquote #[code $ npm i @gobdigital-cl/gob.cl]
+        p.
+          Para utilizar este framework, es necesario incluir dos de los
+          archivos que vienen dentro de la carpeta dist del paquete
+          de NPM:
+        ul
+          li CSS: @gobdigital-cl/dist/css/gob.cl.css
+          li JS: @gobdigital-cl/dist/js/gob.cl.js
+        p.
+          Para cargarlos, necesitaremos ubicar las siguientes líneas en el
+          index de su sitio web:
+        pre(data-src='examples/links-framework.html')
+
+        p.
+          El estilo de Bootstrap 4 viene incluido al instalar el framework kit
+          de gobierno, pero no el archivo JS. Para el correcto funcionamiento
+          del framework, es necesario que importe el archivo en conjunto con
+          los de #[a(href="https://jquery.com/") JQuery] y
+          #[a(href="https://popper.js.org/") Popper.js] en el siguiente orden:
+        pre(data-src='examples/links-js.html')
+        p.
+          También son necesarias las tipografías Roboto y Robot Slab,
+          las cuales la puede descargar con Google Fonts:
+        pre(data-src='examples/links-fonts.html')
+        p.
+          Otra alternativa para cargar el estilo framework kit de gobierno,
+          es utilizar Sass. Para ello deberá importar el scss en
+          su archivo #[code style.scss].
+          Un ejemplo de integración con Sass sería el siguiente:
+        pre(data-src='examples/style.scss').
+
+        h4#installCDN.h5.sub-title Mediante CDN #[a(href='#installCDN') #]
+        p.
+          Es posible cargar el framework kit de gobierno a través de los enlaces
+          disponibles sobre la plataforma CDN de gobierno como se muestra a
+          continuación:
+        pre(data-src='examples/cdn-import.html')
+    div#initialTemplate.doc-subsection
+      .doc-subsection-header
+        h3 Template inicial #[a(href='#initialTemplate') #]
+      .doc-subsection-body
+        p.
+          Es importante que las páginas del sitio a crear sigan los últimos
+          estándares de desarrollo. Esto quiere decir:
+        ul
+          li.
+            Se debe utilizar la declaración HTML5 doctype e incluir un meta tag
+            viewport para un comportamiento responsivo adecuado.
+          li El body debe tener 3 tags de HTML anidados:
+            ol
+              li #[code header]
+              li #[code main]
+              li #[code footer]
+          li.
+            Los scripts de javascript, deben ir al final del body para que el
+            sitio cargue más rápido. Los scripts se cargan de manera secuencial
+            y bloquean el resto de la carga de archivos.
+            Colocarlos al final permite que otros elementos, comos los archivos
+            css carguen primero.
+        p.
+          Juntando lo anterior, un ejemplo de la página principal sería:
+        pre(data-src='examples/layout.html')
+    div#browsersDevices.doc-subsection
+      .doc-subsection-header
+        h3 Soporte browsers y dispositivos #[a(href='#browsersDevices') #]
+      .doc-subsection-body
+        p.
+          El framework mantiene el soporte de navegadores otorgado por bootstrap.
+          Para más detalle puede revisar la documentación de Bootstrap en la sección de
+          #[a(href="https://getbootstrap.com/docs/4.5/getting-started/browsers-devices/",target="_blank") Navegadores y Dispositivos] .
+        p.
+          Las herramientas añadidas en este framework brindan soporte para varios puntos
+          de cambio en el tamaño de la pantalla del dispositivo:
+        table.table.table-bordered
+          thead
+            tr
+              th
+              th.text-center Extra small
+              th.text-center Small
+              th.text-center Medium
+              th.text-center Large
+              th.text-center Extra large
+          tbody
+            tr
+              th.text-nowrap Tamaños para los que aplica
+              td &lt;576px
+              td &GreaterEqual;576px
+              td &GreaterEqual;768px
+              td &GreaterEqual;992px
+              td &GreaterEqual;1200px
+            tr
+              th.text-nowrap Prefijo
+              td No tiene
+              td #[code sm]
+              td #[code md]
+              td #[code lg]
+              td #[code xl]

@@ -1,0 +1,66 @@
+.profile-page {
+  align-content: flex-start;
+
+  @extend .row;
+
+  p {
+    line-height: rem($profile-p-line-height);
+  }
+
+  .profile-group {
+    order: 1;
+
+    @include media($from: tablet) {
+      flex-direction: column;
+
+      @include make-col(4);
+    }
+  }
+
+  .profile-header {
+    display: block;
+    order: 1;
+    width: 100%;
+    padding: 0 $grid-gutter-width / 2;
+
+    section.section {
+      margin-top: spacer(5);
+
+      @include media($from: tablet) {
+        margin-top: spacer(4);
+      }
+    }
+  }
+
+
+  .profile-footer {
+    display: block;
+    order: 3;
+    width: 100%;
+    padding: 0 $grid-gutter-width / 2;
+
+    section.section {
+      margin-top: spacer(5);
+
+      @include media($from: tablet) {
+        margin-top: spacer(4);
+      }
+    }
+  }
+
+  .profile-body {
+    order: 2;
+
+    @extend .col-md-8;
+
+    section.section {
+      margin-top: spacer(5);
+    }
+
+    @include media($from: tablet) {
+      section.section:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

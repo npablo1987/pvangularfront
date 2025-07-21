@@ -1,0 +1,21 @@
+.contingency {
+  background-color: invert($body-bg);
+
+  .contingency-body {
+    > section.section-jumbotron {
+      .section-body {
+        .line::after {
+          background: invert-color("black");
+        }
+      }
+    }
+
+    > section.section {
+      .section-header {
+        h2 {
+          color: invert-gray("a");
+        }
+      }
+    }
+  }
+}

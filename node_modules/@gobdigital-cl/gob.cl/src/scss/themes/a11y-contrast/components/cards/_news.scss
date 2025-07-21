@@ -1,0 +1,21 @@
+.card-news {
+  background-color: contrast-color("white");
+  border-color: invert-theme-color("accent");
+
+  &:hover {
+    color: invert-theme-color();
+    border: 1px solid invert-theme-color();
+
+    a {
+      color: invert-theme-color();
+    }
+  }
+
+  &-body {
+    > a {
+      display: block;
+      margin: 0;
+      overflow: hidden;
+    }
+  }
+}
