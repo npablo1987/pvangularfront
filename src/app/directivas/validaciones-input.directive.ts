@@ -11,12 +11,18 @@ import { Directive, HostListener, ElementRef, Input } from '@angular/core';
 export class ValidacionesInputDirective {
   @Input() appMax?: number;
   @Input() appMin?: number;
+  /** Máximo número de dígitos permitidos */
+  @Input() appMaxLength?: number;
 
   @HostListener('input', ['$event'])
   onInput(event: Event): void {
     const input = event.target as HTMLInputElement;
 
     let limpio = input.value.replace(/\D/g, '');
+
+    if (this.appMaxLength != null && limpio.length > this.appMaxLength) {
+      limpio = limpio.slice(0, this.appMaxLength);
+    }
 
     if (limpio) {
       let valor = parseInt(limpio, 10);
