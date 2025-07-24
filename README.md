@@ -25,4 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# pvangularfront
+
+## Docker with Nginx
+
+A `Dockerfile` is provided to build the project and serve the production build through **Nginx**. Build the image and run it with:
+
+```bash
+docker build -t rfp-app .
+docker run -p 8080:80 rfp-app
+```
+
+The application will be available on [http://localhost:8080](http://localhost:8080).
