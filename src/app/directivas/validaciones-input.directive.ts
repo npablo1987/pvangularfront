@@ -9,11 +9,25 @@ import { Directive, HostListener, ElementRef, Input } from '@angular/core';
   standalone: true
 })
 export class ValidacionesInputDirective {
+  @Input() appMax?: number;
+  @Input() appMin?: number;
+
   @HostListener('input', ['$event'])
   onInput(event: Event): void {
     const input = event.target as HTMLInputElement;
 
-    const limpio = input.value.replace(/\D/g, '');
+    let limpio = input.value.replace(/\D/g, '');
+
+    if (limpio) {
+      let valor = parseInt(limpio, 10);
+      if (this.appMax != null && valor > this.appMax) {
+        valor = this.appMax;
+      }
+      if (this.appMin != null && valor < this.appMin) {
+        valor = this.appMin;
+      }
+      limpio = String(valor);
+    }
 
     if (input.value !== limpio) {
       input.value = limpio;

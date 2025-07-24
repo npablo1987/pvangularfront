@@ -106,6 +106,7 @@
             <div class="col-md-4">
               <label for="patrimonio" class="form-label">Patrimonio</label>
               <input appValidacionesInput
+                [appMax]="99000000" [appMin]="0"
                 type="text"
                 id="patrimonio"
                 class="form-control"
@@ -119,6 +120,7 @@
               <div class="form-group">
                 <label for="capitalSocial" class="form-label">Capital social</label>
                 <input appValidacionesInput
+                  [appMax]="99000000" [appMin]="0"
                   type="text"
                   id="capitalSocial"
                   class="form-control"
@@ -133,6 +135,7 @@
               <div class="form-group">
                 <label for="estadoResultado" class="form-label">Estado Resultado</label>
                 <input appValidacionesInput
+                  [appMax]="99000000" [appMin]="0"
                   type="text"
                   id="estadoResultado"
                   class="form-control"
