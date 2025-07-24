@@ -24,9 +24,17 @@ export class CabeceraLoggedComponent {
     private sesionSrv: SesionService
   ) {
     const u = this.sesionSrv.getUsuario();
-    if (u) { this.nombreUsuario = u.respuesta_xml?.documento?.datosPersonal?.nombre?.nombres
-                         ? `${u.respuesta_xml.documento.datosPersonal.nombre.nombres} ${u.respuesta_xml.documento.datosPersonal.nombre.apellidoPaterno}`.trim()
-                         : u.rut_enviado; }
+    if (u) {
+      const datosPersonal = u.respuesta_xml?.documento?.datosPersonal;
+      if (datosPersonal?.nombre?.nombres) {
+        const nombres = datosPersonal.nombre.nombres.trim();
+        const apPaterno = datosPersonal.nombre.apellidoPaterno || '';
+        const apMaterno = datosPersonal.nombre.apellidoMaterno || '';
+        this.nombreUsuario = `${nombres} ${apPaterno} ${apMaterno}`.trim();
+      } else {
+        this.nombreUsuario = u.rut_enviado;
+      }
+    }
   }
 
   ngOnInit(): void {
