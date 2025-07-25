@@ -4,6 +4,7 @@ import { FichaService } from '../../services/ficha.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ValidacionesInputDirective, ValidarRutDirective } from '../../directivas/validaciones-input.directive';
+import { LimitarTextoDirective } from '../../directivas/limitar-texto.directive';
 
 interface ArchivoWrapper {
   file?: File;   // presente cuando se acaba de seleccionar
@@ -14,7 +15,8 @@ interface ArchivoWrapper {
   standalone: true,
   imports: [CommonModule, FormsModule,
     ValidacionesInputDirective,
-    ValidarRutDirective],
+    ValidarRutDirective,
+    LimitarTextoDirective],
   templateUrl: './crear-ficha.component.html',
   styleUrls: ['./crear-ficha.component.css']
 })
