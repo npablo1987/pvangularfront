@@ -23,7 +23,16 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label for="razonSocial" class="form-label">Razón Social</label>
-                <input type="text" id="razonSocial" class="form-control" placeholder="Municipalidad de Santiago"  [(ngModel)]="razonSocial" name="razonSocial" />
+                <input
+                  type="text"
+                  id="razonSocial"
+                  class="form-control"
+                  placeholder="Municipalidad de Santiago"
+                  [(ngModel)]="razonSocial"
+                  name="razonSocial"
+                  appLimitarTexto
+                  [attr.maxLength]="200"
+                />
               </div>
             </div>
             <div class="col-md-4">
@@ -77,8 +86,15 @@
             <div class="col">
               <div class="form-group">
                 <label for="areaTematica" class="form-label">Área Temática</label>
-                <textarea id="areaTematica" class="form-control" rows="2" [(ngModel)]="areaTematica"
-                name="areaTematica"></textarea>
+                <textarea
+                  id="areaTematica"
+                  class="form-control"
+                  rows="2"
+                  [(ngModel)]="areaTematica"
+                  name="areaTematica"
+                  appLimitarTexto
+                  [attr.maxLength]="200"
+                ></textarea>
               </div>
             </div>
           </div>
