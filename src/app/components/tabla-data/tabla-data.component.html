@@ -21,11 +21,21 @@
         <tr>
             <th>RUT</th>
             <th>Razón Social</th>
-            <th>Región</th>
+            <th>
+              <button type="button" class="btn btn-link p-0 me-1" (click)="toggleSort('region')">
+                <span [innerHTML]="sortDirection.region === 'asc' ? '&#9650;' : '&#9660;'"></span>
+              </button>
+              Región
+            </th>
             <th>Tipo de Empresa</th>
             <th>Representante Legal</th>
             <th>Contacto</th>
-            <th>Fecha Certif.</th>
+            <th>
+              <button type="button" class="btn btn-link p-0 me-1" (click)="toggleSort('fecha')">
+                <span [innerHTML]="sortDirection.fecha === 'asc' ? '&#9650;' : '&#9660;'"></span>
+              </button>
+              Fecha Certif.
+            </th>
         </tr>
     </thead>
     <tbody>

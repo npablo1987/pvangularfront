@@ -20,6 +20,11 @@ import * as FileSaver from 'file-saver';
 export class TablaDataComponent implements OnInit {
   personas: PersonaJuridica[] = [];
   dataTableInitialized = false;
+  dataTable: any;
+  sortDirection: Record<'region' | 'fecha', 'asc' | 'desc'> = {
+    region: 'asc',
+    fecha: 'asc'
+  };
 
   constructor(private apiService: ApirestIndapService) {}
 
@@ -61,8 +66,8 @@ export class TablaDataComponent implements OnInit {
       if (this.dataTableInitialized) {
         $('#fichasReceptores').DataTable().destroy(); // Destruir antes de reiniciar
       }
-  
-      $('#fichasReceptores').DataTable({
+
+      this.dataTable = $('#fichasReceptores').DataTable({
         searching: true,
         paging: true,
         responsive: true,
@@ -81,8 +86,18 @@ export class TablaDataComponent implements OnInit {
           }
         }
       });
-  
+
       this.dataTableInitialized = true;
     }, 0);
+  }
+
+  toggleSort(column: 'region' | 'fecha'): void {
+    if (!this.dataTable) {
+      return;
+    }
+    const index = column === 'region' ? 2 : 6;
+    const direction = this.sortDirection[column] === 'asc' ? 'desc' : 'asc';
+    this.sortDirection[column] = direction;
+    this.dataTable.order([index, direction]).draw();
   }
 }
