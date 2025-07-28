@@ -218,6 +218,14 @@
     <!-- Lista dinámica de slots “otroX” -->
     <div *ngFor="let otro of archivosOtros" class="mb-2">
       <label class="form-label">{{ otro.label }}</label>
+      <input
+        type="text"
+        class="form-control mb-2"
+        [id]="otro.key + '_nombre'"
+        [(ngModel)]="otro.nombre"
+        appLimitarTexto="100"
+        placeholder="Nombre del archivo"
+      />
 
       <div class="row w-100 mb-2">
         <!-- Input oculto + botón seleccionar -->
