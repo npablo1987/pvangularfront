@@ -10,6 +10,12 @@ interface ArchivoWrapper {
   file?: File;   // presente cuando se acaba de seleccionar
   name: string;  // siempre presente para mostrar en la UI
 }
+
+interface OtroArchivo {
+  key: string;
+  label: string;
+  nombre: string;
+}
 @Component({
   selector: 'app-crear-ficha',
   standalone: true,
@@ -37,7 +43,7 @@ export class CrearFichaComponent implements OnInit{
   otorgadaPor = '';
   areaTematica = '';
   otroCounter = 0;
-  archivosOtros: Array<{ key: string; label: string }> = [];
+  archivosOtros: OtroArchivo[] = [];
 
   archivosRequeridosPorTipo: { [key: string]: Array<{ key: string; label: string }> } = {
     'municipalidad': [
@@ -305,6 +311,27 @@ export class CrearFichaComponent implements OnInit{
     } else {
       // Si aún no han elegido tipo de empresa, ya lo marcamos arriba
     }
+
+    /* 2b. Validar nombres personalizados de los archivos "otro" -------- */
+    Object.entries(this.archivosSeleccionados)
+      .filter(([k]) => k.startsWith('otro'))
+      .forEach(([k]) => {
+        const otro = this.archivosOtros.find(o => o.key === k);
+        const nombre = otro?.nombre?.trim() || '';
+        const inputNombre = document.getElementById(k + '_nombre') as HTMLInputElement;
+
+        if (!nombre) {
+          inputNombre?.classList.add('input-error');
+          mensajeError += `- Debe indicar un nombre para ${otro?.label}.\n`;
+          esValido = false;
+        } else if (nombre.length > 100) {
+          inputNombre?.classList.add('input-error');
+          mensajeError += `- El nombre para ${otro?.label} supera 100 caracteres.\n`;
+          esValido = false;
+        } else {
+          inputNombre?.classList.remove('input-error');
+        }
+      });
   
     /* 3. Mostrar mensaje final ---------------------------------------- */
     if (!esValido) {
@@ -380,10 +407,11 @@ export class CrearFichaComponent implements OnInit{
       .forEach(([key, wrapper]) => {
         if (!wrapper) return;               // filtramos los undefined
         if (wrapper.file) {
-          const label = this.archivosRequeridosPorTipo[this.tipoEmpresa]
-            .find(a => a.key === key)?.label
-            || 'SinEtiqueta';
-  
+          const requerido = this.archivosRequeridosPorTipo[this.tipoEmpresa]
+            ?.find(a => a.key === key)?.label;
+          const otroNombre = this.archivosOtros.find(o => o.key === key)?.nombre;
+          const label = requerido || otroNombre || 'SinEtiqueta';
+
           console.log(`→ Persistiendo ${wrapper.name} como ${label}`);
           this.fichaService.setArchivos(key, wrapper.file, label);
         }
@@ -403,10 +431,11 @@ export class CrearFichaComponent implements OnInit{
   agregarOtroArchivo(): void {
     const nextIndex = this.archivosOtros.length + 1;          // 1-based
     const key       = `otro${nextIndex}`;
-  
+
     this.archivosOtros.push({
       key,
-      label: `Otro archivo #${nextIndex}`
+      label: `Otro archivo #${nextIndex}`,
+      nombre: ''
     });
   
     this.cdr.detectChanges();      // refresco si usas OnPush
@@ -417,16 +446,16 @@ export class CrearFichaComponent implements OnInit{
   eliminarOtroSlot(keyEliminado: string): void {
     // a) Quitar el slot de la lista visual
     this.archivosOtros = this.archivosOtros.filter(o => o.key !== keyEliminado);
-  
+
     // b) Reconstruir lista + selección para que queden ordenados
-    const nuevosOtros: Array<{ key: string; label: string }> = [];
+    const nuevosOtros: OtroArchivo[] = [];
     const nuevosSeleccionados: { [k: string]: ArchivoWrapper } = {};
-  
+
     this.archivosOtros.forEach((o, idx) => {
       const newKey = `otro${idx + 1}`;            // 1,2,3…
       const newLabel = `Otro archivo #${idx + 1}`;
-      nuevosOtros.push({ key: newKey, label: newLabel });
-  
+      nuevosOtros.push({ key: newKey, label: newLabel, nombre: o.nombre });
+
       // salvamos el wrapper en una variable
       const wrapper = this.archivosSeleccionados[o.key];
       if (wrapper) {
