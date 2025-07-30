@@ -10,6 +10,8 @@ import { ValidacionesInputDirective, ValidarRutDirective,   ValidarCorreoDirecti
   ValidarTelefonoDirective  } from '../../directivas/validaciones-input.directive';
 import { timeout, TimeoutError } from 'rxjs';
 
+declare var $: any;
+
 
 @Component({
   selector: 'app-crear-ficha-iii',
@@ -26,6 +28,10 @@ export class CrearFichaIIIComponent implements OnInit {
   ubicacionContacto: any = {};
   listaSocios: any[] = [];
   indexEditando: number | null = null;
+
+  dataTableInitialized = false;
+  dataTable: any;
+  sortDirection: Record<'rut' | 'nombre', 'asc' | 'desc'> = { rut: 'asc', nombre: 'asc' };
 
   // Flag para evitar múltiples guardados simultáneos
   isGuardando: boolean = false;
@@ -64,6 +70,7 @@ export class CrearFichaIIIComponent implements OnInit {
     this.listaSocios = this.fichaService.getListaSocios();
     console.log('Datos de ubicación recibidos:', this.ubicacionContacto);
     console.log('Lista de socios cargada:', this.listaSocios);
+    setTimeout(() => this.initializeDataTable(), 0);
   }
 
 
@@ -98,10 +105,17 @@ export class CrearFichaIIIComponent implements OnInit {
   }
 
   marcarRepresentante(event: Event) {
-    // limpia la bandera en todos
-    this.listaSocios.forEach(s => (s.representanteLegal = false));
-    // marca sólo al socio que se está editando
-    this.socio.representanteLegal = (event.target as HTMLInputElement).checked;
+    const checked = (event.target as HTMLInputElement).checked;
+    if (checked) {
+      const existeOtro = this.listaSocios.some((s, idx) => s.representanteLegal && idx !== this.indexEditando);
+      if (existeOtro) {
+        alert('Solo puede haber un representante legal. Se desmarcará el seleccionado anteriormente.');
+      }
+      this.listaSocios.forEach((s, idx) => {
+        if (idx !== this.indexEditando) s.representanteLegal = false;
+      });
+    }
+    this.socio.representanteLegal = checked;
   }
 
   removerSocio(index: number) {
@@ -111,6 +125,7 @@ export class CrearFichaIIIComponent implements OnInit {
   
     this.fichaService.eliminarSocio(index);
     this.listaSocios = [...this.fichaService.getListaSocios()];
+    setTimeout(() => this.initializeDataTable(), 0);
   }
 
   calcularFechaNacimiento(edad: number): string {
@@ -227,6 +242,7 @@ export class CrearFichaIIIComponent implements OnInit {
     this.listaSocios = [...this.fichaService.getListaSocios()];
     this.resetFormulario();
     this.cerrarModal();
+    setTimeout(() => this.initializeDataTable(), 0);
   }
 
   resetFormulario() {
@@ -363,8 +379,46 @@ export class CrearFichaIIIComponent implements OnInit {
   }
 
 
-   */
+  */
 
+  initializeDataTable(): void {
+    setTimeout(() => {
+      if (this.dataTableInitialized) {
+        $('#sociosTable').DataTable().destroy();
+      }
+      this.dataTable = $('#sociosTable').DataTable({
+        searching: true,
+        paging: true,
+        responsive: true,
+        order: [],
+        language: {
+          emptyTable: 'No hay información',
+          info: 'Mostrando _START_ a _END_ de _TOTAL_ ',
+          infoEmpty: 'Mostrando 0 a 0 de 0 entradas',
+          lengthMenu: 'Mostrar _MENU_ entradas',
+          search: 'Buscar:',
+          zeroRecords: 'No se encontraron coincidencias',
+          paginate: {
+            first: 'Primero',
+            last: 'Último',
+            next: 'Siguiente',
+            previous: 'Anterior'
+          }
+        }
+      });
+      this.dataTableInitialized = true;
+    }, 0);
+  }
+
+  toggleSort(column: 'rut' | 'nombre'): void {
+    if (!this.dataTable) {
+      return;
+    }
+    const index = column === 'rut' ? 0 : 1;
+    const direction = this.sortDirection[column] === 'asc' ? 'desc' : 'asc';
+    this.sortDirection[column] = direction;
+    this.dataTable.order([index, direction]).draw();
+  }
 
   volverpasoii(){
     this.router.navigate(['/receptores/crear-fichaii'])

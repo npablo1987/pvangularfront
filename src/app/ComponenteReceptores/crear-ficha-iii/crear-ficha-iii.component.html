@@ -11,11 +11,21 @@
       </div>
       <br>
       <!--  tabla, etc. -->
-      <table id="fichasReceptores" class="table cell-border compact table-striped">
+      <table id="sociosTable" class="table cell-border compact table-striped">
         <thead>
           <tr>
-            <th>RUT</th>
-            <th>Nombre Completo</th>
+            <th>
+              <button type="button" class="btn btn-link p-0 me-1" (click)="toggleSort('rut')">
+                <span [innerHTML]="sortDirection.rut === 'asc' ? '&#9650;' : '&#9660;'"></span>
+              </button>
+              RUT
+            </th>
+            <th>
+              <button type="button" class="btn btn-link p-0 me-1" (click)="toggleSort('nombre')">
+                <span [innerHTML]="sortDirection.nombre === 'asc' ? '&#9650;' : '&#9660;'"></span>
+              </button>
+              Nombre Completo
+            </th>
             <th>Cargo</th>
             <th>Email</th>
             <th>Teléfono</th>
@@ -38,10 +48,19 @@
               <span *ngIf="!item.archivoCedula">--</span>
             </td>
             <td>
-              <button (click)="editarSocio(i)" class="btn btn-sm btn-primary">Editar</button>
+              <button (click)="editarSocio(i)" class="btn btn-sm btn-primary" title="Editar">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-9.5 9.5a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l9.5-9.5zM11.207 2L3 10.207V13h2.793L14 4.793 11.207 2z"/>
+                </svg>
+              </button>
             </td>
             <td>
-              <button (click)="removerSocio(i)" class="btn btn-sm btn-danger">Eliminar</button>
+              <button (click)="removerSocio(i)" class="btn btn-sm btn-danger" title="Eliminar">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 5h4a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H6a.5.5 0 0 1-.5-.5v-8z"/>
+                  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1-1V1h-11v1a1 1 0 0 1-1 1H0v1h16V3h-1.5z"/>
+                </svg>
+              </button>
             </td>
           </tr>
         </tbody>
@@ -148,7 +167,8 @@
     
             <!-- Radio: ¿Es representante legal? -->
             <div class="form-group">
-              <label class="d-block mb-1">¿Es representante legal?</label>
+              <label class="d-block mb-1" title="Solo puede haber un representante legal">¿Es representante legal?</label>
+              <small class="text-muted">Solo debe existir un representante legal</small>
             
               <div class="form-check form-check-inline">
                 <input type="radio"
@@ -156,6 +176,7 @@
                        name="representanteLegal"
                        class="form-check-input"
                        [value]="true"
+                       (change)="marcarRepresentante($event)"
                        [(ngModel)]="socio.representanteLegal">
                 <label class="form-check-label" for="repSi">Sí</label>
               </div>
@@ -166,6 +187,7 @@
                        name="representanteLegal"
                        class="form-check-input"
                        [value]="false"
+                       (change)="marcarRepresentante($event)"
                        [(ngModel)]="socio.representanteLegal">
                 <label class="form-check-label" for="repNo">No</label>
               </div>
