@@ -30,7 +30,7 @@
                   placeholder="Municipalidad de Santiago"
                   [(ngModel)]="razonSocial"
                   name="razonSocial"
-                  appLimitarTexto
+                  [appLimitarTexto]="200"
                   [attr.maxLength]="200"
                 />
               </div>
@@ -92,7 +92,7 @@
                   rows="2"
                   [(ngModel)]="areaTematica"
                   name="areaTematica"
-                  appLimitarTexto
+                  [appLimitarTexto]="200"
                   [attr.maxLength]="200"
                 ></textarea>
               </div>
@@ -223,7 +223,7 @@
         class="form-control mb-2"
         [id]="otro.key + '_nombre'"
         [(ngModel)]="otro.nombre"
-        appLimitarTexto="100"
+        [appLimitarTexto]="100"
         placeholder="Nombre del archivo"
       />
 
