@@ -102,6 +102,11 @@ export class CrearFichaComponent implements OnInit{
   // Estructura donde guardamos los archivos seleccionados
   archivosSeleccionados: { [key: string]: ArchivoWrapper | undefined } = {};
 
+  // Manejo de certificado Registro 19862
+  selectedFile: File | null = null;
+  subiendo = false;
+  mensaje = '';
+
   constructor(
     private router: Router,
     private fichaService: FichaService,
@@ -416,6 +421,36 @@ export class CrearFichaComponent implements OnInit{
           this.fichaService.setArchivos(key, wrapper.file, label);
         }
       });
+  }
+
+  onFileChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length) {
+      this.selectedFile = input.files[0];
+      this.mensaje = '';
+    }
+  }
+
+  subirCertificado() {
+    if (!this.selectedFile || this.subiendo) { return; }
+
+    this.subiendo = true;
+    try {
+      this.fichaService.setArchivos(
+        'certificadoRegistro19862',
+        this.selectedFile,
+        'Certificado Registro 19862'
+      );
+      this.mensaje = '✅ Certificado cargado correctamente';
+      this.selectedFile = null;
+      const inputEl = document.getElementById('certificado') as HTMLInputElement | null;
+      if (inputEl) { inputEl.value = ''; }
+    } catch (err) {
+      console.error(err);
+      this.mensaje = '❌ Error al cargar el certificado';
+    } finally {
+      this.subiendo = false;
+    }
   }
 
   irCrearFichaparteii() {

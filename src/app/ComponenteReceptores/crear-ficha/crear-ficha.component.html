@@ -278,6 +278,31 @@
 </div>
 
 
+          <!-- Aviso importante -->
+          <div class="alert alert-warning" role="alert">
+            La persona jurídica debe estar inscrita en el
+            <strong>Registro Nacional de Receptores de Fondos Públicos</strong> del Ministerio de Hacienda.
+            Puede buscar el perfil en&nbsp;
+            <a href="https://www.registros19862.cl/certificado/institucion"
+               target="_blank" rel="noopener">
+              https://www.registros19862.cl/certificado/institucion
+            </a>.
+          </div>
+
+          <!-- Subida de Certificado Registro 19862 -->
+          <div class="mb-4">
+            <label for="certificado" class="form-label fw-bold">Certificado Registro 19862</label>
+            <input type="file"
+                   class="form-control"
+                   id="certificado"
+                   (change)="onFileChange($event)">
+            <button class="btn btn-dark mt-2"
+                    [disabled]="subiendo || !selectedFile"
+                    (click)="subirCertificado()">
+              {{ subiendo ? 'Subiendo…' : 'Subir' }}
+            </button>
+            <div class="mt-2" *ngIf="mensaje">{{ mensaje }}</div>
+          </div>
           <hr>
 
 
